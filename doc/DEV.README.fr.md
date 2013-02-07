@@ -255,6 +255,19 @@ Du fait que le fichier makefly.rc est inclus dans le Makefile au moment du trait
   * tar : commande pour archiver des fichiers.
   * PUBLISH\_SCRIPT\_NAME : nom du script de publication. Pourrait être renommé par un autre script. Ce script devrait être situé dans le répertoire **TOOLSDIR**. Par défaut **publish.sh**.
   * BODY\_CLASS : Classe utilisée par la baliste html *body* dans toutes les pages. Utile pour le thème et les feuilles de style. Par défaut **single**.
+  * JSKOMMENT\_MAX : nombre de commentaires après lesquels les éléments JSKOMMENT seront réduits (non affichés)
+  * JSKOMMENT\_URL : URL du serveur jskomment
+  * jskom\_name : nom du fichier javascript jskomment
+  * jskom\_file : adresse relative dans le répertoire makefly du fichier javascript jskomment
+  * jskom\_html : adresse relative dans le répertoire makefly du texte HTML qui déclare le fichier javascript jskomment
+  * jskom\_cont : adresse relative dans le répertoire makefly du texte HTML utilisé pour montrer jskomment dans le weblog (joueb)
+  * jskom\_css : adresse relative dans le répertoire makefly du fichier CSS de jskomment
+  * ELI\_API : URL de l'api pour afficher les status
+  * eli\_html : adresse relative dans le répertoire makefly du texte HTML qui déclare le fichier javascript eli
+  * eli\_name : nom du javascript eli
+  * eli\_file : adresse relative dans le répertoire makefly du fichier javascript eli
+  * eli\_cont : adresse relative dans le répertoire makefly du texte HTML utilisé pour afficher eli dans le weblog (joueb)
+  * eli\_css : adresse relative dans le répertoire makefly du fichier CSS eli
 
 ## Les fichiers template
 
@@ -269,9 +282,10 @@ Chaque thème a son propre répertoire. Ainsi pour le thème *défaut*, un dossi
   * un **config.mk** dans lequel vous avez des détails à propos du thème : 
     * CSS\_NAME : Nom qui apparaîtra dans le joueb avec `${CSS_NAME}`
     * CSS\_FILE : le nom de fichier du CSS choisi pour un thème spécifique
-    * CSS\_COLOR\_FILE: le nom du fichier utilisé pour colorier votre thème
-    * JSKOMMENT\_CAPTCHA\_THEME: nom du theme que reCaptcha propose. Plus d'infos sur [https://developers.google.com/recaptcha/docs/customization](https://developers.google.com/recaptcha/docs/customization "Plus d'infos &agrave; propos des th&egrave;mes reCaptcha").
-    * JSKOMMENT\_CSS: nom du fichier CSS utilisé pour l'application JSKOMMENT. Devrait &ecirc;tre dans le répertoire du thème. Si non défini, un fichier par défaut sera utilisé.
+    * CSS\_COLOR\_FILE : le nom du fichier utilisé pour colorier votre thème
+    * JSKOMMENT\_CAPTCHA\_THEME : nom du thème que reCaptcha propose. Plus d'infos sur [https://developers.google.com/recaptcha/docs/customization](https://developers.google.com/recaptcha/docs/customization "Plus d'infos &agrave; propos des th&egrave;mes reCaptcha").
+    * JSKOMMENT\_CSS : nom du fichier CSS utilisé pour l'application JSKOMMENT. Devrait &ecirc;tre dans le répertoire du thème. Si non défini, un fichier par défaut sera utilisé (contenu dans le dossier **template**).
+    * ELI\_CSS : nom du fichier CSS utilisé pour l'application ELI. Devrait &ecirc;tre dans le répertoire du thème. Si non défini, un fichier par défaut sera utilisé (contenu dans le dossier **template**).
 
 ### Fichiers obligatoires
 
@@ -395,15 +409,16 @@ Au moment où j'écrivais cette documentation, voici les mots disponible à la t
   * SEARCH\_BAR\_CONTENT (Recherche)
   * SEARCH\_BAR\_BUTTON\_NAME (Rechercher)
   * AUTHOR\_LABEL (Rédacteur)
-  * LOGO_AVAILABLE (Le logo est disponible sous 'Licence Art Libre' par Ines ECK : )
-  * JSKOMMENT_PSEUDO (Votre pseudonyme)
-  * JSKOMMENT_ADD_COMMENT (Laisser un commentaire)
-  * JSKOMMENT_COMMENTS (Commentaire(s))
-  * JSKOMMENT_POWERED (Système de commentaire propulsé par)
-  * JSKOMMENT_SUBMIT (Soumettre)
-  * JSKOMMENT_YOUR (Votre commentaire)
-  * JSKOMMENT_LABEL (Pseudonyme : )
-  * JSKOMMENT_CAPTCHA_ERROR (erreur d\'utilisation de l\'API)
+  * LOGO\_AVAILABLE (Le logo est disponible sous 'Licence Art Libre' par Ines ECK : )
+  * JSKOMMENT\_PSEUDO (Votre pseudonyme)
+  * JSKOMMENT\_ADD\_COMMENT (Laisser un commentaire)
+  * JSKOMMENT\_COMMENTS (Commentaire(s))
+  * JSKOMMENT\_POWERED (Système de commentaire propulsé par)
+  * JSKOMMENT\_SUBMIT (Soumettre)
+  * JSKOMMENT\_YOUR (Votre commentaire)
+  * JSKOMMENT\_LABEL (Pseudonyme : )
+  * JSKOMMENT\_CAPTCHA\_ERROR (erreur d\'utilisation de l\'API)
+  * ELI\_TITLE (Me suivre)
 
 En utilisant les templates, vous pouvez facilement ajouter du texte et leur traduction dans plusieurs thèmes.
 

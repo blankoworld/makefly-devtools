@@ -256,6 +256,19 @@ Because of makefly.rc included into Makefile at process time, you can redefine s
   * tar: command to archivate files.
   * PUBLISH\_SCRIPT\_NAME: name of the publish script. Could be renamed by another one. The script should be located into the **TOOLSDIR** directory. By default: **publish.sh**.
   * BODY\_CLASS: Class used by the *body* html tag in all pages. Useful for theme and stylesheets. By default **single**.
+  * JSKOMMENT\_MAX: number of comment after which JSKOMMENT element should be reduced.
+  * JSKOMMENT\_URL: URL of jskomment server
+  * jskom\_name: name of jskomment javascript file
+  * jskom\_file: relative address in makefly's directory of jskomment javascript file
+  * jskom\_html: relative address in makefly's directory of HTML text that declare jskomment javascript file
+  * jskom\_cont: relative address in makefly's directory of HTML text used to display jskomment in the weblog
+  * jskom\_css: relative address in makefly's directory of jskomment CSS file
+  * ELI\_API: API URL for displaying statuses
+  * eli\_html: relative address in makefly's directory of HTML text that declare eli javascript file
+  * eli\_name: name of eli javascript
+  * eli\_file: relative address in makefly's directory of eli javascript file
+  * eli\_cont: relative address in makefly's directory of HTML text used to display eli in the weblog
+  * eli\_css: relative address in makefly's directory of eli CSS file
 
 ## Template's files
 
@@ -272,7 +285,9 @@ Each theme have its own directory. So for *default* theme, a **default** directo
     * CSS\_FILE: the filename of choosen CSS for a defined theme
     * CSS\_COLOR\_FILE: the filename used to colour your theme
     * JSKOMMENT\_CAPTCHA\_THEME: the name of the theme that reCaptcha have. More info on [https://developers.google.com/recaptcha/docs/customization](https://developers.google.com/recaptcha/docs/customization "More info about reCaptcha themes").
-    * JSKOMMENT\_CSS: name of CSS file to used for JSKOMMENT application. Should be in theme directory. If not defined, a default one would be used.
+    * JSKOMMENT\_CSS: name of CSS file to use for JSKOMMENT application. Should be in theme directory. If not defined, a default one would be used (located in **template**'s directory).
+    * ELI\_CSS: name of CSS file to use for ELI application. Should be in theme directory. If not defined, a default one would be used (located in **template** directory).
+
 
 ### Mandatory files
 
@@ -396,15 +411,16 @@ At the time I write this documentation, here is the available words to translate
   * SEARCH\_BAR\_CONTENT (Search)
   * SEARCH\_BAR\_BUTTON\_NAME (Search)
   * AUTHOR\_LABEL (Author)
-  * LOGO_AVAILABLE (Logo is under 'Licence Art Libre' conditions by ECK Ines)
-  * JSKOMMENT_PSEUDO (Your nickname)
-  * JSKOMMENT_ADD_COMMENT (Leave a comment)
-  * JSKOMMENT_COMMENTS (Comment(s))
-  * JSKOMMENT_POWERED (Commenting area powered by)
-  * JSKOMMENT_SUBMIT (Submit)
-  * JSKOMMENT_YOUR (Your comment)
-  * JSKOMMENT_LABEL (Nickname: )
-  * JSKOMMENT_CAPTCHA_ERROR (error in API usage)
+  * LOGO\_AVAILABLE (Logo is under 'Licence Art Libre' conditions by ECK Ines)
+  * JSKOMMENT\_PSEUDO (Your nickname)
+  * JSKOMMENT\_ADD\_COMMENT (Leave a comment)
+  * JSKOMMENT\_COMMENTS (Comment(s))
+  * JSKOMMENT\_POWERED (Commenting area powered by)
+  * JSKOMMENT\_SUBMIT (Submit)
+  * JSKOMMENT\_YOUR (Your comment)
+  * JSKOMMENT\_LABEL (Nickname: )
+  * JSKOMMENT\_CAPTCHA\_ERROR (error in API usage)
+  * ELI\_TITLE (Follow me)
 
 By using templates, you can easily add some texts and their translations in some themes.
 
