@@ -422,6 +422,37 @@ Au moment où j'écrivais cette documentation, voici les mots disponible à la t
 
 En utilisant les templates, vous pouvez facilement ajouter du texte et leur traduction dans plusieurs thèmes.
 
+## Système de commentaire jskomment
+
+jskomment est un système de commentaire open source construit sur javascript et AJAX. Il est utilisé par défaut pour Makefly si vous initialisez la variable **JSKOMMENT** à 1 dans votre fichier de configuration makefly.rc (lisez la documentation utilisateur pour en savoir plus).
+
+Pour plus d'informations au sujet de jskomment, allez sur [le site web officiel de jskomment](http://code.google.com/p/jskomment/ "Se rendre sur le site officiel de jskomment").
+
+### Installation
+
+Tout les outils nécessaires sont disponibles dans le dossier **jskomment-srv**. Pour obtenir votre propre instance de jskomment, procédez ainsi :
+
+  * copiez le contenu du répertoire **jskomment-srv** sur votre serveur web
+  * configurez votre serveur (lisez la documentation de votre serveur. Par exemple la documentation du serveur Apache) pour permettre les fichiers **.htaccess** et php
+  * Allez sur la [page admin recaptcha de Google](https://www.google.com/recaptcha/admin/ "Se connecter à l'outil d'administration recaptcha de Google") et créez une nouvelle clé pour votre serveur
+  * Modifiez le fichier **jskomment-core.js** et mettez à jour ces lignes avec l'URL de votre serveur et votre clé PUBLIQUE :
+
+    JSKOMMENT.url = 'http://mon.domaine.tld';
+    JSKOMMENT.recaptchaPublicKey = "maSuperCléPublique";
+
+  * Modifiez le fichier **jskomment.local.php** et ajoutez votre clé PRIVÉE :
+
+    @define('DATADIR','maSuperCléPrivée');
+
+Recharchez la configuration de votre serveur web. Maintenant vous pouvez le tester en utilisation **http://mon.domaine.tld/test-dev.html**.
+
+Toutes les données sont enregistrées dans le dossier **jskomment-data**.
+
+### Utilisation
+
+Dans Makefly mettez à jour votre fichier de configuration makefly.rc avec l'URL de votre serveur (http://mon.domaine.tld): variable **JSKOMMENT_URL**.
+
+
 ## Outils
 
 Makefly est livré avec quelques outils pour être plus utilisable. Ces outils sont mis dans le répertoire **tools**.

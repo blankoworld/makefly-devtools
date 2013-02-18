@@ -424,6 +424,36 @@ At the time I write this documentation, here is the available words to translate
 
 By using templates, you can easily add some texts and their translations in some themes.
 
+## jskomment comment system
+
+jskomment is an open source commenting system that is built on javascript and AJAX. It is used by default for Makefly if you set **JSKOMMENT** variable to 1 in your makefly.rc configuration file (see User documentation for this).
+
+For more information about jskomment, go to [the jskomment official website](http://code.google.com/p/jskomment/ "Go to jskomment official website").
+
+### Installation
+
+All needed tools are available in **jskomment-srv** directory. To have your own instance of jskomment do this:
+
+  * copy the **jskomment-srv** directory content to your webserver
+  * configure your server (read the server's documentation. For an example Apache Server Documentation) to permit **.htaccess** files and php
+  * Go to [Google's recaptcha admin](https://www.google.com/recaptcha/admin/ "Connect to Google's recaptcha admin tool") and create a new key for your server
+  * Edit **jskomment-core.js** file and update these lines with your sever's URL and your PUBLIC key:
+
+    JSKOMMENT.url = 'http://my.domain.tld';
+    JSKOMMENT.recaptchaPublicKey = "mySuperPublicKey";
+
+  * Edit **jskomment.local.php** and add your PRIVATE key:
+
+    @define('DATADIR','mySuperPrivateKey');
+
+Reload your webserver configuration. Now you should test it by using **http://my.domain.tld/test-dev.html**.
+
+All registered data are stored in **jskomment-data** directory.
+
+### Use
+
+In Makefly, update your makefly.rc configuration file with your server's URL (http://my.domain.tld): **JSKOMMENT_URL** variable.
+
 ## Tools
 
 Makefly is delivered with some tools to be more usable. These tools are placed in **tools** directory.
