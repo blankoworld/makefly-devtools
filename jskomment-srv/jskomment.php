@@ -28,7 +28,7 @@ function jskomment_js() {
     $base_url = $_GET['JSKOMMENT_url'];
   }
 
-  echo "JSKOMMENT.url = '{$base_url}';\n";
+//  echo "JSKOMMENT.url = '{$base_url}';\n";
 
   echo "JSKOMMENT.main();\n";
   exit;
