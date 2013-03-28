@@ -1,2 +1,3 @@
 tests/out/*.out
 tests/result/*.txt
+tests/result/result.html
