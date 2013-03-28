@@ -7,5 +7,8 @@
 ## Tests
 
   * Do some simple unit tests
+    * test that building weblog works
+    * test that html is well formed
+    * test that HTML result is correct
   * Create some scenarii
-
+  * Create a script that show test results
