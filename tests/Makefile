@@ -40,5 +40,5 @@ all: test1
 
 clean:
 	$Qecho "Removing .out files..."
-	$Qrm -f ${current}/*.out
+	$Qfind ${current}/ -name '*.out' -print0 |xargs -0 rm -f
 	$Qecho "Done."
