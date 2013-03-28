@@ -13,11 +13,17 @@ white  ?= "$e[37m"
 # Default variables
 current != pwd
 main ?= ${current}/../../makefly/
-out = ${current}/out
-
 default_file = ${main}/Makefile
+out = ${current}/out
+result = ${current}/result
+
+# Result appearance
 result_ok  = "[ ${bold}${green}OK${r_col}  ]"
 result_err = "[ ${bold}${yellow}ER${r_col} ]"
+
+# Git version
+git_branch_version != cd ${main} && git rev-parse HEAD
+TODAY != date '+%Y%m%d_%H%M%S'
 
 #####
 ## BEGIN
@@ -33,9 +39,9 @@ test001_desc = "Minisch WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT i
 test001: test001.rc
 	$Q{ \
 		MAKEOBJDIR=${main} pmake clean -f ${default_file} && MAKEOBJDIR=${main} conf="${current}/test001.rc" pmake -f ${default_file} > ${out}/test001.out && \
-		diff -u test001.ok ${out}/test001.out > ${out}/test001.diff.out && \
-		echo "-- ${test001_name}: ${result_ok} ${test001_desc}"|| \
-		echo "-- ${test001_name}: ${result_err} ${test001_desc}" ; \
+		diff -u test001.ok ${out}/test001.out > ${out}/test001.diff.out && { \
+		echo "-- ${test001_name}: ${result_ok} ${test001_desc}" && echo "test001.rc:${test001_name}:${test001_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; } || { \
+		echo "-- ${test001_name}: ${result_err} ${test001_desc}" && echo "test001.rc:${test001_name}:${test001_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
 
 # THEME   : minisch
@@ -48,9 +54,9 @@ test002_desc = "Minisch WITHOUT sidebar WITHOUT search USING comment WITHOUT ide
 test002: test002.rc
 	$Q{ \
 		MAKEOBJDIR=${main} pmake clean -f ${default_file} && MAKEOBJDIR=${main} conf="${current}/test002.rc" pmake -f ${default_file} > ${out}/test002.out && \
-		diff -u test002.ok ${out}/test002.out > ${out}/test002.diff.out && \
-		echo "-- ${test002_name}: ${result_ok} ${test002_desc}"|| \
-		echo "-- ${test002_name}: ${result_err} ${test002_desc}" ; \
+		diff -u test002.ok ${out}/test002.out > ${out}/test002.diff.out && { \
+		echo "-- ${test002_name}: ${result_ok} ${test002_desc}" && echo "test002.rc:${test002_name}:${test002_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; } || { \
+		echo "-- ${test002_name}: ${result_err} ${test002_desc}" && echo "test002.rc:${test002_name}:${test002_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
 
 # THEME   : minisch
@@ -63,9 +69,9 @@ test003_desc = "Minisch WITHOUT sidebar WITHOUT search WITHOUT comment USING ide
 test003: test003.rc
 	$Q{ \
 		MAKEOBJDIR=${main} pmake clean -f ${default_file} && MAKEOBJDIR=${main} conf="${current}/test003.rc" pmake -f ${default_file} > ${out}/test003.out && \
-		diff -u test003.ok ${out}/test003.out > ${out}/test003.diff.out && \
-		echo "-- ${test003_name}: ${result_ok} ${test003_desc}"|| \
-		echo "-- ${test003_name}: ${result_err} ${test003_desc}" ; \
+		diff -u test003.ok ${out}/test003.out > ${out}/test003.diff.out && { \
+		echo "-- ${test003_name}: ${result_ok} ${test003_desc}" && echo "test003.rc:${test003_name}:${test003_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; } || { \
+		echo "-- ${test003_name}: ${result_err} ${test003_desc}" && echo "test003.rc:${test003_name}:${test003_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
 
 all: test001 test002 test003
