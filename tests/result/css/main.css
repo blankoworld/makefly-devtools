@@ -231,33 +231,42 @@ h1 {
    text-align: center;
 }
 
-ul {
-  list-style-type: square;
+span.label {
+font-weight: bold;
 }
 
-ul ul {
-  list-style-type: none;
+article {
+  margin-bottom: 2px;
+  padding: 5px;
+  width: 100%;
 }
 
-ul.OK {
-  background: lightgreen;
+article header {
+  width: 100%;
+  margin: 0;
+  text-align: center;
 }
 
-ul.ER {
-  background: lightyellow;
+article.OK {
+   background: lightgreen;
 }
 
-li.OK {
-  display: inline-block;
-  width: auto;
+article.ER {
+background: lightyellow;
+}
+
+article footer {
+    float: right;
+  margin: -4.3% 0 0 0;
   padding: 1%;
-  background-color: lightgreen;
-  color: black;
 }
 
-li.ER {
-  display: inline-block;
-  width: auto;
-  padding: 1%;
-  background-color: lightyellow;
+article.OK footer {
+background: green;
+color: white;
+}
+
+article.ER footer {
+background: #ffd700;
+color: black;
 }

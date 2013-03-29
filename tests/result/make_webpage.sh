@@ -24,16 +24,14 @@ do
   formated_date=`date -d "${tmp_date}" +'%Y/%m/%d %H:%M:%S'`
   id=`echo $f|cut -d '-' -f 2|cut -d '.' -f 1`
   echo "<h2>${formated_date}</h2>" >> ${result}
-  echo "<p>Hash: ${id}" >> ${result}
-  echo "<ul>" >> ${result}
+  echo "<p><span class='label'>Hash</span>: ${id}</p>" >> ${result}
   cat $f | while read line ; do
       conf=`echo $line|cut -d ':' -f 1`
       name=`echo $line|cut -d ':' -f 2`
       desc=`echo $line|cut -d ':' -f 3`
       state=`echo $line|cut -d ':' -f 4`
-      echo "        <li><ul class='${state}'><li class='config'>Config: ${conf}</li><li class='name'>Name: ${name}</li><li class='description'>Description: ${desc}</li><li>${state}</li></ul></li>" >> ${result}
+      echo "        <article class='${state}'><header>${name}</header><section><p><span class='label'>Config</span>: <a href="../${conf}" target='_blank'>${conf}</a></p><p><span class='label'>Description</span>: ${desc}</section><footer>${state}</footer></article>" >> ${result}
   done
-  echo "</ul></p>" >> ${result}
 done
 
 cat ${footer} >> ${result}
