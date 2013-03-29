@@ -20,8 +20,10 @@ cat ${header} > ${result}
 for f in $files
 do
   date=`echo $f|cut -d '-' -f 1`
+  tmp_date=`echo "${date:0:8} ${date:9:2}:${date:11:2}:${date:13:2}"`
+  formated_date=`date -d "${tmp_date}" +'%Y/%m/%d %H:%M:%S'`
   id=`echo $f|cut -d '-' -f 2|cut -d '.' -f 1`
-  echo "<h2>${date}</h2>" >> ${result}
+  echo "<h2>${formated_date}</h2>" >> ${result}
   echo "<p>Hash: ${id}" >> ${result}
   echo "<ul>" >> ${result}
   cat $f | while read line ; do
