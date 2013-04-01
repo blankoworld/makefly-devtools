@@ -34,6 +34,7 @@ TODAY != date '+%Y%m%d_%H%M%S'
 # search  : NO
 # comment : NO
 # identica: NO
+# goal    : Test that compilation work without any specific functionnality.
 test001_name = "Test 001"
 test001_desc = "Minisch WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
 test001: test001.rc
@@ -49,6 +50,7 @@ test001: test001.rc
 # search  : NO
 # comment : YES
 # identica: NO
+# goal    : Test that compilation work with jskomment comment system.
 test002_name = "Test 002"
 test002_desc = "Minisch WITHOUT sidebar WITHOUT search USING comment WITHOUT identica"
 test002: test002.rc
@@ -64,6 +66,7 @@ test002: test002.rc
 # search  : NO
 # comment : NO
 # identica: YES
+# goal    : Test that compilation work with identica functionnality.
 test003_name = "Test 003"
 test003_desc = "Minisch WITHOUT sidebar WITHOUT search WITHOUT comment USING identica"
 test003: test003.rc
@@ -74,7 +77,23 @@ test003: test003.rc
 		echo "-- ${test003_name}: ${result_err} ${test003_desc}" && echo "test003.rc:${test003_name}:${test003_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
 
-all: test001 test002 test003
+# THEME   : default
+# sidebar : NO
+# search  : YES
+# comment : NO
+# identica: NO
+# goal    : Test that SEARCH BAR is present in index.html page
+test004_name = "Test 004"
+test004_desc = "Minisch WITHOUT sidebar USING search WITHOUT comment WITHOUT identica"
+test004: test004.rc
+	$Q{ \
+		MAKEOBJDIR=${main} pmake clean -f ${default_file} && MAKEOBJDIR=${main} conf="${current}/test004.rc" pmake -f ${default_file} > ${out}/test004.out && \
+		diff -u test004.html ${main}/pub/index.html > ${out}/test004.diff.out && { \
+		echo "-- ${test004_name}: ${result_ok} ${test004_desc}" && echo "test004.rc:${test004_name}:${test004_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; } || { \
+		echo "-- ${test004_name}: ${result_err} ${test004_desc}" && echo "test004.rc:${test004_name}:${test004_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
+	}
+
+all: test001 test002 test003 test004
 
 clean:
 	$Qecho "Removing .out files..."
