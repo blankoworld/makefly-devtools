@@ -111,11 +111,28 @@ test005: test005.rc
 		echo "-- ${test005_name}: ${result_err} ${test005_desc}" && echo "test005.rc:${test005_name}:${test005_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
 
+# THEME   : default
+# sidebar : NO
+# search  : NO
+# comment : NO
+# identica: NO
+# goal    : Test that documentation could be generated.
+test006_name = "Test 006"
+test006_desc = "Generate documentation -- default theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
+test006: test006.rc
+	$Q{ \
+		(MAKEOBJDIR=${main} pmake clean -f ${default_file} && MAKEOBJDIR=${main} conf="${current}/test006.rc" pmake -f ${default_file} doc > ${out}/test006.out && \
+		diff -u test006.ok ${out}/test006.out > ${out}/test006.diff.out && \
+		diff -ruN test006/ ${main}/doc/ > ${out}/test006.diff2.out && { \
+		echo "-- ${test006_name}: ${result_ok} ${test006_desc}" && echo "test006.rc:${test006_name}:${test006_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
+		echo "-- ${test006_name}: ${result_err} ${test006_desc}" && echo "test006.rc:${test006_name}:${test006_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
+	}
+
 #####
 ## CONFIG
 ###
 
-all: test001 test002 test003 test004 test005
+all: test001 test002 test003 test004 test005 test006
 
 clean:
 	$Qecho "Removing .out files..."
