@@ -1,0 +1,10 @@
+-- Removed: ./pub/posts directory
+-- Removed: ./pub/tags directory
+-- Removed: ./pub directory
+-- Removed: ./tmp/*.mk files
+-- Removed: ./tmp/*.html files
+-- Removed: ./tmp/*.list files
+-- Removed: ./tmp/*.rss files
+-- Removed: ./tmp/*.about files
+-- Removed: ./tmp/* remaining files
+-- Removed: ./doc/*.html files
