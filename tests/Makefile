@@ -29,6 +29,9 @@ TODAY != date '+%Y%m%d_%H%M%S'
 ## BEGIN
 ###
 
+###############################################################################
+###############################################################################
+
 # THEME   : default
 # sidebar : NO
 # search  : NO
@@ -36,7 +39,7 @@ TODAY != date '+%Y%m%d_%H%M%S'
 # identica: NO
 # goal    : Test that cleaning up files works.
 test000_name = "Test 000"
-test000_desc = "Minisch WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
+test000_desc = "Clean command -- default theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
 test000: test000.rc
 	$Q{ \
 		MAKEOBJDIR=${main} pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${current}/test000.rc" pmake -f ${default_file} > /dev/null && \
@@ -46,6 +49,8 @@ test000: test000.rc
 		echo "-- ${test000_name}: ${result_err} ${test000_desc}" && echo "test000.rc:${test000_name}:${test000_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
 
+###############################################################################
+
 # THEME   : minisch
 # sidebar : NO
 # search  : NO
@@ -53,7 +58,7 @@ test000: test000.rc
 # identica: NO
 # goal    : Test that compilation work without any specific functionnality.
 test001_name = "Test 001"
-test001_desc = "Minisch WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
+test001_desc = "Compile without any functionnality -- Minisch theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
 test001: test001.rc
 	$Q{ \
 		(MAKEOBJDIR=${main} pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${current}/test001.rc" pmake -f ${default_file} > ${out}/test001.out && \
@@ -62,6 +67,8 @@ test001: test001.rc
 		echo "-- ${test001_name}: ${result_err} ${test001_desc}" && echo "test001.rc:${test001_name}:${test001_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
 
+###############################################################################
+
 # THEME   : minisch
 # sidebar : NO
 # search  : NO
@@ -69,7 +76,7 @@ test001: test001.rc
 # identica: NO
 # goal    : Test that compilation work with jskomment comment system.
 test002_name = "Test 002"
-test002_desc = "Minisch WITHOUT sidebar WITHOUT search USING comment WITHOUT identica"
+test002_desc = "Only jskomment functionnality -- Minisch theme WITHOUT sidebar WITHOUT search USING comment WITHOUT identica"
 test002: test002.rc
 	$Q{ \
 		(MAKEOBJDIR=${main} pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${current}/test002.rc" pmake -f ${default_file} > ${out}/test002.out && \
@@ -78,6 +85,8 @@ test002: test002.rc
 		echo "-- ${test002_name}: ${result_err} ${test002_desc}" && echo "test002.rc:${test002_name}:${test002_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
 
+###############################################################################
+
 # THEME   : minisch
 # sidebar : NO
 # search  : NO
@@ -85,7 +94,7 @@ test002: test002.rc
 # identica: YES
 # goal    : Test that compilation work with identica functionnality.
 test003_name = "Test 003"
-test003_desc = "Minisch WITHOUT sidebar WITHOUT search WITHOUT comment USING identica"
+test003_desc = "Only identica functionnality -- Minisch theme WITHOUT sidebar WITHOUT search WITHOUT comment USING identica"
 test003: test003.rc
 	$Q{ \
 		(MAKEOBJDIR=${main} pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${current}/test003.rc" pmake -f ${default_file} > ${out}/test003.out && \
@@ -94,6 +103,8 @@ test003: test003.rc
 		echo "-- ${test003_name}: ${result_err} ${test003_desc}" && echo "test003.rc:${test003_name}:${test003_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
 
+###############################################################################
+
 # THEME   : default
 # sidebar : NO
 # search  : YES
@@ -101,7 +112,7 @@ test003: test003.rc
 # identica: NO
 # goal    : Test that SEARCH BAR is present in index.html page
 test004_name = "Test 004"
-test004_desc = "default theme WITHOUT sidebar USING search WITHOUT comment WITHOUT identica"
+test004_desc = "Search bar should be present -- default theme WITHOUT sidebar USING search WITHOUT comment WITHOUT identica"
 test004: test004.rc
 	$Q{ \
 		(MAKEOBJDIR=${main} pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${current}/test004.rc" pmake -f ${default_file} > ${out}/test004.out && \
@@ -111,6 +122,8 @@ test004: test004.rc
 		echo "-- ${test004_name}: ${result_err} ${test004_desc}" && echo "test004.rc:${test004_name}:${test004_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
 
+###############################################################################
+
 # THEME   : default
 # sidebar : NO
 # search  : NO
@@ -118,7 +131,7 @@ test004: test004.rc
 # identica: NO
 # goal    : Test that SEARCH BAR is NOT present in index.html page
 test005_name = "Test 005"
-test005_desc = "default theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
+test005_desc = "Search bar should not be present -- default theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
 test005: test005.rc
 	$Q{ \
 		(MAKEOBJDIR=${main} pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${current}/test005.rc" pmake -f ${default_file} > ${out}/test005.out && \
@@ -127,6 +140,8 @@ test005: test005.rc
 		echo "-- ${test005_name}: ${result_ok} ${test005_desc}" && echo "test005.rc:${test005_name}:${test005_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
 		echo "-- ${test005_name}: ${result_err} ${test005_desc}" && echo "test005.rc:${test005_name}:${test005_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
+
+###############################################################################
 
 # THEME   : default
 # sidebar : NO
@@ -144,6 +159,9 @@ test006: test006.rc
 		echo "-- ${test006_name}: ${result_ok} ${test006_desc}" && echo "test006.rc:${test006_name}:${test006_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
 		echo "-- ${test006_name}: ${result_err} ${test006_desc}" && echo "test006.rc:${test006_name}:${test006_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
+
+###############################################################################
+###############################################################################
 
 #####
 ## CONFIG
