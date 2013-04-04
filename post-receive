@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+#
+# Permit to launch a test environment for Makefly
+#
+
+# To be done:
+# 10/ Create test directory if no one
+# 20/ Pull each needed repo (makefly one, makefly-devtools one)
+# 25/ Clean up resulted files, repos, etc.
+# 30/ Launch tests
+# 40/ Create a result
+# 50/ Publish this result
+
+#####
+## VARIABLES
+###
+
+BASE="/git"
+TESTDIR="${BASE}/makefly_tests"
+REPO="${BASE}/repositories/blogbox/makefly.git"
+REPO_DEV="${BASE}/repositories/blogbox/makefly-devtools.git"
+PUBLISH_DIR="${BASE}/public_html"
+
+#####
+## TESTS
+###
+
+# create testing directory
+if ! test -d ${TESTDIR}
+then
+  mkdir ${TESTDIR} || exit 1
+fi
+
+# update makefly repository
+if ! test -d "${TESTDIR}/makefly"
+then
+  mkdir ${TESTDIR}/makefly && git clone ${REPO} ${TESTDIR}/makefly || exit 1
+else
+  cd ${TESTDIR}/makefly && git pull || exit 1
+fi
+
+# update makefly developer tools repository (in which tests are)
+if ! test -d "${TESTDIR}/makefly-devtools"
+then
+  mkdir ${TESTDIR}/makefly-devtools && git clone ${REPO_DEV} ${TESTDIR}/makefly-devtools || exit 1
+else
+  cd ${TESTDIR}/makefly-devtools && git pull || exit 1
+fi
+
+#####
+## BEGIN
+###
+
+# go to test directory
+cd ${TESTDIR}/makefly-devtools/tests
+# launch test
+MAKEOBJDIR=${TESTDIR}/makefly-devtools/tests main=${TESTDIR}/makefly pmake || exit 1
+# generate webpage
+cd result && bash make_webpage.sh || exit 1
+# publish result
+cp result.html ${PUBLISH_DIR}/index.html || exit 1
+cp -r css/ ${PUBLISH_DIR}/ || exit 1
+cp -r js/ ${PUBLISH_DIR}/ || exit 1
+
+#####
+## END
+###
+
+exit 0
