@@ -1,0 +1,16 @@
+## Compare 2 images
+
+  * Generate (pmake clean && pmake) the website on localhost with an Apache server or an nginx server. (localhost/makefly for an example)
+  * Then create a screenshot with CutyCapt:
+
+    xvfb-run --server-args="-screen 0, 1024x768x24" CutyCapt --url=http://localhost/makefly/ --out="`date +'%Y-%m-%d_%T'`-localhost.jpg" --out-format=jpeg
+
+  * Delete search bar, pmake clean && pmake
+  * Then recreate a screenshot with CutyCapt
+  * compare 2 images with imagemagick:
+
+    compare -metric PSNR 2013-04-04_10:36:34-localhost.jpg 2013-04-04_10:38:18-localhost.jpg difference02.png
+
+This return "inf" if no difference or diff <= 2%, otherwise it return a number.
+
+NOTE: difference02.png contains the real difference between the 2 captures.
