@@ -12,7 +12,7 @@ white  ?= "$e[37m"
 
 # Default variables
 current != pwd
-main ?= ${current}/../../makefly/
+main ?= ${current}/../../makefly
 default_file = ${main}/Makefile
 out = ${current}/out
 result = ${current}/result
