@@ -5,7 +5,8 @@
 # Generate a webpage with test results.
 
 files=`ls *.txt`
-result="result.html"
+RESULTDIR=${RESULTDIR:-"./"}
+result="${RESULTDIR}result.html"
 header="header.html"
 footer="footer.html"
 

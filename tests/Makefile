@@ -15,7 +15,7 @@ current != pwd
 main ?= ${current}/../../makefly
 default_file = ${main}/Makefile
 out = ${current}/out
-result = ${current}/result
+result ?= ${current}/result
 
 # Result appearance
 result_ok  = "[ ${bold}${green}OK${r_col}  ]"
