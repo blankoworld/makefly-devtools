@@ -17,7 +17,7 @@
 
 BASE="/git"
 TESTDIR="${BASE}/makefly_tests"
-RESULTDIR="${BASE}/result"
+RESULTDIR="${TESTDIR}/result"
 REPO="${BASE}/repositories/blogbox/makefly.git"
 REPO_DEV="${BASE}/repositories/blogbox/makefly-devtools.git"
 PUBLISH_DIR="${BASE}/public_html"
@@ -63,7 +63,7 @@ cd ${TESTDIR}/makefly-devtools/tests
 # launch test
 MAKEOBJDIR=${TESTDIR}/makefly-devtools/tests main=${TESTDIR}/makefly result=${RESULTDIR} pmake || exit 1
 # generate webpage
-cd result && bash RESULTDIR=${RESULTDIR} make_webpage.sh
+cd ${TESTDIR}/makefly-devtools/tests/result && RESULTDIR=${RESULTDIR} ./make_webpage.sh
 # publish result
 cp ${RESULTDIR}/result.html ${PUBLISH_DIR}/index.html
 cp -r css/ ${PUBLISH_DIR}/
