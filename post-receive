@@ -56,11 +56,11 @@ cd ${TESTDIR}/makefly-devtools/tests
 # launch test
 MAKEOBJDIR=${TESTDIR}/makefly-devtools/tests main=${TESTDIR}/makefly pmake || exit 1
 # generate webpage
-cd result && bash make_webpage.sh || exit 1
+cd result && bash make_webpage.sh
 # publish result
-cp result.html ${PUBLISH_DIR}/index.html || exit 1
-cp -r css/ ${PUBLISH_DIR}/ || exit 1
-cp -r js/ ${PUBLISH_DIR}/ || exit 1
+cp result.html ${PUBLISH_DIR}/index.html
+cp -r css/ ${PUBLISH_DIR}/
+cp -r js/ ${PUBLISH_DIR}/
 
 #####
 ## END
