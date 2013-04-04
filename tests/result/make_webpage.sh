@@ -4,9 +4,9 @@
 #
 # Generate a webpage with test results.
 
-files=`ls *.txt`
-RESULTDIR=${RESULTDIR:-"./"}
-result="${RESULTDIR}result.html"
+RESULTDIR=${RESULTDIR:-"."}
+files=`ls ${RESULTDIR}/*.txt`
+result="${RESULTDIR}/result.html"
 header="header.html"
 footer="footer.html"
 
