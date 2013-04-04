@@ -32,16 +32,22 @@ then
   mkdir ${TESTDIR} || exit 1
 fi
 
-# update makefly repository
+# delete makefly repository if exists
 if test -d "${TESTDIR}/makefly"
 then
   rm -rf ${TESTDIR}/makefly
 fi
 
-# update makefly developer tools repository (in which tests are)
+# delete makefly developer tools repository if exists
 if test -d "${TESTDIR}/makefly-devtools"
 then
   rm -rf ${TESTDIR}/makefly-devtools
+fi
+
+# create result directory if it doesn't exist
+if ! test -d "${RESULTDIR}"
+then
+  mkdir ${RESULTDIR} || exit 1
 fi
 
 #####
