@@ -22,7 +22,7 @@ result_ok  = "[ ${bold}${green}OK${r_col}  ]"
 result_err = "[ ${bold}${yellow}ER${r_col} ]"
 
 # Git version
-git_branch_version != cd ${main} && git rev-parse HEAD
+git_branch_version != GIT_INDEX_FILE="${main}" git rev-parse HEAD
 TODAY != date '+%Y%m%d_%H%M%S'
 
 #####
