@@ -5,7 +5,7 @@
 # Generate a webpage with test results.
 
 RESULTDIR=${RESULTDIR:-"."}
-files=`ls ${RESULTDIR}/*.txt`
+files=`cd ${RESULTDIR} && ls *.txt`
 result="${RESULTDIR}/result.html"
 header="header.html"
 footer="footer.html"
@@ -26,7 +26,7 @@ do
   id=`echo $f|cut -d '-' -f 2|cut -d '.' -f 1`
   echo "<h2>${formated_date}</h2>" >> ${result}
   echo "<p><span class='label'>Hash</span>: ${id}</p>" >> ${result}
-  cat $f | while read line ; do
+  cat ${RESULTDIR}/$f | while read line ; do
       conf=`echo $line|cut -d ':' -f 1`
       name=`echo $line|cut -d ':' -f 2`
       desc=`echo $line|cut -d ':' -f 3`
