@@ -40,10 +40,11 @@ TODAY != date '+%Y%m%d_%H%M%S'
 # goal    : Test that cleaning up files works.
 test000_name = "Test 000"
 test000_desc = "Clean command -- default theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
+test000_conf = "${current}/test000.rc"
 test000: test000.rc
 	$Q{ \
-		MAKEOBJDIR=${main} pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${current}/test000.rc" pmake -f ${default_file} > /dev/null && \
-		(MAKEOBJDIR=${main} pmake clean -f ${default_file} > ${out}/test000.out && \
+		MAKEOBJDIR=${main} conf="${test000_conf}" pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${test000_conf}" pmake -f ${default_file} > /dev/null && \
+		(MAKEOBJDIR=${main} conf="${test000_conf}" pmake clean -f ${default_file} > ${out}/test000.out && \
 		diff -u test000.ok ${out}/test000.out > ${out}/test000.diff.out && { \
 		echo "-- ${test000_name}: ${result_ok} ${test000_desc}" && echo "test000.rc:${test000_name}:${test000_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
 		echo "-- ${test000_name}: ${result_err} ${test000_desc}" && echo "test000.rc:${test000_name}:${test000_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
