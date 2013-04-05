@@ -6,8 +6,8 @@
 ## VARIABLES
 ###
 
-BASE="../.."
-install_script="../install.sh"
+BASE="../../../makefly"
+install_script="${BASE}/tools/install.sh"
 URL="http://localhost/makefly"
 INSTALLDIR="${HOME}/public_html"
 TEMPLATEDIR="${BASE}/template"
