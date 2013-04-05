@@ -18,7 +18,7 @@ tmprc="`pwd`/themes_appearance.rc"
 head="`pwd`/header.html"
 foot="`pwd`/footer.html"
 
-THEMELIST=`ls -d -- ${TEMPLATEDIR}/*/|sort`
+THEMELIST=`ls -d -- ${TEMPLATEDIR}/*/|sort -r`
 
 #####
 ## TESTS
@@ -73,7 +73,7 @@ do
       xvfb-run --server-args="-screen 0, 1024x768x24" CutyCapt --url=${URL} --out="${tmpimg}" --out-format=jpeg
       convert -resize 50% "${tmpimg}" "img/${main}_${color}_thb.jpg"
       cp ${tmpimg} img/${main}_${color}.jpg
-      echo "<li>Template: ${main} - Color: ${color}.<br /><a href=\"img/${main}_${color}.jpg\" target=\"_blank\"><img src=\"img/${main}_${color}_thb.jpg\"/></a></li>" >> ${result}
+      echo "<li><em>${main}</em> template with <em>${color}</em> style.<br /><a href=\"img/${main}_${color}.jpg\" target=\"_blank\"><img src=\"img/${main}_${color}_thb.jpg\"/></a></li>" >> ${result}
     done
   done
   echo "</ol>" >> ${result}

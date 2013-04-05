@@ -65,8 +65,15 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+h2 {
+  border-bottom: thin solid black;
+}
 
 
+a img {
+  display: block;
+  margin: 15px auto 100px auto;
+}
 
 
 
