@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 #
 # Generate a webpage containing all themes informations
+#
+# Depends:
+# - imagemagick (convert)
+# - CutyCapt (Cf. cutycapt.sf.net)
+# - makefly
 
 #####
 ## VARIABLES
@@ -8,7 +13,7 @@
 
 BASE="../../../makefly"
 install_script="${BASE}/tools/install.sh"
-URL="http://localhost/makefly"
+URL="http://localhost/~${USER}"
 INSTALLDIR="${HOME}/public_html"
 TEMPLATEDIR="${BASE}/template"
 result="`pwd`/index.html"
@@ -27,6 +32,11 @@ THEMELIST=`ls -d -- ${TEMPLATEDIR}/*/|sort -r`
 if test -f ${result}
 then
   rm ${result} && echo "" > ${result}
+fi
+
+if ! test -d img
+then
+  mkdir img
 fi
 
 #####
