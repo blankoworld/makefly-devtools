@@ -3,8 +3,8 @@
 -- Page built: ./pub/posts/official_weblog_open.html.
 -- Page built: ./pub/posts/post_in_future.html.
 -- Page built: ./pub/posts/welcome_to_makefly.html.
--- CSS (colour) copied from default theme: ./pub/makefly_dark.css
--- CSS copied from default theme: ./pub/makefly.css
+-- CSS (colour) copied from default theme: ./pub/color_makefly_dark.css
+-- CSS copied from default theme: ./pub/main_makefly.css
 -- Introduction: done.
 -- Index page built: ./pub/index.html
 -- RSS page built: ./pub/rss.xml

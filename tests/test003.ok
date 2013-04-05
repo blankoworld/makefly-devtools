@@ -3,8 +3,8 @@
 -- Page built: ./pub/posts/official_weblog_open.html.
 -- Page built: ./pub/posts/post_in_future.html.
 -- Page built: ./pub/posts/welcome_to_makefly.html.
--- CSS (colour) copied from minisch theme: ./pub/minisch_normal.css
--- CSS copied from minisch theme: ./pub/minisch.css
+-- CSS (colour) copied from minisch theme: ./pub/color_minisch_light.css
+-- CSS copied from minisch theme: ./pub/main_minisch.css
 -- Introduction: done.
 -- Index page built: ./pub/index.html
 -- RSS page built: ./pub/rss.xml
