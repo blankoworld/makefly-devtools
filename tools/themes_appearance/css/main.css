@@ -69,8 +69,8 @@ h2 {
   border-bottom: thin solid black;
 }
 
-
 a img {
+  width: auto;
   display: block;
   margin: 15px auto 100px auto;
 }

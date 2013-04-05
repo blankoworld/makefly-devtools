@@ -79,7 +79,7 @@ do
       echo "JSKOMMENT_CSS = jskomment.css" >> ${tmpconf}
       # update rc for makefly's configuration
       sed -i "s#\(THEME = \).*#\1${theme_dir}#g" ${tmprc} || exit 1
-      MAKEOBJDIR="${BASE}" conf="${tmprc}" pmake -f "${BASE}/Makefile" clean > /dev/null && MAKEOBJDIR="${BASE}" conf="${tmprc}" theme_config="${tmpconf}" pmake -f "${BASE}/Makefile" > /dev/null && rc=${tmprc} ${install_script} < <(echo "y") > /dev/null
+      MAKEOBJDIR="${BASE}" conf="${tmprc}" pmake -f "${BASE}/Makefile" clean > /dev/null && MAKEOBJDIR="${BASE}" conf="${tmprc}" theme_config="${tmpconf}" pmake -f "${BASE}/Makefile" > /dev/null && rc="${tmprc}" src="${BASE}" ${install_script} < <(echo "y") > /dev/null
       xvfb-run --server-args="-screen 0, 1024x768x24" CutyCapt --url=${URL} --out="${tmpimg}" --out-format=jpeg
       convert -resize 50% "${tmpimg}" "img/${main}_${color}_thb.jpg"
       cp ${tmpimg} img/${main}_${color}.jpg
