@@ -32,14 +32,14 @@ TODAY != date '+%Y%m%d_%H%M%S'
 ###############################################################################
 ###############################################################################
 
-# THEME   : default
+# THEME   : base
 # sidebar : NO
 # search  : NO
 # comment : NO
 # identica: NO
 # goal    : Test that cleaning up files works.
 test000_name = "Test 000"
-test000_desc = "Clean command -- default theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
+test000_desc = "Clean command -- base theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
 test000_conf = "${current}/test000.rc"
 test000: test000.rc
 	$Q{ \
@@ -52,14 +52,14 @@ test000: test000.rc
 
 ###############################################################################
 
-# THEME   : minisch
+# THEME   : base
 # sidebar : NO
 # search  : NO
 # comment : NO
 # identica: NO
 # goal    : Test that compilation work without any specific functionnality.
 test001_name = "Test 001"
-test001_desc = "Compile without any functionnality -- Minisch theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
+test001_desc = "Compile without any functionnality -- base theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
 test001_conf = "${current}/test001.rc"
 test001: test001.rc
 	$Q{ \
@@ -71,14 +71,14 @@ test001: test001.rc
 
 ###############################################################################
 
-# THEME   : minisch
+# THEME   : base
 # sidebar : NO
 # search  : NO
 # comment : YES
 # identica: NO
 # goal    : Test that compilation work with jskomment comment system.
 test002_name = "Test 002"
-test002_desc = "Only jskomment functionnality -- Minisch theme WITHOUT sidebar WITHOUT search USING comment WITHOUT identica"
+test002_desc = "Only jskomment functionnality -- base theme WITHOUT sidebar WITHOUT search USING comment WITHOUT identica"
 test002_conf = "${current}/test002.rc"
 test002: test002.rc
 	$Q{ \
@@ -90,14 +90,14 @@ test002: test002.rc
 
 ###############################################################################
 
-# THEME   : minisch
+# THEME   : base
 # sidebar : NO
 # search  : NO
 # comment : NO
 # identica: YES
 # goal    : Test that compilation work with identica functionnality.
 test003_name = "Test 003"
-test003_desc = "Only identica functionnality -- Minisch theme WITHOUT sidebar WITHOUT search WITHOUT comment USING identica"
+test003_desc = "Only identica functionnality -- base theme WITHOUT sidebar WITHOUT search WITHOUT comment USING identica"
 test003_conf = "${current}/test003.rc"
 test003: test003.rc
 	$Q{ \
@@ -109,14 +109,14 @@ test003: test003.rc
 
 ###############################################################################
 
-# THEME   : default
+# THEME   : base
 # sidebar : NO
 # search  : YES
 # comment : NO
 # identica: NO
 # goal    : Test that SEARCH BAR is present in index.html page
 test004_name = "Test 004"
-test004_desc = "Search bar should be present -- default theme WITHOUT sidebar USING search WITHOUT comment WITHOUT identica"
+test004_desc = "Search bar should be present -- base theme WITHOUT sidebar USING search WITHOUT comment WITHOUT identica"
 test004_conf = "${current}/test004.rc"
 test004: test004.rc
 	$Q{ \
@@ -129,14 +129,14 @@ test004: test004.rc
 
 ###############################################################################
 
-# THEME   : default
+# THEME   : base
 # sidebar : NO
 # search  : NO
 # comment : NO
 # identica: NO
 # goal    : Test that SEARCH BAR is NOT present in index.html page
 test005_name = "Test 005"
-test005_desc = "Search bar should not be present -- default theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
+test005_desc = "Search bar should not be present -- base theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
 test005_conf = "${current}/test005.rc"
 test005: test005.rc
 	$Q{ \
@@ -149,14 +149,14 @@ test005: test005.rc
 
 ###############################################################################
 
-# THEME   : default
+# THEME   : base
 # sidebar : NO
 # search  : NO
 # comment : NO
 # identica: NO
 # goal    : Test that documentation could be generated.
 test006_name = "Test 006"
-test006_desc = "Generate documentation -- default theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
+test006_desc = "Generate documentation -- base theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
 test006_conf = "${current}/test006.rc"
 test006: test006.rc
 	$Q{ \

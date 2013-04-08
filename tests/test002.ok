@@ -3,8 +3,8 @@
 -- Page built: ./pub/posts/official_weblog_open.html.
 -- Page built: ./pub/posts/post_in_future.html.
 -- Page built: ./pub/posts/welcome_to_makefly.html.
--- CSS (colour) copied from minisch theme: ./pub/color_minisch_light.css
--- CSS copied from minisch theme: ./pub/main_minisch.css
+-- CSS (colour) copied from base theme: ./pub/color_base_light.css
+-- CSS copied from base theme: ./pub/main_base.css
 -- Introduction: done.
 -- Index page built: ./pub/index.html
 -- RSS page built: ./pub/rss.xml
@@ -13,16 +13,12 @@
 -- Tag list built: ./pub/tags/index.html
 -- New static file: ./pub/makefly.svg
 -- Page built: ./pub/about.html.
--- New theme static file: ./pub/Cantarell-Bold.ttf
--- New theme static file: ./pub/Cantarell-BoldOblique.ttf
--- New theme static file: ./pub/Cantarell-Oblique.ttf
--- New theme static file: ./pub/Cantarell-Regular.ttf
--- New theme static file: ./pub/bg.png
+-- New theme static file: ./pub/css
 -- New theme static file: ./pub/favicon.ico
--- New theme static file: ./pub/html5.js
+-- New theme static file: ./pub/img
 -- New theme static file: ./pub/jquery.js
--- New theme static file: ./pub/labels.png
--- New theme static file: ./pub/logodefault.gif
+-- New theme static file: ./pub/js
+-- New theme static file: ./pub/logo.gif
 -- New theme static file: ./pub/print.css
 -- CSS copied: jskomment.css.
 -- Script added: jskomment.js.

@@ -1,37 +1,50 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="generator" content="Makefly 0.2-alpha" />
+  <meta charset="UTF-8">
+  <meta name="generator" content="Makefly 0.2-alpha">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Makefly - Home</title>
-  <link rel="stylesheet" type="text/css" media="all" href="http://localhost/makefly/${JSKOMMENT_CSS}">
-  <link rel="stylesheet" type="text/css" media="all" href="http://localhost/makefly/${ELI_CSS}">
-  <link type="text/css" rel="stylesheet" media="screen" href="http://localhost/makefly/main_makefly.css" title="Default" />
-  <link type="text/css" rel="stylesheet" media="screen" href="http://localhost/makefly/color_makefly_dark.css" title="Default" />
-  <link type="text/css" rel="stylesheet" media="print" href="http://localhost/makefly/print.css" />
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="http://localhost/makefly/${JSKOMMENT_CSS}">
+  <link rel="stylesheet" href="http://localhost/makefly/${ELI_CSS}">
+  <link rel="stylesheet" href="http://localhost/makefly/css/normalize.min.css">
+  <link rel="stylesheet" media="screen" href="http://localhost/makefly/main_base.css" title="Base">
+  <link rel="stylesheet" media="screen" href="http://localhost/makefly/color_base_light.css" title="Base">
   <link rel="alternate" type="application/rss+xml" title="Makefly RSS feed" href="http://localhost/makefly/rss.xml" />
-  <link rel="shortcut icon" href="http://localhost/makefly/favicon.ico" />
+
+  <script src="http://localhost/makefly/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-  <body class="home">
-    <header>
-      <h1>Makefly</h1>
-      <p id="subtitle">A static makefile weblog engine</p>
-    </header>
+<body class="home">
+  <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+  <![endif]-->
 
-    <nav>
-      <ul>
-        <li><a href="http://localhost/makefly">Home</a></li>
-        <li><a href="http://localhost/makefly/posts/index.html">Posts</a></li>
-        <li><a href="http://localhost/makefly/tags/index.html">Tags</a></li>
-        <li><a href=http://localhost/makefly/about.html>About</a></li>
-      </ul>
-    </nav>
+  <nav id="main">
+    <ol>
+      <li><a href="#content">Content</a></li>
+      <li><a href="#nav">Navigation</a></li>
+      <li><a href="#footer">Footer</a></li>
+    </ol>
+  </nav>
 
-    <div id="content">
+  <header>
+    <h1>Makefly</h1>
+    <p id="subtitle">A static makefile weblog engine</p>
+  </header>
 
-      <article class="special">
+  <div id="content">
+
+    <article class="post special" id="post-official_weblog_open">
+      <header>
         <h1 class='title'><a href="http://localhost/makefly/posts/official_weblog_open.html">Official weblog: Open</a></h1>
-        <p>Just remember one address for last makefly news: <a href="http://makefly.e-mergence.org/" title="Visit official Makefly weblog to have news about Makefly!">http://makefly.e-mergence.org/</a>.</p>
+        <p>Posted&#8239;: <time class="entry-date" datetime="2012-07-04T00:00">2012-07-04 at 00:00</time> <span class="author">Author&#8239;: The best long pseudo I ever seen</span></p>
+      </header>
+      <p>Just remember one address for last makefly news: <a href="http://makefly.e-mergence.org/" title="Visit official Makefly weblog to have news about Makefly!">http://makefly.e-mergence.org/</a>.</p>
   
   <p>I will post some tips &amp; tricks, news and event about Makefly here. For this, I could use some example like this to be changed in a file:</p>
   
@@ -41,14 +54,22 @@
   <p>But those who prefer to be more connected, I suggest you <a href="http://identi.ca/group/makefly">to follow Makefly identica's group</a>.</p>
   
   <p>Don't forget to have fun with Makefly ;-)</p>
-      </article>
-      <div class="articleinfo">
-        <p>Tag(s)&#8239;: <a href="http://localhost/makefly/tags/news.html">news</a>, <a href="http://localhost/makefly/tags/web.html">web</a> | <a href="http://localhost/makefly/posts/official_weblog_open.html">permalink</a> | Posted&#8239;: 2012-07-04 at 00:00 | Author&#8239;: The best long pseudo I ever seen</p>
-      </div>
-      
-      <article class="normal">
+      <footer>
+        <section class="tags">
+          <p>Tag(s)&#8239;: <a href="http://localhost/makefly/tags/news.html">news</a>, <a href="http://localhost/makefly/tags/web.html">web</a></p>
+        </section>
+      </footer>
+      <section class="comment">
+      <p><a href="http://localhost/makefly/posts/official_weblog_open.html#comment-official_weblog_open">Comment(s)</a></p>
+      </section>
+    </article>
+    <hr />
+    <article class="post normal" id="post-makefly_project">
+      <header>
         <h1 class='title'><a href="http://localhost/makefly/posts/makefly_project.html">Makefly project</a></h1>
-        <h2>About</h2>
+        <p>Posted&#8239;: <time class="entry-date" datetime="2012-07-01T00:00">2012-07-01 at 00:00</time> <span class="author">Author&#8239;: anonymous</span></p>
+      </header>
+      <h2>About</h2>
   
   <p>Makefly could be followed on <a href="http://makefly.e-mergence.org/" title="Visit official website">the official Makefly weblog</a>.</p>
   
@@ -67,25 +88,48 @@
   <h2>Contact</h2>
   
   <p>For other piece of information, you could contact me at this email address: <a href="mailto:olivier+makefly@dossmann.net" title="Contact me">olivier [AT] dossmann [DOT] net</a>.</p>
-      </article>
-      <div class="articleinfo">
-        <p>Tag(s)&#8239;: <a href="http://localhost/makefly/tags/makefly.html">makefly</a>, <a href="http://localhost/makefly/tags/social.html">social</a>, <a href="http://localhost/makefly/tags/programmation.html">programmation</a> | <a href="http://localhost/makefly/posts/makefly_project.html">permalink</a> | Posted&#8239;: 2012-07-01 at 00:00 | Author&#8239;: anonymous</p>
-      </div>
-      
+      <footer>
+        <section class="tags">
+          <p>Tag(s)&#8239;: <a href="http://localhost/makefly/tags/makefly.html">makefly</a>, <a href="http://localhost/makefly/tags/social.html">social</a>, <a href="http://localhost/makefly/tags/programmation.html">programmation</a></p>
+        </section>
+      </footer>
+      <section class="comment">
+      <p><a href="http://localhost/makefly/posts/makefly_project.html#comment-makefly_project">Comment(s)</a></p>
+      </section>
+    </article>
+    <hr />
+  </div>
+
+  <aside id="navigation">
+    <nav id="secondary">
+      <h2 id="nav">Navigation</h2>
+      <ul>
+        <li><a href="http://localhost/makefly">Home</a></li>
+        <li><a href="http://localhost/makefly/posts/index.html">Posts</a></li>
+        <li><a href="http://localhost/makefly/tags/index.html">Tags</a></li>
+        <li><a href=http://localhost/makefly/about.html>About</a></li>
+      </ul>
+    
+    </nav>
+
+    
+  </aside>
+
+  <footer id="footer">
+    <p>Powered by <a href="http://makefly.e-mergence.org/" title="Makefly">Makefly</a> (<a href="http://gitorious.org/makefly/" title="Go to the gitorious makefly homepage">Sources on gitorious</a>)<br />
+    Theme is: Base</p>
+    <div id="special_footer">
+        <p>Logo is under 'Licence Art Libre' conditions by ECK Ines: <a href="http://localhost/makefly/makefly.svg">Logo sources</a></p>
     </div>
+    <p><img id="logo" src="http://localhost/makefly/logo.gif" alt="Logo" title="Logo"/></p>
+  </footer>
 
-    <footer>
-      <p>Powered by <a href="http://makefly.e-mergence.org/" title="Makefly">Makefly</a> (<a href="http://gitorious.org/makefly/" title="Go to the gitorious makefly homepage">Sources on gitorious</a>)<br />
-      Theme is: Makefly Base</p>
-      <div id="special_footer">
-          <p>Logo is under 'Licence Art Libre' conditions by ECK Ines: <a href="http://localhost/makefly/makefly.svg">Logo sources</a></p>
-      </div>
-      <p><img id="logo" src="http://localhost/makefly/logo.gif" alt="Logo" title="Logo"/></p>
-    </footer>
-  
-    <!-- Script JQuery -->
-    <script src="http://localhost/makefly/jquery.js" type="text/javascript"></script>
+  <!-- Script JQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://localhost/makefly/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+  <script src="http://localhost/makefly/js/main.js"></script>
 
 
-  </body>
+</body>
 </html>

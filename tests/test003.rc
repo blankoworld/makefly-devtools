@@ -15,5 +15,5 @@ SIDEBAR = 0
 SEARCH_BAR = 0
 MAX_RSS = 8
 JSKOMMENT = 0
-THEME = minisch
+THEME = base
 ELI_USER = bl4n
