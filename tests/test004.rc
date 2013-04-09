@@ -16,3 +16,4 @@ SEARCH_BAR = 1
 MAX_RSS = 8
 JSKOMMENT = 0
 THEME = base
+VERSION = x.x.x
