@@ -220,6 +220,17 @@ bash tinstall.sh
 
 <p>For developers: You can also edit <strong>tools/publish.sh</strong> file and change script content to you own code.</p>
 
+<h2>Create a new theme</h2>
+
+<p>To make easier the theme creation you can use this command:</p>
+
+<pre><code>pmake theme name="myTheme"
+</code></pre>
+
+<p>where <strong>myTheme</strong> is to replace by your own theme name.</p>
+
+<p>Note: This exploit a theme called <em>Base</em> as example.</p>
+
 <h2>Translation</h2>
 
 <p>A simple way to translate Makefly to your language is to copy the <strong>lang/translate.en</strong> file to another translation file. For an example, for french (with fr code), you can copy <strong>lang/translate.en</strong> to <strong>lang/translate.fr</strong> and change values. Then just change <em>BLOG_LANG</em> option in <strong>makefly.rc</strong> file.</p>

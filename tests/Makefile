@@ -176,6 +176,8 @@ test006: test006.rc
 
 all: test000 test001 test002 test003 test004 test005 test006
 
+.PHONY: test000 test001 test002 test003 test004 test005 test006
+
 clean:
 	$Qecho "Removing .out files..."
 	$Qfind ${current}/ -name '*.out' -print0 |xargs -0 rm -f

@@ -220,6 +220,17 @@ bash install.sh
 
 <p>Pour les d&eacute;velopeurs : Vous pouvez aussi modifier le fichier <strong>tools/publish.sh</strong> et changer le contenu du script par votre propre code.</p>
 
+<h2>Créer un nouveau thème</h2>
+
+<p>Afin de vous faciliter la tâche de création d'un nouveau thème, vous pouvez utiliser la commande suivante :</p>
+
+<pre><code>pmake theme name="myTheme"
+</code></pre>
+
+<p>où <strong>myTheme</strong> est à remplacer par le nom de votre thème.</p>
+
+<p>Note : Ceci utilise le thème nommé <em>Base</em> comme exemple.</p>
+
 <h2>Traduction</h2>
 
 <p>Une fa&ccedil;on simple de traduire Makefly dans votre langage est de copier le fichier <strong>lang/translate.en</strong> dans un autre fichier. Par exemple, pour le Fran&ccedil;ais (avec le code fr), vous pouvez copier <strong>lang/translate.en</strong> en <strong>lang/translate.fr</strong> et changez les valeurs. Puis changez simplement l'option <em>BLOG_LANG</em> dans le fichier <strong>makefly.rc</strong>.</p>
