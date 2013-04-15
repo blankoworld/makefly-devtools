@@ -36,7 +36,7 @@ MAKEOBJDIR="$tmp/makefly" conf="$tmp/makefly/makefly.rc" pmake -f "$tmp/makefly/
 # Delete useless 
 cd $tmp/makefly && grep -Ev '^($|#)' ../../prepare-new-version.txt | xargs -n 1 rm -fr && cd ../../ || exit 1
 # Create a tarball
-cd $tmp && tar cvf - makefly | xz > "../makefly-$2.tar.xz" && cd ../ || exit 1
+cd $tmp && zip -r ../makefly-$2.zip makefly && cd ../ || exit 1
 # Delete temporary directory
 rm -rf $tmp
 
