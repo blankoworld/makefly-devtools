@@ -2,7 +2,9 @@ bin/element.xhtml
 bin/test_parser.sh
 db/1341093600,makefly_project.mk
 db/1341352800,official_weblog_open.mk
-doc/*.md
+doc/README.md
+doc/README.fr.md
+doc/KNOWN_ISSUES.md
 IDEAS
 TODO
 mbackup
