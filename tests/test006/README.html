@@ -58,7 +58,7 @@
 
 <p>Just download last version on official website: <a href="http://makefly.e-mergence.org/" title="Go to official makefly website">http://makefly.e-mergence.org/</a>.</p>
 
-<p>For an example <a href="http://makefly.e-mergence.org/makefly_0.1.zip" title="Download Makefly 0.1">0.1 version</a>.</p>
+<p>For an example <a href="http://makefly.e-mergence.org/makefly_0.2.zip" title="Download Makefly 0.2">0.2 version</a>.</p>
 
 <p>Then extract tarball's content into a directory.</p>
 
@@ -84,7 +84,15 @@
 
 <h2>Configuration</h2>
 
+<h3>Stable version</h3>
+
+<p>No special configuration required. Check that <strong>makefly.rc</strong> file is present. Otherwise copy <strong>makefly.rc.example</strong> file or rename it to <strong>makefly.rc</strong>.</p>
+
+<h3>Trunk version</h3>
+
 <p>The first time you use Makefly you don't have any configuration file. An example is available in <em>makefly.rc.example</em>. Copy it to <strong>makefly.rc</strong> to permit Makefly to work.</p>
+
+<h3>More info</h3>
 
 <p>For more information please read <strong>The makefly.rc configuration file</strong> section.</p>
 
@@ -125,47 +133,6 @@ bash create_post.sh
 <p>It will generate a Makefly weblog to the <strong>pub</strong> directory.</p>
 
 <p>Note: <em>pmake</em> is for Debian like distribution. For other distributions, I suggest you to use <strong>bmake</strong>.</p>
-
-<h2>The makefly.rc configuration file</h2>
-
-<p>Here is some options you can change:</p>
-
-<ul>
-<li>BLOG_TITLE: Title of your weblog</li>
-<li>BLOG_SHORT_DESC: A short description of your weblog</li>
-<li>BLOG_DESCRIPTION: A long description of your weblog</li>
-<li>BLOG_LANG: your language code. Note that file lang/translate.YOUR_LANGUAGE_CODE should exists. For an example if I set this parameter to <em>en</em>, a <em>lang/translate.en</em> file should exists!</li>
-<li>BLOG_CHARSET: your encoding configuration. Should be something like <strong>UTF-8</strong> or <strong>ISO-8859-1</strong>. If you don't know what's this option, just let it to <em>UTF-8</em>.</li>
-<li>BASE_URL: absolute URL of your blog. For an example http://makefly.e-mergence.org/.</li>
-<li>RSS_FEED_NAME: Title for the RSS Feed</li>
-<li>MAX_POST: Max post that would be showed on home page</li>
-<li>MAX_POST_LINES: Number of lines that should be shown on Homepage. If set to 0 or not referenced in <em>makefly.rc</em> file, then posts are fully shown.</li>
-<li>DATE_FORMAT: Date format displayed for each post. Please see man date's page for more information.</li>
-<li>SHORT_DATE_FORMAT: Short date format that would be used on the post list page. Please see man date's page for more information.</li>
-<li>INDEX_FILENAME: Name given to all index'pages. For an example with <strong>INDEX_FILENAME = mainpage</strong>, post list page will be named <em>mainpage.html</em>.</li>
-<li>PAGE_EXT: suffix that all page will have. <strong>DO NOT FORGET TO ADD A POINT BEFORE SUFFIX</strong>. For an example, with <strong>PAGE_EXT = .html</strong>, all pages will be under the form: index.html.</li>
-<li>ABOUT_FILENAME: As described, this is the about's filename. If you set it to "about" for an example, you have to create a "about.md" file into <strong>special</strong> directory in order to have an about's page. If you change it to "toto", so you have to create a <em>toto.md</em> file into <strong>special</strong> directory.</li>
-<li>POSTDIR_NAME: The name you want to be displayed in URL when a user go to post list. For an example, if you set it to "myposts": http://makefly.e-mergence.org/myposts/ will display all you posts. This is useful for others languages.</li>
-<li>TAGDIR_NAME: Same behaviour as POSTDIR_NAME, but for tags. Change it to "mytags" for an example, and you will have URLs like this: http://makefly.e-mergence.org/mytags/ to display tag list.</li>
-<li>THEME: Name of the theme you want to be used. All themes are available in <strong>template</strong> directory. Each theme have its own directory. For an example, "default" theme have its <strong>template/default</strong> directory.</li>
-<li>BACKUPDIR: Name of directory where <em>backup</em> command will save all files.</li>
-<li>SIDEBAR_FILENAME: As described, name of sidebar file that would be used to create a sidebar. If you set it to "sidebar" for an example, you have to create a "sidebar.md" file into <strong>special</strong> directory in order to have this sidebar. Note that your theme should support sidebars!</li>
-<li>SIDEBAR: If set to 1, so activate a sidebar on Makefly. Note that your theme should support sidebars!</li>
-<li>PUBLISH_DESTINATION: Full address from where to send files in order to publish them.</li>
-<li>PUBLISH_SCRIPT_NAME: script filename used to send files from <strong>pub</strong> directory to a destination filled in <em>PUBLISH_DESTINATION</em> variable.</li>
-<li>SEARCH_BAR: If set to 1, activate a search bar on Makefly. Note that your theme should support search bar!</li>
-<li>MAX_RSS: Max RSS posts that would be fetch from your users.</li>
-<li>JSKOMMENT : If set to 1, this activate a comment system on Makefly. Note that your theme should support comment system. Warning: default server is jskomment.appspot.com which doesn't guarantee a long backup of your comments. More info are available <a href="http://code.google.com/p/jskomment/wiki/Installation" title="Go to jskomment webpage for more information">on jskomment project installation page</a> (fr).</li>
-<li>JSKOMMENT_CAPTCHA_THEME (optional): Define a theme regarding <a href="https://developers.google.com/recaptcha/docs/customization" title="More info about reCaptcha themes">reCaptcha page</a> for Catpcha in JSKOMMENT comment system</li>
-<li>JSKOMMENT_URL (optional): Define a JSKOMMENT server on which send comments. By default <strong>http://jskomment.appspot.com/</strong>.</li>
-<li>JSKOMMENT_MAX (optional): Define a limit for displayed comments for JSKOMMENT comment system. By default <strong>2</strong>.</li>
-<li>ELI_USER: If set, this activate a badge for identica. Note that your theme should support ELI widget. By default this functionality use IDENTICA's API.</li>
-<li>ELI_TYPE (optional): Change this to "group" to follow a group instead of a user on IDENTICA. By default "user".</li>
-<li>ELI_MAX (optional): Permit to choose how many statuses to display. On identica, this couldn't bypass the default 20 items. Default value: 5.</li>
-<li>INSTALLDIR : Permit to choose a target directory when using <strong>install.sh</strong> script (Read more in <em>Publish result to the web</em> chapter)</li>
-<li>COMPRESS_TOOL (optional) : Shell tool used for backup compression via <em>backup</em> command (Cf. <em>Backup</em> section). Example : <strong>gzip</strong>.</li>
-<li>COMPRESS_EXT (optional) : Backup file extension. Warning: do not forget the point char. Example: <strong>.gz</strong>.</li>
-</ul>
 
 <h2>Publish result to the web</h2>
 
@@ -298,3 +265,45 @@ bash tinstall.sh
 <p>In Makefly you can publish early posts. To do that metadata file should have a timestamp superior to current's one when you generate the weblog. </p>
 
 <p>For an example we are 2013, the 6th march. 12:30:00. The timestamp is : 1362569400. Your post (situated in the <strong>db</strong> directory) have to have a timestamp inferior to current's one (1362569400).</p>
+
+<h2>The makefly.rc configuration file</h2>
+
+<p>Here is some options you can change:</p>
+
+<ul>
+<li>BLOG_TITLE: Title of your weblog</li>
+<li>BLOG_SHORT_DESC: A short description of your weblog</li>
+<li>BLOG_DESCRIPTION: A long description of your weblog</li>
+<li>BLOG_LANG: your language code. Note that file lang/translate.YOUR_LANGUAGE_CODE should exists. For an example if I set this parameter to <em>en</em>, a <em>lang/translate.en</em> file should exists!</li>
+<li>BLOG_CHARSET: your encoding configuration. Should be something like <strong>UTF-8</strong> or <strong>ISO-8859-1</strong>. If you don't know what's this option, just let it to <em>UTF-8</em>.</li>
+<li>BASE_URL: absolute URL of your blog. For an example http://makefly.e-mergence.org/.</li>
+<li>RSS_FEED_NAME: Title for the RSS Feed</li>
+<li>MAX_POST: Max post that would be showed on home page</li>
+<li>MAX_POST_LINES: Number of lines that should be shown on Homepage. If set to 0 or not referenced in <em>makefly.rc</em> file, then posts are fully shown.</li>
+<li>DATE_FORMAT: Date format displayed for each post. Please see man date's page for more information.</li>
+<li>SHORT_DATE_FORMAT: Short date format that would be used on the post list page. Please see man date's page for more information.</li>
+<li>INDEX_FILENAME: Name given to all index'pages. For an example with <strong>INDEX_FILENAME = mainpage</strong>, post list page will be named <em>mainpage.html</em>.</li>
+<li>PAGE_EXT: suffix that all page will have. <strong>DO NOT FORGET TO ADD A POINT BEFORE SUFFIX</strong>. For an example, with <strong>PAGE_EXT = .html</strong>, all pages will be under the form: index.html.</li>
+<li>ABOUT_FILENAME: As described, this is the about's filename. If you set it to "about" for an example, you have to create a "about.md" file into <strong>special</strong> directory in order to have an about's page. If you change it to "toto", so you have to create a <em>toto.md</em> file into <strong>special</strong> directory.</li>
+<li>POSTDIR_NAME: The name you want to be displayed in URL when a user go to post list. For an example, if you set it to "myposts": http://makefly.e-mergence.org/myposts/ will display all you posts. This is useful for others languages.</li>
+<li>TAGDIR_NAME: Same behaviour as POSTDIR_NAME, but for tags. Change it to "mytags" for an example, and you will have URLs like this: http://makefly.e-mergence.org/mytags/ to display tag list.</li>
+<li>THEME: Name of the theme you want to be used. All themes are available in <strong>template</strong> directory. Each theme have its own directory. For an example, "default" theme have its <strong>template/default</strong> directory.</li>
+<li>FLAVOR: This name will be used to select a color from your theme (if exists)</li>
+<li>BACKUPDIR: Name of directory where <em>backup</em> command will save all files.</li>
+<li>SIDEBAR_FILENAME: As described, name of sidebar file that would be used to create a sidebar. If you set it to "sidebar" for an example, you have to create a "sidebar.md" file into <strong>special</strong> directory in order to have this sidebar. Note that your theme should support sidebars!</li>
+<li>SIDEBAR: If set to 1, so activate a sidebar on Makefly. Note that your theme should support sidebars!</li>
+<li>PUBLISH_DESTINATION: Full address from where to send files in order to publish them.</li>
+<li>PUBLISH_SCRIPT_NAME: script filename used to send files from <strong>pub</strong> directory to a destination filled in <em>PUBLISH_DESTINATION</em> variable.</li>
+<li>SEARCH_BAR: If set to 1, activate a search bar on Makefly. Note that your theme should support search bar!</li>
+<li>MAX_RSS: Max RSS posts that would be fetch from your users.</li>
+<li>JSKOMMENT : If set to 1, this activate a comment system on Makefly. Note that your theme should support comment system. Warning: default server is jskomment.appspot.com which doesn't guarantee a long backup of your comments. More info are available <a href="http://code.google.com/p/jskomment/wiki/Installation" title="Go to jskomment webpage for more information">on jskomment project installation page</a> (fr).</li>
+<li>JSKOMMENT_CAPTCHA_THEME (optional): Define a theme regarding <a href="https://developers.google.com/recaptcha/docs/customization" title="More info about reCaptcha themes">reCaptcha page</a> for Catpcha in JSKOMMENT comment system</li>
+<li>JSKOMMENT_URL (optional): Define a JSKOMMENT server on which send comments. By default <strong>http://jskomment.appspot.com/</strong>.</li>
+<li>JSKOMMENT_MAX (optional): Define a limit for displayed comments for JSKOMMENT comment system. By default <strong>2</strong>.</li>
+<li>ELI_USER: If set, this activate a badge for identica. Note that your theme should support ELI widget. By default this functionality use IDENTICA's API.</li>
+<li>ELI_TYPE (optional): Change this to "group" to follow a group instead of a user on IDENTICA. By default "user".</li>
+<li>ELI_MAX (optional): Permit to choose how many statuses to display. On identica, this couldn't bypass the default 20 items. Default value: 5.</li>
+<li>INSTALLDIR : Permit to choose a target directory when using <strong>install.sh</strong> script (Read more in <em>Publish result to the web</em> chapter)</li>
+<li>COMPRESS_TOOL (optional) : Shell tool used for backup compression via <em>backup</em> command (Cf. <em>Backup</em> section). Example : <strong>gzip</strong>.</li>
+<li>COMPRESS_EXT (optional) : Backup file extension. Warning: do not forget the point char. Example: <strong>.gz</strong>.</li>
+</ul>
