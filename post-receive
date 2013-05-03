@@ -68,7 +68,9 @@ cd ${TESTDIR}/makefly-devtools/tests/result && RESULTDIR=${RESULTDIR} ./make_web
 cp ${RESULTDIR}/result.html ${PUBLISH_DIR}/index.html
 cp -r css/ ${PUBLISH_DIR}/
 cp -r js/ ${PUBLISH_DIR}/
-cp *.rc ${PUBLISH_DIR}/
+for i in `ls ${RESULTDIR}/*.rc`; do
+  cp -f ${i} ${PUBLISH_DIR}/
+done
 
 #####
 ## END
