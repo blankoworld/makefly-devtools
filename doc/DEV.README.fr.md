@@ -159,7 +159,6 @@ Ce que vous pouvez y trouver :
 
   * TITLE : Titre de l'article (affiché dans toutes les pages liées à un article)
   * DESCRIPTION : Description de l'article (actuellement non utilisé)
-  * DATE : Pas encore utilisé (inutile ?)
   * TAGS : Liste des mots-clés dans lesquels les articles sont inclus.
   * TYPE : nom utilisé pour différencier un type d'article d'un autre. Utile pour les feuilles de style.
   * AUTHOR : Rédacteur de l'article.

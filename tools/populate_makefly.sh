@@ -121,13 +121,13 @@ IFS="\\"
 # BEGIN
 
 # create POST 1
-./create_post.sh -q < <(echo ${POST1_AUTHOR}; echo ${POST1_TITLE}; echo ${POST1_DESC}; echo ${POST1_DATE}; echo ${POST1_TAGS}; echo ${POST1_TYPE}) && echo -e ${POST1_CONTENT} > ${SRCDIR}/welcome_to_makefly.md || exit 1
+./create_post.sh -q < <(echo ${POST1_AUTHOR}; echo ${POST1_TITLE}; echo ${POST1_DESC}; echo ${POST1_TAGS}; echo ${POST1_TYPE}) && echo -e ${POST1_CONTENT} > ${SRCDIR}/welcome_to_makefly.md || exit 1
 
 # create POST 2
-./create_post.sh -q < <(echo ${POST2_AUTHOR}; echo ${POST2_TITLE}; echo ${POST2_DESC}; echo ${POST2_DATE}; echo ${POST2_TAGS}; echo ${POST2_TYPE}) && echo -e ${POST2_CONTENT} > ${SRCDIR}/makefly_project.md || exit 1
+./create_post.sh -q < <(echo ${POST2_AUTHOR}; echo ${POST2_TITLE}; echo ${POST2_DESC}; echo ${POST2_TAGS}; echo ${POST2_TYPE}) && echo -e ${POST2_CONTENT} > ${SRCDIR}/makefly_project.md || exit 1
 
 # create POST 3
-./create_post.sh -q < <(echo ${POST3_AUTHOR}; echo ${POST3_TITLE}; echo ${POST3_DESC}; echo ${POST3_DATE}; echo ${POST3_TAGS}; echo ${POST3_TYPE}) && echo -e ${POST3_CONTENT} > ${SRCDIR}/official_weblog_open.md || exit 1
+./create_post.sh -q < <(echo ${POST3_AUTHOR}; echo ${POST3_TITLE}; echo ${POST3_DESC}; echo ${POST3_TAGS}; echo ${POST3_TYPE}) && echo -e ${POST3_CONTENT} > ${SRCDIR}/official_weblog_open.md || exit 1
 
 # Change TIMESTAMP of posts
 mv ${DBDIR}/*,welcome_to_makefly.mk "${DBDIR}/`date -d ${POST1_DATE} +'%s'`,welcome_to_makefly.mk"

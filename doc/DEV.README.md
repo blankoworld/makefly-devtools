@@ -160,7 +160,6 @@ What you can find:
 
   * TITLE: Title of post (displayed in all page that are linked to a post)
   * DESCRIPTION: Description of post (currently not used)
-  * DATE: Not used yet (useless?)
   * TAGS: List of tags in which this post is included
   * TYPE: name used to differenciate a post type from another. Useful for CSS.
   * AUTHOR: Author of the post.
