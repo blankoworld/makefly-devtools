@@ -1,5 +1,6 @@
 tests/out/*.out
 tests/result/*.txt
+tests/result/*.rc
 tests/result/result.html
 tools/themes_appearance/index.html
 tools/themes_appearance/*.jpg

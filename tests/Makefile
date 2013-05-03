@@ -43,6 +43,7 @@ test000_desc = "Clean command -- base theme WITHOUT sidebar WITHOUT search WITHO
 test000_conf = "${current}/test000.rc"
 test000: test000.rc
 	$Q{ \
+		cp ${test000_conf} ${result}/${TODAY}-test000.rc && \
 		MAKEOBJDIR=${main} conf="${test000_conf}" pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${test000_conf}" pmake -f ${default_file} > /dev/null && \
 		(MAKEOBJDIR=${main} conf="${test000_conf}" pmake clean -f ${default_file} > ${out}/test000.out && \
 		diff -u test000.ok ${out}/test000.out > ${out}/test000.diff.out && { \
@@ -63,6 +64,7 @@ test001_desc = "Compile without any functionnality -- base theme WITHOUT sidebar
 test001_conf = "${current}/test001.rc"
 test001: test001.rc
 	$Q{ \
+		cp ${test001_conf} ${result}/${TODAY}-test001.rc && \
 		(MAKEOBJDIR=${main} conf="${test001_conf}" pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${test001_conf}" pmake -f ${default_file} > ${out}/test001.out && \
 		diff -u test001.ok ${out}/test001.out > ${out}/test001.diff.out && { \
 		echo "-- ${test001_name}: ${result_ok} ${test001_desc}" && echo "test001.rc:${test001_name}:${test001_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
@@ -82,6 +84,7 @@ test002_desc = "Only jskomment functionnality -- base theme WITHOUT sidebar WITH
 test002_conf = "${current}/test002.rc"
 test002: test002.rc
 	$Q{ \
+		cp ${test002_conf} ${result}/${TODAY}-test002.rc && \
 		(MAKEOBJDIR=${main} conf="${test002_conf}" pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${test002_conf}" pmake -f ${default_file} > ${out}/test002.out && \
 		diff -u test002.ok ${out}/test002.out > ${out}/test002.diff.out && { \
 		echo "-- ${test002_name}: ${result_ok} ${test002_desc}" && echo "test002.rc:${test002_name}:${test002_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
@@ -101,6 +104,7 @@ test003_desc = "Only identica functionnality -- base theme WITHOUT sidebar WITHO
 test003_conf = "${current}/test003.rc"
 test003: test003.rc
 	$Q{ \
+		cp ${test003_conf} ${result}/${TODAY}-test003.rc && \
 		(MAKEOBJDIR=${main} conf="${test003_conf}" pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${test003_conf}" pmake -f ${default_file} > ${out}/test003.out && \
 		diff -u test003.ok ${out}/test003.out > ${out}/test003.diff.out && { \
 		echo "-- ${test003_name}: ${result_ok} ${test003_desc}" && echo "test003.rc:${test003_name}:${test003_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
@@ -120,6 +124,7 @@ test004_desc = "Search bar should be present -- base theme WITHOUT sidebar USING
 test004_conf = "${current}/test004.rc"
 test004: test004.rc
 	$Q{ \
+		cp ${test004_conf} ${result}/${TODAY}-test004.rc && \
 		(MAKEOBJDIR=${main} conf="${test004_conf}" pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${test004_conf}" pmake -f ${default_file} > ${out}/test004.out && \
 		diff -u test004.ok ${out}/test004.out > ${out}/test004.diff.out && \
 		diff -u test004.html ${main}/pub/index.html > ${out}/test004.diff2.out && { \
@@ -140,6 +145,7 @@ test005_desc = "Search bar should not be present -- base theme WITHOUT sidebar W
 test005_conf = "${current}/test005.rc"
 test005: test005.rc
 	$Q{ \
+		cp ${test005_conf} ${result}/${TODAY}-test005.rc && \
 		(MAKEOBJDIR=${main} conf="${test005_conf}" pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${test005_conf}" pmake -f ${default_file} > ${out}/test005.out && \
 		diff -u test005.ok ${out}/test005.out > ${out}/test005.diff.out && \
 		diff -u test005.html ${main}/pub/index.html > ${out}/test005.diff2.out && { \
@@ -160,6 +166,7 @@ test006_desc = "Generate documentation -- base theme WITHOUT sidebar WITHOUT sea
 test006_conf = "${current}/test006.rc"
 test006: test006.rc
 	$Q{ \
+		cp ${test006_conf} ${result}/${TODAY}-test006.rc && \
 		(MAKEOBJDIR=${main} conf="${test006_conf}" pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${test006_conf}" pmake -f ${default_file} doc > ${out}/test006.out && \
 		diff -u test006.ok ${out}/test006.out > ${out}/test006.diff.out && \
 		diff -ruN test006/ ${main}/doc/ > ${out}/test006.diff2.out && { \

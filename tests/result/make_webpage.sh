@@ -5,6 +5,7 @@
 # Generate a webpage with test results.
 
 RESULTDIR=${RESULTDIR:-"."}
+COMMIT_URL="https://gitorious.org/makefly/master/commit"
 files=`cd ${RESULTDIR} && ls *.txt`
 result="${RESULTDIR}/result.html"
 header="header.html"
@@ -25,13 +26,13 @@ do
   formated_date=`date -d "${tmp_date}" +'%Y/%m/%d %H:%M:%S'`
   id=`echo $f|cut -d '-' -f 2|cut -d '.' -f 1`
   echo "<h2>${formated_date}</h2>" >> ${result}
-  echo "<p><span class='label'>Hash</span>: ${id}</p>" >> ${result}
+  echo "<p><span class='label'>Hash</span>: <a href="${COMMIT_URL}/${id}" target='_blank'>${id}</a></p>" >> ${result}
   cat ${RESULTDIR}/$f | while read line ; do
       conf=`echo $line|cut -d ':' -f 1`
       name=`echo $line|cut -d ':' -f 2`
       desc=`echo $line|cut -d ':' -f 3`
       state=`echo $line|cut -d ':' -f 4`
-      echo "        <article class='${state}'><header>${name}</header><section><p><span class='label'>Config</span>: <a href="../${conf}" target='_blank'>${conf}</a></p><p><span class='label'>Description</span>: ${desc}</section><footer>${state}</footer></article>" >> ${result}
+      echo "        <article class='${state}'><header>${name}</header><section><p><span class='label'>Config</span>: <a href="./${date}-${conf}" target='_blank'>${conf}</a></p><p><span class='label'>Description</span>: ${desc}</section><footer>${state}</footer></article>" >> ${result}
   done
 done
 
