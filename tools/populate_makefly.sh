@@ -37,7 +37,7 @@ POST1_DATE="2012-06-29"
 POST1_TAGS="makefly, news"
 POST1_TYPE="news"
 IFS='' read -r -d '' POST1_CONTENT<<'EOF'
-Makefly is a *static weblog engine* working thanks to a BSD **makefile**.
+Makefly is a *static weblog engine* working thanks to a BSD **makefile** under GNU Affero General Public License (AGPL).
 
 It's composed of:
 
@@ -55,6 +55,9 @@ and includes somes functionalities like:
   * translation: English, French
   * static files
   * templates
+  * comment system
+  * identica badge (to display twitter/identica statuses)
+  * backup command
 
 You can so:
 
@@ -65,8 +68,13 @@ You can so:
   * give some static files (for an example to share PDF)
   * have your own template
   * translate Makefly in your language
+  * prepare some post and publish them in the future
+  * add comments on each post
+  * add an about page, an introduction on main page and/or a specific footer content
+  * display your identica statuses in sidebar
+  * backup your configuration file, theme, static files and some important files for your Makefile blog
 
-In fact, it's a lightweight weblog engine that generate some HTML files.
+In fact, it's a lightweight weblog engine that generate some HTML static files.
 EOF
 IFS="\\"
 
@@ -118,6 +126,68 @@ Don't forget to have fun with Makefly ;-)
 EOF
 IFS="\\"
 
+# POST 4
+POST4_AUTHOR="non-human"
+POST4_TITLE="Post in the future"
+POST4_DESC="That's so strange!"
+POST4_DATE="2038-01-19 04:14:07"
+POST4_TAGS="strange, archaic"
+POST4_TYPE="special"
+IFS='' read -r -d '' POST4_CONTENT<<'EOF'
+## Introduction
+
+This post is here to test future post. If this date: 2038-01-19 04:14:07 is not achieved, Makefly have a bug.
+
+## Content
+
+     .===============================================================.
+     |  ,-----------------,                                          |
+     | /| HELP THE BUNNY  |==========.===.   .===.   .===========.   |
+     || |    FIND HIS     |          |   |   |   |   |      .-.  | E |
+     || |  EASTER EGGS!   |  |===|   |   |   |   |   |..==./xxx\ | N |
+     || |_________________|          |   |       |   /<<<<<\    || D |
+     ||/_________________/   .======='   |   .   |   \>>>>>/xxxx/--. |
+     |   |   |           |   |           |   |   |   |`'==''---; * *`\
+     |   |   '==========='   |   |======='   |   |   |   ,===. \* * */
+     |   |                   |               |   |   |   |   |  '--'`|
+     |   '===============|   '===.   |===.   |   |   |==='   '=======|
+     |                           |       |   |   |   |               |
+     |   |===============.   .   '===|   |   |===|   |   .=======.   |
+     |                   |   |           |   |   |   |   |       |   |
+     |   .===========.   |   |   |===.   |   |   |   |   |   |   |   |
+     |   |           |   |   |       |   |   |   |   |   |   |   |   |
+     |   |   .===.   |   |   |===.   '===|   |   '==='   |   |   |   |
+     |   |   |   |   |   |   |   |       |   |           |   |   |   |
+     |   '==='   /`\ '==='   |   '===.   |   '===========|   |   |   |
+     |          / : |                |   |               |   |   |   |
+     | _.._=====| '/ '===|   .======='   '===========.   |   |   |   |
+     /`    \    | /          |                       |   |   |       |
+    |  .-._ '-"` (=======.   |   .===============.   |   |   '===.   |
+    |_/  |/   e  e\==.   |   |   |               |   |   |       |   |
+     | S ||  >   @ )<|   |   |   |   .=======.   |   |   |===.   |   |
+     | T | \  '--`/  |   |   |   |   |       |   |   |   |   |   |   |
+     | A | / '--<`   |   |   |   |   |   |   |   |   '==='   |   '   |
+     | R || ,    \\\  |           |   |   |   |   |           |       |
+     | T |; ;     \\\__'======.   |   |   '==='   |   .===.   |   |   |
+     |   / /      |.__)==,   |   |   |           |   |   |   |   |   |
+     |  (_/,--.   ; //"""\\\  |   |   '==========='   |   '==='   |   |
+     |  { `|   \_/  ||___||  |   |                   |           |   |
+     |   ;-\   / |  |(___)|  |   '===========.   |   '=======.   |   |
+     |   |  | /  |  |XXXXX|  |               |   |           |   |   |
+     |   | /  \  '-,\XXXXX/  |   .==========='   '=======.   |   |   |
+     |   | \__|----' `"""`   |   |                       |   |   |   |
+     |   '==================='   '======================='   '==='   |
+     |                                                               |
+     '==jgs=='01====================================================='
+
+[Original one can be found here](http://www.geocities.com/spunk1111/easter.htm)
+
+## Conclusion
+
+WTF?! **You should not be displayed!**
+EOF
+IFS="\\"
+
 # BEGIN
 
 # create POST 1
@@ -129,10 +199,14 @@ DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${POST2_AUTHOR}; ec
 # create POST 3
 DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${POST3_AUTHOR}; echo ${POST3_TITLE}; echo ${POST3_DESC}; echo ${POST3_TAGS}; echo ${POST3_TYPE}) && echo -e ${POST3_CONTENT} > ${SRCDIR}/official_weblog_open.md || exit 1
 
+# create POST 4
+DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${POST4_AUTHOR}; echo ${POST4_TITLE}; echo ${POST4_DESC}; echo ${POST4_TAGS}; echo ${POST4_TYPE}) && echo -e ${POST4_CONTENT} > ${SRCDIR}/post_in_the_future.md || exit 1
+
 # Change TIMESTAMP of posts
 mv ${DBDIR}/*,welcome_to_makefly.mk "${DBDIR}/`date -d ${POST1_DATE} +'%s'`,welcome_to_makefly.mk"
 mv ${DBDIR}/*,makefly_project.mk "${DBDIR}/`date -d ${POST2_DATE} +'%s'`,makefly_project.mk"
 mv ${DBDIR}/*,official_weblog_open.mk "${DBDIR}/`date -d ${POST3_DATE} +'%s'`,official_weblog_open.mk"
+mv ${DBDIR}/*,post_in_the_future.mk "${DBDIR}/`date -d ${POST4_DATE} +'%s'`,post_in_the_future.mk"
 
 # END
 exit 0
