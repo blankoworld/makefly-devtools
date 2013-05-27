@@ -162,6 +162,7 @@ Ce que vous pouvez y trouver :
   * TAGS : Liste des mots-clés dans lesquels les articles sont inclus.
   * TYPE : nom utilisé pour différencier un type d'article d'un autre. Utile pour les feuilles de style.
   * AUTHOR : Rédacteur de l'article.
+  * JSKOMMENT_PREFIX : Préfixe l'identifiant unique pour le système de commentaire. (utile en cas de migration).
 
 ### Les fichiers sources
 
@@ -328,6 +329,7 @@ Variables disponibles :
   * ${DATETIME}: Date utilisant le format ISO8601 pour être compatible avec la balise HTML5 *time*.
   * ${HOME\_TITLE} : Titre qui apparaîtra sur le lien qui redirige vers la page d'accueil. Par exemple *Accueil*.
   * ${JSKOMMENT\_CONTENT} : Contenu du système de commentaires JSKOMMENT sera affiché ici. Il devrait être adapté pour chaque article de la page principale et sur chaque page d'article seul.
+  * ${JSKOMMENT\_ID} : Identifiant unique pour le système de commentaires JSKOMMENT. Il est préfixé de ${BASE\_URL} OU de ${JSKOMMENT\_PREFIX} si renseigné dans le fichier de méta-données.
   * ${JSKOMMENT\_SCRIPT} : Déclaration du script JSKOMMENT. Devrait être fait avant la balise `</body>`.
   * ${LANG} : Code pays utilisé dans les pages HTML pour définir une langue. Par exemple *fr* pour français, *en* pour anglais, etc.
   * ${POSTDIR\_INDEX} : Nom exact de la page d'index des articles. Par exemple *index.html*.

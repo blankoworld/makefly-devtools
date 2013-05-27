@@ -163,6 +163,7 @@ What you can find:
   * TAGS: List of tags in which this post is included
   * TYPE: name used to differenciate a post type from another. Useful for CSS.
   * AUTHOR: Author of the post.
+  * JSKOMMENT_PREFIX: prefix unique identifier for jskomment system. (useful for blog migration)
 
 ### Source files
 
@@ -329,6 +330,7 @@ Available variables:
   * ${DATE}: Date using ${DATE\_FORMAT} format.
   * ${DATETIME}: Date using ISO8601 format to be compatible with HTML5 *time* tag.
   * ${HOME\_TITLE}: Title that will appears on the link that redirect to homepage. For an example *Home*.
+  * ${JSKOMMENT\_ID}: Unique identifier for JSKOMMENT comment system. It's prefixed with ${BASE\_URL} OR JSKOMMENT\_PREFIX if defined in metadata file.
   * ${JSKOMMENT\_CONTENT}: Content of the JSKOMMENT comment system will be displayed here. It would be adapted for each post on home page and for each single post page.
   * ${JSKOMMENT\_SCRIPT}: JSKOMMENT script declaration. Should be done before the `</body>` tag.
   * ${LANG}: Country code used in HTML's page to define a language. For an example *en* for english, *fr* for *french*, etc.
