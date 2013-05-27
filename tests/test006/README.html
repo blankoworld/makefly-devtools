@@ -2,7 +2,7 @@
 
 <h1>Makefly</h1>
 
-<p>Une version fran&ccedil;aise de cette documentation est disponible dans le fichier <strong>README.fr.md</strong>.</p>
+<p>Une version fran&ccedil;aise de cette documentation est disponible dans le fichier <strong>README.fr.md</strong> (situé dans le répertoire <strong>doc</strong>).</p>
 
 <h2>About</h2>
 
@@ -97,6 +97,29 @@
 <p>For more information please read <strong>The makefly.rc configuration file</strong> section.</p>
 
 <h2>Create content</h2>
+
+<p>The way to create content depends on your version.</p>
+
+<p>To know your current version, just use this command:</p>
+
+<pre><code>pmake version
+</code></pre>
+
+<p>If an error occured like <code>pmake: don't know how to make version. Stop</code>, then you are under 0.2.1 version.</p>
+
+<h3>Version older than 0.2.1</h3>
+
+<p>Go to <strong>tools</strong> directory and launch <strong>create_post.sh</strong> script like this: </p>
+
+<pre><code>cd tools
+./create_post.sh
+</code></pre>
+
+<p>and answer to all given questions. It will generate some files needed by Makefly.</p>
+
+<p>Note that Makefly use the <a href="http://daringfireball.net/projects/markdown/" title="Learn more about Markdown format">markdown format</a> for its posts.</p>
+
+<h3>Version equal or superior to 0.2.1</h3>
 
 <p>Use this command:</p>
 

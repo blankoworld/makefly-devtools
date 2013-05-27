@@ -2,7 +2,7 @@
 
 <h1>Makefly</h1>
 
-<p>An english version of this documentation is available in <strong>README.md</strong> file.</p>
+<p>An english version of this documentation is available in <strong>README.md</strong> file (located in <strong>doc</strong> directory).</p>
 
 <h2>&Agrave; propos</h2>
 
@@ -86,7 +86,7 @@
 
 <h3>Pour la version stable</h3>
 
-<p>Aucune configuration particulière n'est requise. Vérifiez que le fichier <strong>makefly.rc</strong> existe bien. Le cas échéant copiez le fichier <strong>makefly.rc.example</strong> ou renommez le en <strong>makefly.rc</strong>.</p>
+<p>Aucune configuration particuli&egrave;re n'est requise. V&eacute;rifiez que le fichier <strong>makefly.rc</strong> existe bien. Le cas &eacute;ch&eacute;ant copiez le fichier <strong>makefly.rc.example</strong> ou renommez le en <strong>makefly.rc</strong>.</p>
 
 <h3>Pour la version trunk</h3>
 
@@ -98,12 +98,35 @@
 
 <h2>Cr&eacute;er du contenu</h2>
 
+<p>La mani&egrave;re de cr&eacute;er du contenu d&eacute;pend de votre version.</p>
+
+<p>Pour connaitre votre version, faites :</p>
+
+<pre><code>pmake version
+</code></pre>
+
+<p>Si une erreur apparait comme : <code>pmake: don't know how to make version. Stop</code>, alors vous avez une version ant&eacute;rieure &agrave; 0.2.1.</p>
+
+<h3>Version ant&eacute;rieure &agrave; 0.2.1</h3>
+
+<p>Rendez-vous dans le dossier <strong>tools</strong> puis lancez le script <strong>create_post.sh</strong> de la mani&egrave;re suivante : </p>
+
+<pre><code>cd tools
+./create_post.sh
+</code></pre>
+
+<p>et r&eacute;pondez &agrave; toutes les questions pos&eacute;es. Cela g&eacute;n&egrave;rera les fichiers n&eacute;cessaires pour Makefly.</p>
+
+<p>Il est &agrave; noter que Makefly utilise <a href="http://daringfireball.net/projects/markdown/" title="En savoir plus sur le format Markdown">le format markdown</a> pour ses articles.</p>
+
+<h3>Version sup&eacute;rieure ou &eacute;gale &agrave; 0.2.1 (version trunk)</h3>
+
 <p>Utilisez la commande suivante :</p>
 
 <pre><code>pmake add
 </code></pre>
 
-<p>et répondez à toutes les questions posées. Cela g&eacute;n&egrave;rera les fichiers n&eacute;cessaires pour Makefly.</p>
+<p>et r&eacute;pondez &agrave; toutes les questions pos&eacute;es. Cela g&eacute;n&egrave;rera les fichiers n&eacute;cessaires pour Makefly.</p>
 
 <p>Il est &agrave; noter que Makefly utilise <a href="http://daringfireball.net/projects/markdown/" title="En savoir plus sur le format Markdown">le format markdown</a> pour ses articles.</p>
 
@@ -113,13 +136,13 @@
 
 <h3>Le dossier 'special'</h3>
 
-<p>Ce dossier nommé <strong>special</strong> peut contenir certains fichiers que vous devrez créer pour activer une fonctionnalité : </p>
+<p>Ce dossier nomm&eacute; <strong>special</strong> peut contenir certains fichiers que vous devrez cr&eacute;er pour activer une fonctionnalit&eacute; : </p>
 
 <ul>
-<li><em>about.md</em> : Contient le contenu d'une page d'à propos au sujet de votre site. Cela va ajouter une entrée dans le menu principal du site (si votre thème le supporte).</li>
-<li><em>sidebar.md</em> : Ajoute une barre latérale sur votre site. Le thème doit supporter cette fonction.</li>
-<li><em>introduction.md</em> : Affiche le contenu de ce fichier comme introduction de votre page d'accueil. Varie selon le thème choisi.</li>
-<li><em>footer.md</em> : Affiche le contenu de ce fichier comme d'un pied de page sur l'ensemble de vos pages. Varie selon le thème choisi.</li>
+<li><em>about.md</em> : Contient le contenu d'une page d'&agrave; propos au sujet de votre site. Cela va ajouter une entr&eacute;e dans le menu principal du site (si votre th&egrave;me le supporte).</li>
+<li><em>sidebar.md</em> : Ajoute une barre lat&eacute;rale sur votre site. Le th&egrave;me doit supporter cette fonction.</li>
+<li><em>introduction.md</em> : Affiche le contenu de ce fichier comme introduction de votre page d'accueil. Varie selon le th&egrave;me choisi.</li>
+<li><em>footer.md</em> : Affiche le contenu de ce fichier comme d'un pied de page sur l'ensemble de vos pages. Varie selon le th&egrave;me choisi.</li>
 </ul>
 
 <h2>Utilisez le !</h2>
@@ -186,16 +209,16 @@ bash install.sh
 
 <p>Pour les d&eacute;velopeurs : Vous pouvez aussi modifier le fichier <strong>tools/publish.sh</strong> et changer le contenu du script par votre propre code.</p>
 
-<h2>Créer un nouveau thème</h2>
+<h2>Cr&eacute;er un nouveau th&egrave;me</h2>
 
-<p>Afin de vous faciliter la tâche de création d'un nouveau thème, vous pouvez utiliser la commande suivante :</p>
+<p>Afin de vous faciliter la tâche de cr&eacute;ation d'un nouveau th&egrave;me, vous pouvez utiliser la commande suivante :</p>
 
 <pre><code>pmake theme name="myTheme"
 </code></pre>
 
-<p>où <strong>myTheme</strong> est à remplacer par le nom de votre thème.</p>
+<p>o&ugrave; <strong>myTheme</strong> est &agrave; remplacer par le nom de votre th&egrave;me.</p>
 
-<p>Note : Ceci utilise le thème nommé <em>Base</em> comme exemple.</p>
+<p>Note : Ceci utilise le th&egrave;me nomm&eacute; <em>Base</em> comme exemple.</p>
 
 <h2>Traduction</h2>
 
@@ -259,11 +282,11 @@ bash install.sh
 
 <h2>Astuces</h2>
 
-<h3>Écrire des billets en avance</h3>
+<h3>&Eacute;crire des billets en avance</h3>
 
-<p>Dans Makefly vous pouvez écrire des billets en avance. Il suffit pour cela que le fichier de méta-données de votre billet possède un timestamp supérieur à celui du moment où est généré le blog.</p>
+<p>Dans Makefly vous pouvez &eacute;crire des billets en avance. Il suffit pour cela que le fichier de m&eacute;ta-donn&eacute;es de votre billet poss&egrave;de un timestamp sup&eacute;rieur &agrave; celui du moment o&ugrave; est g&eacute;n&eacute;r&eacute; le blog.</p>
 
-<p>Par exemple nous sommes le 6 mars 2013, à 12:30, le timestamp est : 1362569400. Il faut que dans le dossier <strong>db</strong>, votre article ait un timestamp inférieur à celui d'aujourd'hui.</p>
+<p>Par exemple nous sommes le 6 mars 2013, &agrave; 12:30, le timestamp est : 1362569400. Il faut que dans le dossier <strong>db</strong>, votre article ait un timestamp inf&eacute;rieur &agrave; celui d'aujourd'hui.</p>
 
 <h2>Le fichier de configuration makefly.rc</h2>
 
@@ -287,22 +310,22 @@ bash install.sh
 <li>POSTDIR_NAME : Le nom que vous voudriez afficher dans l'URL quand un utilisateur se rend sur la page de la liste des articles. Par exemple, param&eacute;tr&eacute; &agrave; "mesarticles" : http://makefly.e-mergence.org/mesarticles/ affichera la liste de vos articles. Ceci est utile pour divers langages.</li>
 <li>TAGDIR_NAME : M&ecirc;me chose que pour le param&egrave;tre <em>POSTDIR_NAME</em>, mais pour les mots-cl&eacute;s (tags) cette fois. Modifiez le en "motcle" par exemple et l'adresse suivante affichera la liste des mots-cl&eacute;s : http://makefly.e-mergence.org/motcle/.</li>
 <li>THEME : Nom du th&egrave;me choisi. Les th&egrave;mes sont disponibles dans le dossier nomm&eacute; <strong>template</strong>. Chaque th&egrave;me poss&egrave;de son propre r&eacute;pertoire. Par exemple, le th&egrave;me <em>default</em> poss&egrave;de son propre r&eacute;pertoire <strong>template/default</strong>.</li>
-<li>FLAVOR: Ce nom sera utilisé pour choisir la couleur de votre thème (si elle existe)</li>
+<li>FLAVOR: Ce nom sera utilis&eacute; pour choisir la couleur de votre th&egrave;me (si elle existe)</li>
 <li>BACKUPDIR : Nom du dossier o&ugrave; seront sauv&eacute;s les fichiers r&eacute;sultant de la commande <em>backup</em>.</li>
 <li>SIDEBAR_FILENAME : Comme d&eacute;crit, nom du fichier utilis&eacute; pour la barre lat&eacute;rale. Elle contient des liens et tout un tas d'autres choses. Si vous la param&eacute;trez &agrave; "sidebar.md", par exemple, vous devez cr&eacute;er le fichier dans le r&eacute;pertoire <strong>special</strong> pour obtenir cette barre. &Agrave; noter que votre th&egrave;me doit inclure les barres lat&eacute;rales !</li>
 <li>SIDEBAR : Mis &agrave; 1 permet d'activer la barre lat&eacute;rale sur Makefly. &Agrave; noter que votre th&egrave;me doit inclure les barres lat&eacute;rales !</li>
 <li>PUBLISH_DESTINATION : Adresse compl&egrave;te du lieu o&ugrave; envoyer les fichiers afin de les publier.</li>
 <li>PUBLISH_SCRIPT_NAME : Nom du fichier script utilis&eacute; pour envoyer les fichiers du dossier <strong>pub</strong> vers une destination renseign&eacute;e dans la variable <em>PUBLISH_DESTINATION</em>.</li>
 <li>SEARCH_BAR : Mis &agrave; 1 permet d'activer une barre de recherche sur Makefly. &Agrave; noter que votre th&egrave;me doit supporter la barre de recherche.</li>
-<li>MAX_RSS : Nombre d'articles RSS maximum qui sera récupéré par vos utilisateurs.</li>
+<li>MAX_RSS : Nombre d'articles RSS maximum qui sera r&eacute;cup&eacute;r&eacute; par vos utilisateurs.</li>
 <li>JSKOMMENT : Mis &agrave; 1 permet d'activer un syst&eacute;me de commentaires pour Makefly. &Agrave; noter que votre th&egrave;me doit supporter le syst&eacute;me de commentaires. Attention, par d&eacute;faut cela utiliser jskomment.appspot.com en tant que serveur, il ne garantit pas un archivage &agrave; long terme des commentaires. Plus d'informations sont disponibles <a href="http://code.google.com/p/jskomment/wiki/Installation" title="Se rendre sur la page du projet pour en savoir plus">sur la page d'installation du projet jskomment</a>.</li>
-<li>JSKOMMENT_CAPTCHA_THEME (optionnel) : Définissez un thème suivant la <a href="https://developers.google.com/recaptcha/docs/customization" title="Plus d'infos sur les thèmes reCaptcha">page reCaptcha</a> pour les Catpcha dans le système de commentaires JSKOMMENT.</li>
-<li>JSKOMMENT_URL (optionnel) : Définit un serveur JSKOMMENT sur lequel envoyer les commentaires. Par défaut <strong>http://jskomment.appspot.com/</strong>.</li>
-<li>JSKOMMENT_MAX (optionnel) : Définit une limite de commentaires à afficher pour le système de commentaire JSKOMMENT. Par défaut <strong>2</strong>.</li>
-<li>ELI_USER: Si utilisé, ceci active un cadre pour identica. &Agrave; noter que votre th&egrave;me doit supporter le widget ELI. Par d&eacute;faut cette fonctionnalit&eacute; utiliser l'API d'IDENTICA.</li>
+<li>JSKOMMENT_CAPTCHA_THEME (optionnel) : D&eacute;finissez un th&egrave;me suivant la <a href="https://developers.google.com/recaptcha/docs/customization" title="Plus d'infos sur les th&egrave;mes reCaptcha">page reCaptcha</a> pour les Catpcha dans le syst&egrave;me de commentaires JSKOMMENT.</li>
+<li>JSKOMMENT_URL (optionnel) : D&eacute;finit un serveur JSKOMMENT sur lequel envoyer les commentaires. Par d&eacute;faut <strong>http://jskomment.appspot.com/</strong>.</li>
+<li>JSKOMMENT_MAX (optionnel) : D&eacute;finit une limite de commentaires &agrave; afficher pour le syst&egrave;me de commentaire JSKOMMENT. Par d&eacute;faut <strong>2</strong>.</li>
+<li>ELI_USER: Si utilis&eacute;, ceci active un cadre pour identica. &Agrave; noter que votre th&egrave;me doit supporter le widget ELI. Par d&eacute;faut cette fonctionnalit&eacute; utiliser l'API d'IDENTICA.</li>
 <li>ELI_TYPE (optionel) : Changer cet &eacute;l&eacute;ment par "group" pour suivre un groupe plut&ocirc;t qu'un utilisateur d'IDENTICA. Par d&eacute;faut "user".</li>
 <li>ELI_MAX (optionnel) : Permet de choisir le nombre de statuts affich&eacute;s. Sur IDENTICA ceci ne peut d&eacute;passer 20 &eacute;l&eacute;ments. Valeur par d&eacute;faut : 5.</li>
-<li>INSTALLDIR : Permet de choisir le dossier de destination lors de l'utilisation du script <strong>install.sh</strong> (Cf. Chapitre Publier le résultat sur le web).</li>
-<li>COMPRESS_TOOL (optionnel) : Outil console utilisé pour la compression lors des sauvegardes via la commande <em>backup</em> (Cf. Chapitre <em>Sauvegardes</em>). Exemple : <strong>gzip</strong>.</li>
-<li>COMPRESS_EXT (optionnel) : Extension des fichiers de sauvegarde. Attention à ne pas oublier le caractère point. Exemple : <strong>.gz</strong>.</li>
+<li>INSTALLDIR : Permet de choisir le dossier de destination lors de l'utilisation du script <strong>install.sh</strong> (Cf. Chapitre Publier le r&eacute;sultat sur le web).</li>
+<li>COMPRESS_TOOL (optionnel) : Outil console utilis&eacute; pour la compression lors des sauvegardes via la commande <em>backup</em> (Cf. Chapitre <em>Sauvegardes</em>). Exemple : <strong>gzip</strong>.</li>
+<li>COMPRESS_EXT (optionnel) : Extension des fichiers de sauvegarde. Attention &agrave; ne pas oublier le caract&egrave;re point. Exemple : <strong>.gz</strong>.</li>
 </ul>
