@@ -17,4 +17,5 @@ MAX_RSS = 8
 JSKOMMENT = 0
 THEME = base
 ELI_USER = bl4n
+ELI_API = https://status.vinilox.eu/api/
 VERSION = x.x.x
