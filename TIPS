@@ -14,3 +14,8 @@
 This return "inf" if no difference or diff <= 2%, otherwise it return a number.
 
 NOTE: difference02.png contains the real difference between the 2 captures.
+
+## i18N or gettext or po/mo file in Lua:
+
+  * http://lua-users.org/lists/lua-l/2010-04/msg00005.html <= code with examples
+
