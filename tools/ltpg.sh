@@ -723,7 +723,7 @@ IFS="\\"
 
 for ((i = 0; i <= $max; i += 1))
 do
-  timestamp=$(($now+$i))
+  timestamp=$(($now-$i))
   TITLE="post_${timestamp}"
   DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${AUTHOR}; echo ${TITLE}; echo ${DESC}; echo ${TAGS}; echo ${TYPE}) && echo -e ${CONTENT} > ${SRCDIR}/post_${timestamp}.md || exit 1
   mv ${DBDIR}/*,post_${timestamp}.mk "${DBDIR}/${timestamp},post_${timestamp}.mk"
