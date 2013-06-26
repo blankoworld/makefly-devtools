@@ -175,15 +175,38 @@ test006: test006.rc
 	}
 
 ###############################################################################
+
+# THEME   : minisch
+# sidebar : YES
+# search  : YES
+# comment : YES
+# identica: YES
+# MAX_POST: 2
+# MAX_POST_LINES: 13
+# MAX_RSS : 5
+# goal    : Test that we can compile with the max functionnalities' number.
+test007_name = "Test 007"
+test007_desc = "All functionnalities except INTRO -- minisch theme"
+test007_conf = "${current}/test007.rc"
+test007: test007.rc
+	$Q{ \
+		cp ${test007_conf} ${result}/${TODAY}-test007.rc && \
+		(MAKEOBJDIR=${main} conf="${test007_conf}" pmake clean -f ${default_file} > /dev/null && MAKEOBJDIR=${main} conf="${test007_conf}" pmake -f ${default_file} > ${out}/test007.out && \
+		diff -u test007.ok ${out}/test007.out > ${out}/test007.diff.out && { \
+		echo "-- ${test007_name}: ${result_ok} ${test007_desc}" && echo "test007.rc:${test007_name}:${test007_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
+		echo "-- ${test007_name}: ${result_err} ${test007_desc}" && echo "test007.rc:${test007_name}:${test007_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
+	}
+
+###############################################################################
 ###############################################################################
 
 #####
 ## CONFIG
 ###
 
-all: test000 test001 test002 test003 test004 test005 test006
+all: test000 test001 test002 test003 test004 test005 test006 test007
 
-.PHONY: test000 test001 test002 test003 test004 test005 test006
+.PHONY: test000 test001 test002 test003 test004 test005 test006 test007
 
 clean:
 	$Qecho "Removing .out files..."
