@@ -3,15 +3,18 @@
 -- [ SUCCESS ] New folder: ./pub
 -- [ SUCCESS ] New folder: ./pub/posts
 -- [ SUCCESS ] New folder: ./pub/tags
+-- [ ENABLE  ] About's page available
 -- [ ENABLE  ] ELI badge
 -- [ ENABLE  ] Sidebar
 -- [ ENABLE  ] Search bar
 -- [ ENABLE  ] Comment system
 -- [ ENABLE  ] FOOTER
 -- [ DISABLE ] INTRO
+-- [ SUCCESS ] Folder content copied: ./static
 -- [ SUCCESS ] New post: Makefly project
 -- [ SUCCESS ] New post: Official weblog: Open
 -- [ SUCCESS ] New post: Welcome to makefly!
+-- [ SUCCESS ] RSS feed: BUILT.
 -- [ SUCCESS ] Post list: BUILT.
 -- [ SUCCESS ] New tag: a test to see if space breaks tags
 -- [ SUCCESS ] New tag: makefly

@@ -1,24 +1,25 @@
--- Creating ./pub/posts...
--- Page built: ./pub/posts/makefly_project.html.
--- Page built: ./pub/posts/official_weblog_open.html.
--- Page built: ./pub/posts/post_in_the_future.html.
--- Page built: ./pub/posts/welcome_to_makefly.html.
--- CSS (colour) copied from base theme: ./pub/color_base_light.css
--- CSS copied from base theme: ./pub/main_base.css
--- Introduction: done.
--- Index page built: ./pub/index.html
--- RSS page built: ./pub/rss.xml
--- List page built: ./pub/posts/index.html
--- Creating ./pub/tags...
--- Tag list built: ./pub/tags/index.html
--- New static file: ./pub/makefly.svg
--- Page built: ./pub/about.html.
--- New theme static file: ./pub/css
--- New theme static file: ./pub/favicon.ico
--- New theme static file: ./pub/img
--- New theme static file: ./pub/jquery.js
--- New theme static file: ./pub/js
--- New theme static file: ./pub/logo.gif
--- New theme static file: ./pub/print.css
--- Comments: desactivated.
--- ELI: desactivated.
+-- [  INFO   ] Theme: base
+-- [ SUCCESS ] New folder: ./tmp
+-- [ SUCCESS ] New folder: ./pub
+-- [ SUCCESS ] New folder: ./pub/posts
+-- [ SUCCESS ] New folder: ./pub/tags
+-- [ ENABLE  ] About's page available
+-- [ DISABLE ] ELI badge
+-- [ DISABLE ] Sidebar
+-- [ ENABLE  ] Search bar
+-- [ DISABLE ] Comment system
+-- [ ENABLE  ] FOOTER
+-- [ DISABLE ] INTRO
+-- [ SUCCESS ] Folder content copied: ./static
+-- [ SUCCESS ] New post: Makefly project
+-- [ SUCCESS ] New post: Official weblog: Open
+-- [ SUCCESS ] New post: Welcome to makefly!
+-- [ SUCCESS ] RSS feed: BUILT.
+-- [ SUCCESS ] Post list: BUILT.
+-- [ SUCCESS ] New tag: a test to see if space breaks tags
+-- [ SUCCESS ] New tag: makefly
+-- [ SUCCESS ] New tag: news
+-- [ SUCCESS ] New tag: programmation
+-- [ SUCCESS ] New tag: social
+-- [ SUCCESS ] New tag: web
+-- [ SUCCESS ] Tag list: BUILT.
