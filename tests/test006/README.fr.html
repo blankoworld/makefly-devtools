@@ -151,7 +151,7 @@
 
 <h3>Fichiers statiques</h3>
 
-<p>Si vous voulez ajouter quelques fichiers statiques, rajoutez les simplement dans le dossier <em>static</em>. Ils seront copier dans le dossier de destination.</p>
+<p>Si vous voulez ajouter quelques fichiers statiques, rajoutez les simplement dans le dossier <em>static</em>. Ils seront copiés dans le dossier de destination.</p>
 
 <h3>Le dossier 'special'</h3>
 
@@ -160,7 +160,7 @@
 <ul>
 <li><em>about.md</em> : Contient le contenu d'une page d'&agrave; propos au sujet de votre site. Cela va ajouter une entr&eacute;e dans le menu principal du site (si votre th&egrave;me le supporte).</li>
 <li><em>sidebar.md</em> : Ajoute une barre lat&eacute;rale sur votre site. Le th&egrave;me doit supporter cette fonction.</li>
-<li><em>introduction.md</em> : Affiche le contenu de ce fichier comme introduction de votre page d'accueil. Varie selon le th&egrave;me choisi.</li>
+<li><em>introduction.md</em> : Affiche le contenu de ce fichier comme introduction sur l'ensemble de vos pages. Varie selon le th&egrave;me choisi.</li>
 <li><em>footer.md</em> : Affiche le contenu de ce fichier comme d'un pied de page sur l'ensemble de vos pages. Varie selon le th&egrave;me choisi.</li>
 </ul>
 
@@ -181,27 +181,21 @@
 
 <h3>Sur un serveur web</h3>
 
-<p>Si vous lancez Makefly sur votre propre serveur ou tr&egrave;s certainement sur le serveur de votre h&eacute;bergeur, vous pourrez utiliser <strong>install.sh</strong> qui est un script shell. Lancez simplement : </p>
+<p>Si vous lancez Makefly sur votre propre serveur ou tr&egrave;s certainement sur le serveur de votre h&eacute;bergeur, vous pourrez utiliser l'installation automatis&eacute;e. Lancez simplement la commande suivante : </p>
 
-<pre><code>cd tools
-bash install.sh
+<pre><code>pmake install
 </code></pre>
 
 <p>...et cela copiera tous les fichiers dans le r&eacute;pertoire <strong>~/public_html</strong>.</p>
 
 <p><strong>ATTENTION</strong>: Cela supprimera tous les fichiers contenus dans le dossier <em>public_html</em> !</p>
 
-<p><strong>Note</strong>: Vous pouvez personnaliser le script pour copier tous les fichiers dans un autre r&eacute;pertoire que le <em>public_html</em>. Pour cela, modifiez le script <strong>install.sh</strong> et changez cette variable : </p>
+<p><strong>Note</strong>: Vous pouvez personnaliser la destination en changeant le fichier <strong>makefly.rc</strong> et plus particuli&egrave;rement la ligne suivante : </p>
 
-<pre><code>DESTDIR=${HOME}/public_html
+<pre><code>INSTALLDIR=${HOME}/public_html
 </code></pre>
 
-<p>en : </p>
-
-<pre><code>DESTDIR=/mon/site/web
-</code></pre>
-
-<p>Relancez le script <em>install.sh</em> pour voir le r&eacute;sultat.</p>
+<p>Relancez ensuite la commande <code>pmake install</code> pour recompiler le blog.</p>
 
 <h3>Vers un ordinateur distant : la commande <em>publish</em></h3>
 

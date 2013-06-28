@@ -160,7 +160,7 @@
 <ul>
 <li><em>about.md</em> : Is the content of an about's page about your website. It will add an item in the website main menu (If your theme support it.)</li>
 <li><em>sidebar.md</em> : Add a sidebar on your website. The theme have to support this function.</li>
-<li><em>introduction.md</em> : Display this file's content as an introduction to your website homepage. This could change regarding the choosen theme.</li>
+<li><em>introduction.md</em> : Display this file's content as an introduction on all your website's pages. This could change regarding the choosen theme.</li>
 <li><em>footer.md</em> : Display this file's content as a footer on all your website's pages. This could change regarding the choosen theme.</li>
 </ul>
 
@@ -181,27 +181,21 @@
 
 <h3>From a webserver</h3>
 
-<p>If you launch Makefly on you own server or probably on provider ' server, you should so use <strong>install.sh</strong> which is a bash shell script. Just launch it:</p>
+<p>If you launch Makefly on you own server or probably on provider ' server, you should be capable to use <strong>install</strong> script automation. Just launch it as:</p>
 
-<pre><code>cd tools
-bash tinstall.sh
+<pre><code>pmake install
 </code></pre>
 
 <p>...and it will copy all files to <strong>~/public_html</strong> directory.</p>
 
 <p><strong>WARNING</strong>: This will erase all files from <em>public_html</em> directory!</p>
 
-<p><strong>Note</strong>: You can customize the script to copy files in another directory. To do that, just edit <strong>install.sh</strong> script and change this variable:</p>
+<p><strong>Note</strong>: You can customize the destination by changing <strong>makefly.rc</strong> file espacially the given line : </p>
 
-<pre><code>DESTDIR=${HOME}/public_html
+<pre><code>INSTALLDIR=${HOME}/public_html
 </code></pre>
 
-<p>to:</p>
-
-<pre><code>DESTDIR=/my/personal/website
-</code></pre>
-
-<p>Relaunch <em>install.sh</em> script to see result.</p>
+<p>Then relaunch <code>pmake install</code> to recompile the weblog.</p>
 
 <h3>To a remote computer: <em>publish</em> command</h3>
 
