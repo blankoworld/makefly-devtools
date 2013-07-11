@@ -53,16 +53,59 @@
 
 <ul>
 <li>pmake ou bmake</li>
-<li>la commande markdown</li>
 <li>lua 5.1 ou plus r&eacute;cent</li>
 </ul>
 
 <p>Ainsi utilisez le gestionnaire de paquet de votre distribution pour les installer. Par exemple sur Debian et d&eacute;riv&eacute;es, ce serait : </p>
 
-<pre><code>apt-get install pmake markdown lua5.1
+<pre><code>apt-get install pmake lua5.1
 </code></pre>
 
 <p>Pour d'autres distributions, regardez du c&ocirc;t&eacute; des forums, d'IRC et/ou de la communaut&eacute; de votre distribution. Ils seront heureux de vous aider.</p>
+
+<h3>Biblioth&egrave;ques</h3>
+
+<p>Quelques biblioth&egrave;ques sont n&eacute;cessaires pour faire fonctionner les scripts Lua : </p>
+
+<ul>
+<li>lua-filesystem</li>
+<li>lua-markdown</li>
+</ul>
+
+<p>Pour les installer, vous avez deux possibilit&eacute;s : </p>
+
+<ul>
+<li>soit vous utilisez <strong>luarocks</strong></li>
+<li>soit vous utilisez <strong>les paquets de votre distribution</strong></li>
+</ul>
+
+<h4>Luarocks</h4>
+
+<p>Il suffit d'installer <em>luarocks</em> et de lancer quelques commandes : </p>
+
+<pre><code>apt-get install luarocks
+luarocks install lua-filesystem lua-markdown
+</code></pre>
+
+<p>Et c'est tout !</p>
+
+<h4>Les paquets de votre distribution</h4>
+
+<p>Utilisez cette m&eacute;thode seulement si vous n'avez pas fait celle de <em>luarocks</em> pr&eacute;c&eacute;dente.</p>
+
+<p>Sous Debian GNU/Linux, par exemple, installer les paquets suivant : </p>
+
+<ul>
+<li>liblua5.1-filesystem0</li>
+<li>liblua5.1-markdown0</li>
+</ul>
+
+<p>à l'aide de la commande suivante : </p>
+
+<pre><code>apt-get install liblua5.1-filesystem0 liblua5.1-markdown0
+</code></pre>
+
+<p>Et c'est tout !</p>
 
 <h2>Installation</h2>
 
