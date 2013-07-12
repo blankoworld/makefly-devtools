@@ -1,13 +1,13 @@
--- [  INFO   ] Theme: base
+-- [  INFO   ] Theme: minisch
 -- [ SUCCESS ] New folder: ./tmp
 -- [ SUCCESS ] New folder: ./pub
 -- [ SUCCESS ] New folder: ./pub/posts
 -- [ SUCCESS ] New folder: ./pub/tags
 -- [ ENABLE  ] About's page available
 -- [ ENABLE  ] ELI badge
--- [ DISABLE ] Sidebar
--- [ DISABLE ] Search bar
--- [ DISABLE ] Comment system
+-- [ ENABLE  ] Sidebar
+-- [ ENABLE  ] Search bar
+-- [ ENABLE  ] Comment system
 -- [ ENABLE  ] FOOTER
 -- [ DISABLE ] INTRO
 -- [ SUCCESS ] Folder content copied: ./static

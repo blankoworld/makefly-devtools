@@ -17,8 +17,6 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
 
-<p><link href="./readme.css" rel="stylesheet"></link></p>
-
 <h1>Makefly</h1>
 
 <p><a href="http://makefly.e-mergence.org/documentation.html">Version originale de la documentation</a> (French original version)</p>
@@ -55,16 +53,59 @@
 
 <ul>
 <li>pmake or bmake</li>
-<li>markdown command</li>
 <li>lua 5.1 and earlier</li>
 </ul>
 
 <p>So use your distribution package manager to install them. For an example on Debian and derivated, it would be:</p>
 
-<pre><code>apt-get install pmake markdown lua5.1
+<pre><code>apt-get install pmake lua5.1
 </code></pre>
 
 <p>For other distribution, please have a look on your distribution's forum/IRC/community. They will enjoy helping you.</p>
+
+<h3>Librairies</h3>
+
+<p>Some librairies are needed in order Lua scripts to work:</p>
+
+<ul>
+<li>lua-filesystem</li>
+<li>lua-markdown</li>
+</ul>
+
+<p>To install them you have 2 choices:</p>
+
+<ul>
+<li>either you install <strong>luarocks</strong></li>
+<li>or <strong>your distribution's packages</strong></li>
+</ul>
+
+<h4>Luarocks</h4>
+
+<p>You just have to install <em>luarocks</em> and launch some commands:</p>
+
+<pre><code>apt-get install luarocks
+luarocks install lua-filesystem lua-markdown
+</code></pre>
+
+<p>That's all!</p>
+
+<h4>Your distribution's packages</h4>
+
+<p>Use this method only if you didn't use previous <em>luarocks</em> one.</p>
+
+<p>Under GNU/Linux Debian for an example install given packages:</p>
+
+<ul>
+<li>liblua5.1-filesystem0</li>
+<li>liblua5.1-markdown0</li>
+</ul>
+
+<p>with this command:</p>
+
+<pre><code>apt-get install liblua5.1-filesystem0 liblua5.1-markdown0
+</code></pre>
+
+<p>That's all!</p>
 
 <h2>Installation</h2>
 
@@ -162,7 +203,7 @@
 <ul>
 <li><em>about.md</em> : Is the content of an about's page about your website. It will add an item in the website main menu (If your theme support it.)</li>
 <li><em>sidebar.md</em> : Add a sidebar on your website. The theme have to support this function.</li>
-<li><em>introduction.md</em> : Display this file's content as an introduction to your website homepage. This could change regarding the choosen theme.</li>
+<li><em>introduction.md</em> : Display this file's content as an introduction on all your website's pages. This could change regarding the choosen theme.</li>
 <li><em>footer.md</em> : Display this file's content as a footer on all your website's pages. This could change regarding the choosen theme.</li>
 </ul>
 
@@ -183,27 +224,21 @@
 
 <h3>From a webserver</h3>
 
-<p>If you launch Makefly on you own server or probably on provider ' server, you should so use <strong>install.sh</strong> which is a bash shell script. Just launch it:</p>
+<p>If you launch Makefly on you own server or probably on provider ' server, you should be capable to use <strong>install</strong> script automation. Just launch it as:</p>
 
-<pre><code>cd tools
-bash tinstall.sh
+<pre><code>pmake install
 </code></pre>
 
 <p>...and it will copy all files to <strong>~/public_html</strong> directory.</p>
 
 <p><strong>WARNING</strong>: This will erase all files from <em>public_html</em> directory!</p>
 
-<p><strong>Note</strong>: You can customize the script to copy files in another directory. To do that, just edit <strong>install.sh</strong> script and change this variable:</p>
+<p><strong>Note</strong>: You can customize the destination by changing <strong>makefly.rc</strong> file espacially the given line : </p>
 
-<pre><code>DESTDIR=${HOME}/public_html
+<pre><code>INSTALLDIR=${HOME}/public_html
 </code></pre>
 
-<p>to:</p>
-
-<pre><code>DESTDIR=/my/personal/website
-</code></pre>
-
-<p>Relaunch <em>install.sh</em> script to see result.</p>
+<p>Then relaunch <code>pmake install</code> to recompile the weblog.</p>
 
 <h3>To a remote computer: <em>publish</em> command</h3>
 
@@ -319,7 +354,7 @@ bash tinstall.sh
 <li>BLOG_DESCRIPTION: A long description of your weblog</li>
 <li>BLOG_LANG: your language code. Note that file lang/translate.YOUR_LANGUAGE_CODE should exists. For an example if I set this parameter to <em>en</em>, a <em>lang/translate.en</em> file should exists!</li>
 <li>BLOG_CHARSET: your encoding configuration. Should be something like <strong>UTF-8</strong> or <strong>ISO-8859-1</strong>. If you don't know what's this option, just let it to <em>UTF-8</em>.</li>
-<li>BASE_URL: absolute URL of your blog. For an example http://makefly.e-mergence.org/.</li>
+<li>BLOG_URL: absolute URL of your blog. For an example http://makefly.e-mergence.org/.</li>
 <li>RSS_FEED_NAME: Title for the RSS Feed</li>
 <li>MAX_POST: Max post that would be showed on home page</li>
 <li>MAX_POST_LINES: Number of lines that should be shown on Homepage. If set to 0 or not referenced in <em>makefly.rc</em> file, then posts are fully shown.</li>

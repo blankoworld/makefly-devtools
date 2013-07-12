@@ -30,10 +30,10 @@ cp -r $branch/* "$tmp/makefly" || exit 1
 cp $tmp/makefly/makefly.rc.example $tmp/makefly/makefly.rc
 # Change Makefly version in code
 cat $tmp/makefly/Makefile |sed -e "s#\(VERSION = \).*#\1$2#g" > "$tmp/makefly/Makefile.new" && mv -f "$tmp/makefly/Makefile.new" "$tmp/makefly/Makefile"
-cat $tmp/makefly/Changelog |sed -e "s#^\(Current \)(.*)#\1#g" > "$tmp/makefly/Changelog.new" && mv -f "$tmp/makefly/Changelog.new" "$tmp/makefly/Changelog"
+cat $tmp/makefly/Changelog |sed -e "s#^\(Current \).*#Version $2#g" > "$tmp/makefly/Changelog.new" && mv -f "$tmp/makefly/Changelog.new" "$tmp/makefly/Changelog"
 # Generate documentation
 MAKEOBJDIR="$tmp/makefly" conf="$tmp/makefly/makefly.rc" pmake -f "$tmp/makefly/Makefile" doc || exit 1
-# Delete useless 
+# Delete useless files/directories
 cd $tmp/makefly && grep -Ev '^($|#)' ../../prepare-new-version.txt | xargs -n 1 rm -fr && cd ../../ || exit 1
 # Create a tarball
 cd $tmp && zip -r ../makefly_$2.zip makefly && cd ../ || exit 1
