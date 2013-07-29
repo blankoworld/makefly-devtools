@@ -222,6 +222,7 @@ Most important variables:
   * SHORT\_DATE\_FORMAT: same as DATE\_FORMAT
   * INDEX\_FILENAME: if you want to name page as **main** instead of **index**
   * PAGE\_EXT: if you want another extension. For an example **xhtml** instead of **html**.
+  * TMPL\_EXT: if you want another template file extension. For an example **.template** instead of **.tmpl**
   * MAX_RSS: to limit the number of post on RSS feed.
 
 ### Tip: redefine some others VARS
