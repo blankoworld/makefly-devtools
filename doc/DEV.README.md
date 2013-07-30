@@ -279,7 +279,7 @@ Templates are located to **template** directory.
 
 Each theme have its own directory. So for *default* theme, a **default** directory is created in which you can see some files:
 
-  * .xhtml files to describe the content of the weblog
+  * .tmpl files to describe the content of the weblog
   * a **style** directory in which you can see all CSS files for a defined theme
   * a **config.mk** in which you have some details about the theme:
     * CSS\_NAME: Name that will appear on the weblog with `${CSS_NAME}`
@@ -292,20 +292,20 @@ Each theme have its own directory. So for *default* theme, a **default** directo
 
 ### Mandatory files
 
-Here is some explanations about **.xhtml** files you can find into a theme:
+Here is some explanations about **.tmpl** files you can find into a theme:
 
-  * article.index.xhtml: Template for each post that are shown on homepage
-  * article.xhtml: Template for a post on its single page
-  * element.xhtml: Template for a line in **Post List** page
-  * footer.xhtml: End of each HTML page
-  * header.xhtml: Head of each HTML page
-  * menu.about.xhtml: Element that is used to show the link to the About's page
-  * menu.search_bar.xhtml: Template for search bar
-  * read_more_link.xhtml: Template for the link **Read more** for each post.
-  * sidebar.xhtml: Template for the sidebar
-  * tagelement.xhtml: Template for a line in **Tag List** page 
-  * taglink.xhtml: Template for a single link to a tag's page
-  * tags.xhtml: Template for the **Tag List** page
+  * article.index.tmpl: Template for each post that are shown on homepage
+  * article.tmpl: Template for a post on its single page
+  * element.tmpl: Template for a line in **Post List** page
+  * footer.tmpl: End of each HTML page
+  * header.tmpl: Head of each HTML page
+  * menu.about.tmpl: Element that is used to show the link to the About's page
+  * menu.search_bar.tmpl: Template for search bar
+  * read_more_link.tmpl: Template for the link **Read more** for each post.
+  * sidebar.tmpl: Template for the sidebar
+  * tagelement.tmpl: Template for a line in **Tag List** page 
+  * taglink.tmpl: Template for a single link to a tag's page
+  * tags.tmpl: Template for the **Tag List** page
 
 ### Completion
 

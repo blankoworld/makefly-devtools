@@ -278,7 +278,7 @@ Les templates sont situés dans le dossier **template** (variable TMPLDIR).
 
 Chaque thème a son propre répertoire. Ainsi pour le thème *défaut*, un dossier **défaut** est crée dans lequel vous pouvez voir quelques fichiers comme :
 
-  * les fichiers .xhtml pour décrire le contenu du joueb (JOUrnal wEB, blog)
+  * les fichiers .tmpl pour décrire le contenu du joueb (JOUrnal wEB, blog)
   * un dossier **style** dans lequel vous pouvez voir tout les fichiers CSS pour un thème défini
   * un **config.mk** dans lequel vous avez des détails à propos du thème : 
     * CSS\_NAME : Nom qui apparaîtra dans le joueb avec `${CSS_NAME}`
@@ -290,20 +290,20 @@ Chaque thème a son propre répertoire. Ainsi pour le thème *défaut*, un dossi
 
 ### Fichiers obligatoires
 
-Voici quelques explications à propos des fichiers **.xhtml** que vous pouvez trouver dans un thème : 
+Voici quelques explications à propos des fichiers **.tmpl** que vous pouvez trouver dans un thème : 
 
-  * article.index.xhtml: Template pour chaque article qui est montré sur la page principale
-  * article.xhtml: Template pour un article sur sa page seule
-  * element.xhtml: Template pour une liste dans la page **Post List** (liste des articles)
-  * footer.xhtml: Fin de chaque page HTML
-  * header.xhtml: Début de chaque page HTML
-  * menu.about.xhtml: Élément qui est utilisé pour montrer le lien de la page *À propos*.
-  * menu.search_bar.xhtml: Template pour la barre de recherche
-  * read_more_link.xhtml: Template pour le lien **Lire la suite** pour chaque article.
-  * sidebar.xhtml: Template pour le panneau latéral
-  * tagelement.xhtml: Template pour une ligne sur la page **Tag List** (liste des mots-clés)
-  * taglink.xhtml: Template pour un lien seul vers une page de mot-clé
-  * tags.xhtml: Template pour la page **Tag List** (liste des mots-clés)
+  * article.index.tmpl: Template pour chaque article qui est montré sur la page principale
+  * article.tmpl: Template pour un article sur sa page seule
+  * element.tmpl: Template pour une liste dans la page **Post List** (liste des articles)
+  * footer.tmpl: Fin de chaque page HTML
+  * header.tmpl: Début de chaque page HTML
+  * menu.about.tmpl: Élément qui est utilisé pour montrer le lien de la page *À propos*.
+  * menu.search_bar.tmpl: Template pour la barre de recherche
+  * read_more_link.tmpl: Template pour le lien **Lire la suite** pour chaque article.
+  * sidebar.tmpl: Template pour le panneau latéral
+  * tagelement.tmpl: Template pour une ligne sur la page **Tag List** (liste des mots-clés)
+  * taglink.tmpl: Template pour un lien seul vers une page de mot-clé
+  * tags.tmpl: Template pour la page **Tag List** (liste des mots-clés)
 
 ### Complètement
 
