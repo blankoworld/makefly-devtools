@@ -35,6 +35,7 @@ cat $tmp/makefly/Changelog |sed -e "s#^\(Current \).*#Version $2#g" > "$tmp/make
 MAKEOBJDIR="$tmp/makefly" conf="$tmp/makefly/makefly.rc" pmake -f "$tmp/makefly/Makefile" doc || exit 1
 # Delete useless files/directories
 cd $tmp/makefly && grep -Ev '^($|#)' ../../prepare-new-version.txt | xargs -n 1 rm -fr && cd ../../ || exit 1
+cd $tmp/makefly/lang && rm -f *.po && cd ../../../ || exit 1
 # Create a tarball
 cd $tmp && zip -r ../makefly_$2.zip makefly && cd ../ || exit 1
 # Delete temporary directory
