@@ -61,7 +61,7 @@ git clone ${REPO_DEV} ${TESTDIR}/makefly-devtools || exit 1
 # go to test directory
 cd ${TESTDIR}/makefly-devtools/tests
 # launch test
-MAKEOBJDIR=${TESTDIR}/makefly-devtools/tests main=${TESTDIR}/makefly result=${RESULTDIR} pmake > /dev/null || exit 1
+MAKEOBJDIR=${TESTDIR}/makefly-devtools/tests main=${TESTDIR}/makefly result=${RESULTDIR} LANG="en_US.UTF-8" pmake > /dev/null || exit 1
 # generate webpage
 cd ${TESTDIR}/makefly-devtools/tests/result && RESULTDIR=${RESULTDIR} ./make_webpage.sh
 # publish result
