@@ -192,6 +192,8 @@ luarocks install lua-filesystem lua-markdown
 
 <p>Note that Makefly use the <a href="http://daringfireball.net/projects/markdown/" title="Learn more about Markdown format">markdown format</a> for its posts.</p>
 
+<p><strong>Don't forget to edit the file that the 'pmake add' command return.</strong></p>
+
 <h3>Static files</h3>
 
 <p>If you want to add some static files, just add them to the <em>static</em> directory. They will be copied in destination directory.</p>
@@ -343,6 +345,26 @@ luarocks install lua-filesystem lua-markdown
 <p>In Makefly you can publish early posts. To do that metadata file should have a timestamp superior to current's one when you generate the weblog. </p>
 
 <p>For an example we are 2013, the 6th march. 12:30:00. The timestamp is : 1362569400. Your post (situated in the <strong>db</strong> directory) have to have a timestamp inferior to current's one (1362569400).</p>
+
+<h3>Write directly the post's content during its creation</h3>
+
+<p>Just use the 'content' variable at the beginning of the command:</p>
+
+<pre><code>content="my little content" pmake add
+</code></pre>
+
+<p>This will add "my little content" into your new post.</p>
+
+<h3>Do not lost comments when migrating from an old domain to a new one</h3>
+
+<p>When you migrate from <strong>old.domain.tld</strong> to <strong>new.domain.tld</strong>, comments will not appear.</p>
+
+<p>To avoid this problem, just use <strong>migratefrom command</strong> as:</p>
+
+<pre><code>domain="http://old.domain.tld" pmake migratefrom
+</code></pre>
+
+<p>This will update all your old posts with the old comments' identifier (your old domain) and comments will afressh appear.</p>
 
 <h2>The makefly.rc configuration file</h2>
 

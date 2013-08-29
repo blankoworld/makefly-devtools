@@ -192,6 +192,8 @@ luarocks install lua-filesystem lua-markdown
 
 <p>Il est &agrave; noter que Makefly utilise <a href="http://daringfireball.net/projects/markdown/" title="En savoir plus sur le format Markdown">le format markdown</a> pour ses articles.</p>
 
+<p><strong>N'oubliez pas d'&eacute;diter le fichier renseign&eacute; par la commande 'pmake add'.</strong></p>
+
 <h3>Fichiers statiques</h3>
 
 <p>Si vous voulez ajouter quelques fichiers statiques, rajoutez les simplement dans le dossier <em>static</em>. Ils seront copiés dans le dossier de destination.</p>
@@ -343,6 +345,26 @@ luarocks install lua-filesystem lua-markdown
 <p>Dans Makefly vous pouvez &eacute;crire des billets en avance. Il suffit pour cela que le fichier de m&eacute;ta-donn&eacute;es de votre billet poss&egrave;de un timestamp sup&eacute;rieur &agrave; celui du moment o&ugrave; est g&eacute;n&eacute;r&eacute; le blog.</p>
 
 <p>Par exemple nous sommes le 6 mars 2013, &agrave; 12:30, le timestamp est : 1362569400. Il faut que dans le dossier <strong>db</strong>, votre article ait un timestamp inf&eacute;rieur &agrave; celui d'aujourd'hui.</p>
+
+<h3>&Eacute;crire directement le contenu de l'article &agrave; sa cr&eacute;ation</h3>
+
+<p>Utilisez juste la variable 'content' au d&eacute;but de la commande : </p>
+
+<pre><code>content="mon petit contenu" pmake add
+</code></pre>
+
+<p>Ceci ajoutera "mon petit contenu" dans votre nouvel article.</p>
+
+<h3>Ne pas perdre les commentaires quand on migre d'un vieux domaine &agrave; un nouveau</h3>
+
+<p>Quand vous migrez de <strong>vieux.domaine.tld</strong> &agrave; <strong>nouveau.domaine.tld</strong>, les commentaires n'appara&icirc;tront plus.</p>
+
+<p>Pour r&eacute;gler le probl&egrave;me, utilisez simplement la <strong>commande migratefrom</strong> : </p>
+
+<pre><code>domain="http://vieux.domaine.tld" pmake migratefrom
+</code></pre>
+
+<p>Ceci va mettre &agrave; jour tout les anciens articles avec l'identifiant des vieux commentaires (votre vieux domaine) et les commentaires r&eacute;appara&icirc;tront.</p>
 
 <h2>Le fichier de configuration makefly.rc</h2>
 
