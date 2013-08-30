@@ -198,15 +198,34 @@ test007: test007.rc
 	}
 
 ###############################################################################
+
+# THEME   : base
+# sidebar : NO
+# search  : NO
+# comment : NO
+# identica: NO
+# goal    : Test that compilation DOESN'T work if TMPL_EXT is same as PAGE_EXT (without any specific functionnality).
+test008_name = "Test 008"
+test008_desc = "TMPL_EXT = PAGE_EXT should NOT compile -- base theme WITHOUT sidebar WITHOUT search WITHOUT comment WITHOUT identica"
+test008_conf = "${current}/test008.rc"
+test008: test008.rc
+	$Q{ \
+		cp ${test008_conf} ${result}/${TODAY}-test008.rc && \
+		(MAKEOBJDIR=${main} conf="${test008_conf}" pmake clean -f ${default_file} > ${out}/test008.out && { \
+		echo "-- ${test008_name}: ${result_err} ${test008_desc}" && echo "test008.rc:${test008_name}:${test008_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
+		echo "-- ${test008_name}: ${result_ok} ${test008_desc}" && echo "test008.rc:${test008_name}:${test008_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
+	}
+
+###############################################################################
 ###############################################################################
 
 #####
 ## CONFIG
 ###
 
-all: test000 test001 test002 test003 test004 test005 test006 test007
+all: test000 test001 test002 test003 test004 test005 test006 test007 test008
 
-.PHONY: test000 test001 test002 test003 test004 test005 test006 test007
+.PHONY: test000 test001 test002 test003 test004 test005 test006 test007 test008
 
 clean:
 	$Qecho "Removing .out files..."
