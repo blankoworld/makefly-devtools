@@ -36,6 +36,7 @@ POST1_DESC="Makefly discovering"
 POST1_DATE="2012-06-29"
 POST1_TAGS="makefly, news"
 POST1_TYPE="news"
+POST1_KEYWORDS="discovering, welcome"
 IFS='' read -r -d '' POST1_CONTENT<<'EOF'
 ### Introduction
 
@@ -109,6 +110,7 @@ POST2_DESC="How to contribute?"
 POST2_DATE="2012-07-01"
 POST2_TAGS="makefly, social, programmation"
 POST2_TYPE="normal"
+POST2_KEYWORDS=""
 IFS='' read -r -d '' POST2_CONTENT<<'EOF'
 ## About
 
@@ -135,8 +137,9 @@ POST3_AUTHOR="The best long pseudo I ever seen"
 POST3_TITLE="Official weblog: Open"
 POST3_DESC="Makefly is now available on the web"
 POST3_DATE="2012-07-04"
-POST3_TAGS="news, web"
+POST3_TAGS="news, a test to see if space breaks tags, web"
 POST3_TYPE="special"
+POST3_KEYWORDS=""
 IFS='' read -r -d '' POST3_CONTENT<<'EOF'
 Just remember one address for last makefly news: [http://makefly.e-mergence.org/](http://makefly.e-mergence.org/ "Visit official Makefly weblog to have news about Makefly!").
 
@@ -145,6 +148,8 @@ I will post some tips & tricks, news and event about Makefly here. For this, I c
     YOURVAR = the content of your variable
 
 But those who prefer to be more connected, I suggest you [to follow Makefly identica's group](http://identi.ca/group/makefly).
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/dHURyRLMOK0" frameborder="0" allowfullscreen></iframe>
 
 Don't forget to have fun with Makefly ;-)
 EOF
@@ -157,6 +162,7 @@ POST4_DESC="That's so strange!"
 POST4_DATE="2038-01-19 04:14:07"
 POST4_TAGS="strange, archaic"
 POST4_TYPE="special"
+POST4_KEYWORDS="easter,egg"
 IFS='' read -r -d '' POST4_CONTENT<<'EOF'
 ## Introduction
 
@@ -215,22 +221,25 @@ IFS="\\"
 # BEGIN
 
 # create POST 1
-DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${POST1_AUTHOR}; echo ${POST1_TITLE}; echo ${POST1_DESC}; echo ${POST1_TAGS}; echo ${POST1_TYPE}) && echo -e ${POST1_CONTENT} > ${SRCDIR}/welcome_to_makefly.md || exit 1
+DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${POST1_AUTHOR}; echo ${POST1_TITLE}; echo ${POST1_DESC}; echo ${POST1_TAGS}; echo ${POST1_TYPE}; echo ${POST1_KEYWORDS}) && echo -e ${POST1_CONTENT} > ${SRCDIR}/welcome_to_makefly.md || exit 1
 
 # create POST 2
-DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${POST2_AUTHOR}; echo ${POST2_TITLE}; echo ${POST2_DESC}; echo ${POST2_TAGS}; echo ${POST2_TYPE}) && echo -e ${POST2_CONTENT} > ${SRCDIR}/makefly_project.md || exit 1
+DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${POST2_AUTHOR}; echo ${POST2_TITLE}; echo ${POST2_DESC}; echo ${POST2_TAGS}; echo ${POST2_TYPE}; echo ${POST2_KEYWORDS}) && echo -e ${POST2_CONTENT} > ${SRCDIR}/makefly_project.md || exit 1
 
 # create POST 3
-DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${POST3_AUTHOR}; echo ${POST3_TITLE}; echo ${POST3_DESC}; echo ${POST3_TAGS}; echo ${POST3_TYPE}) && echo -e ${POST3_CONTENT} > ${SRCDIR}/official_weblog_open.md || exit 1
+DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${POST3_AUTHOR}; echo ${POST3_TITLE}; echo ${POST3_DESC}; echo ${POST3_TAGS}; echo ${POST3_TYPE}; echo ${POST3_KEYWORDS}) && echo -e ${POST3_CONTENT} > ${SRCDIR}/official_weblog_open.md || exit 1
 
 # create POST 4
-DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${POST4_AUTHOR}; echo ${POST4_TITLE}; echo ${POST4_DESC}; echo ${POST4_TAGS}; echo ${POST4_TYPE}) && echo -e ${POST4_CONTENT} > ${SRCDIR}/post_in_the_future.md || exit 1
+DBDIR=${DBDIR} SRCDIR=${SRCDIR} ./create_post.sh -q < <(echo ${POST4_AUTHOR}; echo ${POST4_TITLE}; echo ${POST4_DESC}; echo ${POST4_TAGS}; echo ${POST4_TYPE}; echo ${POST4_KEYWORDS}) && echo -e ${POST4_CONTENT} > ${SRCDIR}/post_in_the_future.md || exit 1
 
 # Change TIMESTAMP of posts
 mv ${DBDIR}/*,welcome_to_makefly.mk "${DBDIR}/`date -d ${POST1_DATE} +'%s'`,welcome_to_makefly.mk"
 mv ${DBDIR}/*,makefly_project.mk "${DBDIR}/`date -d ${POST2_DATE} +'%s'`,makefly_project.mk"
 mv ${DBDIR}/*,official_weblog_open.mk "${DBDIR}/`date -d ${POST3_DATE} +'%s'`,official_weblog_open.mk"
 mv ${DBDIR}/*,post_in_the_future.mk "${DBDIR}/`date -d ${POST4_DATE} +'%s'`,post_in_the_future.mk"
+
+# Add JSKOMMENT prefix to POST3
+echo "JSKOMMENT_PREFIX =" >> "${DBDIR}/`date -d ${POST3_DATE} +'%s'`,official_weblog_open.mk"
 
 # END
 exit 0
