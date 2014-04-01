@@ -19,9 +19,9 @@
 
 <h1>Makefly</h1>
 
-<p><a href="http://makefly.e-mergence.org/documentation.html">Original english documentation version</a> (version originale en anglais)</p>
+<p><a href="http://makefly.depotoi.re/documentation.html">Original english documentation version</a> (version originale en anglais)</p>
 
-<p><a href="http://makefly.e-mergence.org/">Aller sur le site web</a></p>
+<p><a href="http://makefly.depotoi.re/">Aller sur le site web</a></p>
 
 <h2>&Agrave; propos</h2>
 
@@ -29,7 +29,7 @@
 
 <h3>Site web</h3>
 
-<p>Visitez fr&eacute;quemment le <a href="http://makefly.e-mergence.org/blog/" title="Visiter le blog officiel de Makefly">blog de Makefly</a> (en) pour avoir des nouvelles du projet.</p>
+<p>Visitez fr&eacute;quemment le <a href="http://makefly.depotoi.re/blog/" title="Visiter le blog officiel de Makefly">blog de Makefly</a> (en) pour avoir des nouvelles du projet.</p>
 
 <h3>Contact</h3>
 
@@ -45,7 +45,7 @@
 
 <h2>Description</h2>
 
-<p>Makefly est un sous-projet de <a href="http://blogbox.e-mergence.org/" title="En savoir plus sur le projet BlogBox">BlogBox</a> qui vise &agrave; fournir de meilleurs moyens pour h&eacute;berger un blog &agrave; la maison.</p>
+<p>Makefly est un sous-projet de <a href="http://blogbox.depotoi.re/" title="En savoir plus sur le projet BlogBox">BlogBox</a> qui vise &agrave; fournir de meilleurs moyens pour h&eacute;berger un blog &agrave; la maison.</p>
 
 <h2>D&eacute;pendences</h2>
 
@@ -118,9 +118,9 @@ luarocks install lua-filesystem lua-markdown
 
 <h3>Utiliser la derni&egrave;re version stable</h3>
 
-<p>R&eacute;cup&eacute;rez simplement la derni&egrave;re version sur le site officiel : <a href="http://makefly.e-mergence.org/" title="Aller sur le site officiel de Makefly">http://makefly.e-mergence.org/</a>.</p>
+<p>R&eacute;cup&eacute;rez simplement la derni&egrave;re version sur le site officiel : <a href="http://makefly.depotoi.re/" title="Aller sur le site officiel de Makefly">http://makefly.depotoi.re/</a>.</p>
 
-<p>Par exemple <a href="http://makefly.e-mergence.org/makefly_0.2.1.zip" title="T&eacute;l&eacute;charger Makefly 0.2.1">la version 0.2.1</a>.</p>
+<p>Par exemple <a href="http://makefly.depotoi.re/makefly_0.2.1.zip" title="T&eacute;l&eacute;charger Makefly 0.2.1">la version 0.2.1</a>.</p>
 
 <p>Puis extraire le contenu de l'archive dans un dossier.</p>
 
@@ -376,7 +376,7 @@ luarocks install lua-filesystem lua-markdown
 <li>BLOG_DESCRIPTION : Une description plus compl&egrave;te de votre blog</li>
 <li>BLOG_LANG : votre code langue. &Agrave; noter qu'un fichier lang/translate.VOTRE_CODE_LANGAGE doit exister. Par exemple si je configure ce param&egrave;tre &agrave; <em>fr</em>, un fichier <em>lang/translate.fr</em> doit exister !</li>
 <li>BLOG_CHARSET : votre configuration d'encodage. Doit ressembler &agrave; quelque chose comme <strong>UTF-8</strong> ou <strong>ISO-8859-1</strong>. Si vous ne savez pas ce que c'est, laissez la param&eacute;tr&eacute;e &agrave; <em>UTF-8</em>.</li>
-<li>BLOG_URL : adresse URL absolue de votre blog. Par exemple http://makefly.e-mergence.org/.</li>
+<li>BLOG_URL : adresse URL absolue de votre blog. Par exemple http://makefly.depotoi.re/.</li>
 <li>BLOG_AUTHOR : Auteur principal du blog. Permet un r&eacute;f&eacute;rencement dans les moteurs de recherche.</li>
 <li><p>BLOG_COPYRIGHT : Copyright du blog. Permet un r&eacute;f&eacute;rencement dans les moteurs de recherche.</p></li>
 <li><p>BLOG_KEYWORDS : Mots-cl&eacute;s qui doivent appara&icirc;trent pour l'ensemble des pages du blog. Permet un r&eacute;f&eacute;rencement dans les moteurs de recherche.</p></li>
@@ -388,8 +388,8 @@ luarocks install lua-filesystem lua-markdown
 <li>INDEX_FILENAME : Nom donn&eacute; &agrave; toutes les pages index. Par exemple avec <strong>INDEX_FILENAME = mainpage</strong>, la liste des articles se nommera <em>mainpage.html</em>.</li>
 <li>PAGE_EXT : suffixe que toutes les pages auront. <strong>NE PAS OUBLIER D'AJOUTER UN POINT AVANT LE SUFFIXE</strong>. Par exemple avec <strong>PAGE_EXT = .html</strong>, toutes les pages seront de la forme : <em>index.html</em>.</li>
 <li>ABOUT_FILENAME : Comme son nom l'indique, c'est le titre du fichier utilis&eacute; pour la page "&Agrave; propos". Si vous le param&eacute;trez &agrave; "apropos" par exemple, vous devez cr&eacute;er un fichier "apropos.md" dans le r&eacute;pertoire nomm&eacute; <strong>special</strong> afin de permettre  l'obtention d'une page d'&agrave; propos. Si vous le changez &agrave; <em>toto</em>, vous devez cr&eacute;er un fichier <em>toto.md</em> dans le dossier <strong>special</strong>.</li>
-<li>POSTDIR_NAME : Le nom que vous voudriez afficher dans l'URL quand un utilisateur se rend sur la page de la liste des articles. Par exemple, param&eacute;tr&eacute; &agrave; "mesarticles" : http://makefly.e-mergence.org/mesarticles/ affichera la liste de vos articles. Ceci est utile pour divers langages.</li>
-<li>TAGDIR_NAME : M&ecirc;me chose que pour le param&egrave;tre <em>POSTDIR_NAME</em>, mais pour les mots-cl&eacute;s (tags) cette fois. Modifiez le en "motcle" par exemple et l'adresse suivante affichera la liste des mots-cl&eacute;s : http://makefly.e-mergence.org/motcle/.</li>
+<li>POSTDIR_NAME : Le nom que vous voudriez afficher dans l'URL quand un utilisateur se rend sur la page de la liste des articles. Par exemple, param&eacute;tr&eacute; &agrave; "mesarticles" : http://makefly.depotoi.re/mesarticles/ affichera la liste de vos articles. Ceci est utile pour divers langages.</li>
+<li>TAGDIR_NAME : M&ecirc;me chose que pour le param&egrave;tre <em>POSTDIR_NAME</em>, mais pour les mots-cl&eacute;s (tags) cette fois. Modifiez le en "motcle" par exemple et l'adresse suivante affichera la liste des mots-cl&eacute;s : http://makefly.depotoi.re/motcle/.</li>
 <li>THEME : Nom du th&egrave;me choisi. Les th&egrave;mes sont disponibles dans le dossier nomm&eacute; <strong>template</strong>. Chaque th&egrave;me poss&egrave;de son propre r&eacute;pertoire. Par exemple, le th&egrave;me <em>default</em> poss&egrave;de son propre r&eacute;pertoire <strong>template/default</strong>.</li>
 <li>FLAVOR: Ce nom sera utilis&eacute; pour choisir la couleur de votre th&egrave;me (si elle existe)</li>
 <li>BACKUPDIR : Nom du dossier o&ugrave; seront sauv&eacute;s les fichiers r&eacute;sultant de la commande <em>backup</em>.</li>

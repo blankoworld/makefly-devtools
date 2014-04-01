@@ -114,7 +114,7 @@ POST2_KEYWORDS=""
 IFS='' read -r -d '' POST2_CONTENT<<'EOF'
 ## About
 
-Makefly could be followed on [the official Makefly weblog](http://makefly.e-mergence.org/ "Visit official website").
+Makefly could be followed on [the official Makefly weblog](http://makefly.depotoi.re/ "Visit official website").
 
 But for those who prefer status.net, you could use the [makefly identica's group](http://identi.ca/group/makefly).
 
@@ -141,7 +141,7 @@ POST3_TAGS="news, a test to see if space breaks tags, web"
 POST3_TYPE="special"
 POST3_KEYWORDS=""
 IFS='' read -r -d '' POST3_CONTENT<<'EOF'
-Just remember one address for last makefly news: [http://makefly.e-mergence.org/](http://makefly.e-mergence.org/ "Visit official Makefly weblog to have news about Makefly!").
+Just remember one address for last makefly news: [http://makefly.depotoi.re/](http://makefly.depotoi.re/ "Visit official Makefly weblog to have news about Makefly!").
 
 I will post some tips & tricks, news and event about Makefly here. For this, I could use some example like this to be changed in a file:
 
