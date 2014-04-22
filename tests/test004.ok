@@ -12,6 +12,7 @@
 -- [ ENABLE  ] FOOTER
 -- [ DISABLE ] INTRO
 -- [ SUCCESS ] Folder content copied: ./static
+-- [  INFO   ] No static page(s) found.
 -- [ SUCCESS ] New post: Makefly project
 -- [ SUCCESS ] New post: Official weblog: Open
 -- [ SUCCESS ] New post: Welcome to makefly!
