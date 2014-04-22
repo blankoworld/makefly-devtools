@@ -17,9 +17,10 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
 
+Version x.x.x
 <h1>Makefly</h1>
 
-<p><a href="http://makefly.depotoi.re/documentation.html">Version originale de la documentation</a> (French original version)</p>
+<p><a href="http://makefly.depotoi.re/documentation.html.fr">Version originale de la documentation</a> (French original version)</p>
 
 <p><a href="http://makefly.depotoi.re/">Go to the website</a></p>
 
@@ -120,7 +121,7 @@ luarocks install lua-filesystem lua-markdown
 
 <p>Just download last version on official website: <a href="http://makefly.depotoi.re/" title="Go to official makefly website">http://makefly.depotoi.re/</a>.</p>
 
-<p>For an example <a href="http://makefly.depotoi.re/makefly_0.2.1.zip" title="Download Makefly 0.2.1">0.2.1 version</a>.</p>
+<p>For an example <a href="http://makefly.depotoi.re/makefly_0.3.zip" title="Download Makefly 0.3">0.3 version</a>.</p>
 
 <p>Then extract tarball's content into a directory.</p>
 
@@ -383,6 +384,7 @@ luarocks install lua-filesystem lua-markdown
 <li>RSS_FEED_NAME: Title for the RSS Feed</li>
 <li>MAX_POST: Max post that would be showed on home page</li>
 <li>MAX_POST_LINES: Number of lines that should be shown on Homepage. If set to 0 or not referenced in <em>makefly.rc</em> file, then posts are fully shown.</li>
+<li>MAX_PAGE: Maximum number of post that should be displayed on Post's list. If set to 0 or not used in <em>makefly.rc</em> file, then only one page is done with all posts!</li>
 <li>DATE_FORMAT: Date format displayed for each post. Please see man date's page for more information.</li>
 <li>SHORT_DATE_FORMAT: Short date format that would be used on the post list page. Please see man date's page for more information.</li>
 <li>INDEX_FILENAME: Name given to all index'pages. For an example with <strong>INDEX_FILENAME = mainpage</strong>, post list page will be named <em>mainpage.html</em>.</li>
@@ -410,6 +412,7 @@ luarocks install lua-filesystem lua-markdown
 <li>INSTALLDIR : Permit to choose a target directory when using <strong>install.sh</strong> script (Read more in <em>Publish result to the web</em> chapter)</li>
 <li>COMPRESS_TOOL (optional) : Shell tool used for backup compression via <em>backup</em> command (Cf. <em>Backup</em> section). Example : <strong>gzip</strong>.</li>
 <li>COMPRESS_EXT (optional) : Backup file extension. Warning: do not forget the point char. Example: <strong>.gz</strong>.</li>
+<li>SORT (optional) : Sort posts' list. Use ASC for posts to be from the oldiest to the latest. DESC (default value) sort posts from the latest to the oldiest.</li>
 </ul>
  
 </body>

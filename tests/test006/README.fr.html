@@ -17,9 +17,10 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
 
+Version x.x.x
 <h1>Makefly</h1>
 
-<p><a href="http://makefly.depotoi.re/documentation.html">Original english documentation version</a> (version originale en anglais)</p>
+<p><a href="http://makefly.depotoi.re/documentation.html.en">Original english documentation version</a> (version originale en anglais)</p>
 
 <p><a href="http://makefly.depotoi.re/">Aller sur le site web</a></p>
 
@@ -120,7 +121,7 @@ luarocks install lua-filesystem lua-markdown
 
 <p>R&eacute;cup&eacute;rez simplement la derni&egrave;re version sur le site officiel : <a href="http://makefly.depotoi.re/" title="Aller sur le site officiel de Makefly">http://makefly.depotoi.re/</a>.</p>
 
-<p>Par exemple <a href="http://makefly.depotoi.re/makefly_0.2.1.zip" title="T&eacute;l&eacute;charger Makefly 0.2.1">la version 0.2.1</a>.</p>
+<p>Par exemple <a href="http://makefly.depotoi.re/makefly_0.3_fr.zip" title="T&eacute;l&eacute;charger Makefly 0.3 (fr)">la version 0.3 (fr)</a>.</p>
 
 <p>Puis extraire le contenu de l'archive dans un dossier.</p>
 
@@ -181,7 +182,7 @@ luarocks install lua-filesystem lua-markdown
 
 <p>Il est &agrave; noter que Makefly utilise <a href="http://daringfireball.net/projects/markdown/" title="En savoir plus sur le format Markdown">le format markdown</a> pour ses articles.</p>
 
-<h3>Version sup&eacute;rieure ou &eacute;gale &agrave; 0.2.1 (version trunk)</h3>
+<h3>Version sup&eacute;rieure ou &eacute;gale &agrave; 0.2.1</h3>
 
 <p>Utilisez la commande suivante :</p>
 
@@ -384,6 +385,7 @@ luarocks install lua-filesystem lua-markdown
 <li>MAX_POST : Nombre maximum d'articles qui seront affich&eacute;s sur la page d'accueil.</li>
 <li>MAX_POST_LINES : Nombre de lignes qui seront montr&eacute;es sur la page d'accueil. Si param&eacute;tr&eacute; &agrave; 0 ou inexistant dans le fichier <em>makefly.rc</em>, alors les articles sont enti&egrave;rement montr&eacute;s.</li>
 <li>DATE_FORMAT : Format de la date affich&eacute;e pour chaque article. Lisez les pages du manuel <em>date</em> pour plus d'informations.</li>
+<li>MAX_PAGE : Nombre maximal d'articles qui devrait s'afficher sur la liste des articles. Si param&eacute;tr&eacute; &agrave; 0 ou inexistant du fichier <em>makefly.rc</em>, alors une seule page sera faite avec tout les articles !</li>
 <li>SHORT_DATE_FORMAT : Format court de la date. Sera utilis&eacute; sur la page de la liste des articles. Pour plus d'informations, lire les pages du manuel <em>date</em>.</li>
 <li>INDEX_FILENAME : Nom donn&eacute; &agrave; toutes les pages index. Par exemple avec <strong>INDEX_FILENAME = mainpage</strong>, la liste des articles se nommera <em>mainpage.html</em>.</li>
 <li>PAGE_EXT : suffixe que toutes les pages auront. <strong>NE PAS OUBLIER D'AJOUTER UN POINT AVANT LE SUFFIXE</strong>. Par exemple avec <strong>PAGE_EXT = .html</strong>, toutes les pages seront de la forme : <em>index.html</em>.</li>
@@ -410,6 +412,7 @@ luarocks install lua-filesystem lua-markdown
 <li>INSTALLDIR : Permet de choisir le dossier de destination lors de l'utilisation du script <strong>install.sh</strong> (Cf. Chapitre Publier le r&eacute;sultat sur le web).</li>
 <li>COMPRESS_TOOL (optionnel) : Outil console utilis&eacute; pour la compression lors des sauvegardes via la commande <em>backup</em> (Cf. Chapitre <em>Sauvegardes</em>). Exemple : <strong>gzip</strong>.</li>
 <li>COMPRESS_EXT (optionnel) : Extension des fichiers de sauvegarde. Attention &agrave; ne pas oublier le caract&egrave;re point. Exemple : <strong>.gz</strong>.</li>
+<li>SORT (optionnel) : Tri la liste des billets. Utilisez ASC pour que les billets soient triés du plus anciens au plus récent. DESC (valeur par défaut) tri les billets du plus récent au plus ancien.</li>
 </ul>
  
 </body>

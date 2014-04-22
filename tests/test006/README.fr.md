@@ -1,6 +1,6 @@
 # Makefly
 
-[Original english documentation version](http://makefly.depotoi.re/documentation.html) (version originale en anglais)
+[Original english documentation version](http://makefly.depotoi.re/documentation.html.en) (version originale en anglais)
 
 [Aller sur le site web](http://makefly.depotoi.re/)
 
@@ -88,7 +88,7 @@ Il y a deux mani&egrave;res d'installer Makefly sur votre ordinateur :
 
 R&eacute;cup&eacute;rez simplement la derni&egrave;re version sur le site officiel : [http://makefly.depotoi.re/](http://makefly.depotoi.re/ "Aller sur le site officiel de Makefly").
 
-Par exemple [la version 0.2.1](http://makefly.depotoi.re/makefly_0.2.1.zip "T&eacute;l&eacute;charger Makefly 0.2.1").
+Par exemple [la version 0.3 (fr)](http://makefly.depotoi.re/makefly_0.3_fr.zip "T&eacute;l&eacute;charger Makefly 0.3 (fr)").
 
 Puis extraire le contenu de l'archive dans un dossier.
 
@@ -145,7 +145,7 @@ et r&eacute;pondez &agrave; toutes les questions pos&eacute;es. Cela g&eacute;n&
 
 Il est &agrave; noter que Makefly utilise [le format markdown](http://daringfireball.net/projects/markdown/ "En savoir plus sur le format Markdown") pour ses articles.
 
-### Version sup&eacute;rieure ou &eacute;gale &agrave; 0.2.1 (version trunk)
+### Version sup&eacute;rieure ou &eacute;gale &agrave; 0.2.1
 
 Utilisez la commande suivante :
 
@@ -326,6 +326,7 @@ Voici quelques options que vous pouvez changer :
   * MAX\_POST : Nombre maximum d'articles qui seront affich&eacute;s sur la page d'accueil.
   * MAX\_POST\_LINES : Nombre de lignes qui seront montr&eacute;es sur la page d'accueil. Si param&eacute;tr&eacute; &agrave; 0 ou inexistant dans le fichier *makefly.rc*, alors les articles sont enti&egrave;rement montr&eacute;s.
   * DATE\_FORMAT : Format de la date affich&eacute;e pour chaque article. Lisez les pages du manuel *date* pour plus d'informations.
+  * MAX\_PAGE : Nombre maximal d'articles qui devrait s'afficher sur la liste des articles. Si param&eacute;tr&eacute; &agrave; 0 ou inexistant du fichier *makefly.rc*, alors une seule page sera faite avec tout les articles !
   * SHORT\_DATE\_FORMAT : Format court de la date. Sera utilis&eacute; sur la page de la liste des articles. Pour plus d'informations, lire les pages du manuel *date*.
   * INDEX\_FILENAME : Nom donn&eacute; &agrave; toutes les pages index. Par exemple avec **INDEX\_FILENAME = mainpage**, la liste des articles se nommera *mainpage.html*.
   * PAGE\_EXT : suffixe que toutes les pages auront. **NE PAS OUBLIER D'AJOUTER UN POINT AVANT LE SUFFIXE**. Par exemple avec **PAGE\_EXT = .html**, toutes les pages seront de la forme : *index.html*.
@@ -352,4 +353,5 @@ Voici quelques options que vous pouvez changer :
   * INSTALLDIR : Permet de choisir le dossier de destination lors de l'utilisation du script **install.sh** (Cf. Chapitre Publier le r&eacute;sultat sur le web).
   * COMPRESS_TOOL (optionnel) : Outil console utilis&eacute; pour la compression lors des sauvegardes via la commande *backup* (Cf. Chapitre *Sauvegardes*). Exemple : **gzip**.
   * COMPRESS_EXT (optionnel) : Extension des fichiers de sauvegarde. Attention &agrave; ne pas oublier le caract&egrave;re point. Exemple : **.gz**.
+  * SORT (optionnel) : Tri la liste des billets. Utilisez ASC pour que les billets soient triés du plus anciens au plus récent. DESC (valeur par défaut) tri les billets du plus récent au plus ancien.
 
