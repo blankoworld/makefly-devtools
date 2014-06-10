@@ -116,7 +116,7 @@ IFS='' read -r -d '' POST2_CONTENT<<'EOF'
 
 Makefly could be followed on [the official Makefly weblog](http://makefly.depotoi.re/ "Visit official website").
 
-But for those who prefer status.net, you could use the [makefly identica's group](http://identi.ca/group/makefly).
+But for those who prefer status.net, you could use the [makefly social network group](http://status.vinilox.eu/group/makefly).
 
 ## Social coding
 
@@ -147,7 +147,7 @@ I will post some tips & tricks, news and event about Makefly here. For this, I c
 
     YOURVAR = the content of your variable
 
-But those who prefer to be more connected, I suggest you [to follow Makefly identica's group](http://identi.ca/group/makefly).
+But those who prefer to be more connected, I suggest you [to follow Makefly social network group](http://status.vinilox.eu/group/makefly).
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/dHURyRLMOK0" frameborder="0" allowfullscreen></iframe>
 
