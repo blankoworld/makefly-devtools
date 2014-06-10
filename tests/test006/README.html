@@ -17,172 +17,134 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
 
-Version x.x.x
+Version 0.4-trunk
 <h1>Makefly</h1>
 
-<p><a href="http://makefly.depotoi.re/documentation.html.fr">Version originale de la documentation</a> (French original version)</p>
+<p><a href="http://makefly.depotoi.re/documentation.html.fr">Version française</a> (French original version)</p>
 
-<p><a href="http://makefly.depotoi.re/">Go to the website</a></p>
-
-<h2>About</h2>
-
-<p>Makefly is a static weblog engine that used a BSD Makefile to work.</p>
-
-<h3>Website</h3>
-
-<p>Stay tuned to <a href="http://makefly.depotoi.re/blog/" title="Visit Makefly official website">Makefly weblog</a>.</p>
-
-<h3>Contact</h3>
-
-<p>You can contact me <a href="mailto:olivier+makefly@dossmann.net" title="Contact me">to this address</a>.</p>
-
-<h3>License</h3>
-
-<p>This software is published under GNU Affero General Public License 3.0.</p>
-
-<h3>Stats</h3>
-
-<p>Some stats about project could be found <a href="http://www.ohloh.net/p/makefly" title="See ohloh's analysis for Makefly project">on Ohloh.net</a>.</p>
+<p><a href="http://makefly.depotoi.re/" title="Go to the website">Official website</a></p>
 
 <h2>Description</h2>
 
-<p>Makefly is a subproject of <a href="http://blogbox.depotoi.re/" title="Read more about BlogBox project">BlogBox</a> that aims to give user a better way to host a blog at home.</p>
+<p>Makefly is a fast and lightweight command line static weblog engine which uses the <a href="http://daringfireball.net/projects/markdown/syntax" title="Discover the Markdown format">Markdown format</a> for post writting and rendering.</p>
 
-<h2>Dependencies</h2>
+<p>It consists in a homepage, a post list, a tag list and an about's page.</p>
+
+<p>It gives these functionnalities:</p>
+
+<ul>
+<li>themes</li>
+<li>RSS feed</li>
+<li>keywords on each page (for web ranking)</li>
+<li>tags</li>
+<li>static webpages</li>
+<li>predate posts</li>
+<li>translations</li>
+<li>comment system</li>
+<li>backup</li>
+<li>publishing scripts to remote servers</li>
+<li>quick theme creation</li>
+<li>Nanoblogger posts migration (Cf. <strong>Migrate from Nanoblogger</strong> section)</li>
+</ul>
+
+<h1>Installation</h1>
+
+<h2>Briefly</h2>
+
+<p>In some short steps, here is how to install the last version (current development):</p>
+
+<pre><code>sudo apt-get install pmake lua5.1 lua-filesystem lua-markdown
+curl https://github.com/blankoworld/makefly/archive/master.zip
+unzip master.zip
+cd makefly-master
+cp makefly.rc.example makefly.rc
+pmake clean &amp;&amp; pmake
+</code></pre>
+
+<p>You should have an action list done on your computer. And result is available in <strong>pub directory</strong>.</p>
+
+<h2>Detailed</h2>
+
+<p>If you achieve the <strong>Briefly</strong> step, go to <strong>Use it!</strong> section.</p>
+
+<h3>Dependencies</h3>
 
 <p>Some programs on which makefly depends: </p>
 
 <ul>
 <li>pmake or bmake</li>
 <li>lua 5.1 and earlier</li>
-</ul>
-
-<p>So use your distribution package manager to install them. For an example on Debian and derivated, it would be:</p>
-
-<pre><code>apt-get install pmake lua5.1
-</code></pre>
-
-<p>For other distribution, please have a look on your distribution's forum/IRC/community. They will enjoy helping you.</p>
-
-<h3>Librairies</h3>
-
-<p>Some librairies are needed in order Lua scripts to work:</p>
-
-<ul>
 <li>lua-filesystem</li>
 <li>lua-markdown</li>
 </ul>
 
-<p>To install them you have 2 choices:</p>
+<p>So use your distribution package manager to install them. For an example on Debian and derivated, it would be:</p>
 
-<ul>
-<li>either you install <strong>luarocks</strong></li>
-<li>or <strong>your distribution's packages</strong></li>
-</ul>
+<pre><code>apt-get install pmake lua5.1 lua-filesystem lua-markdown
+</code></pre>
 
-<h4>Luarocks</h4>
+<p>For other distribution, please have a look on your distribution's forum/IRC/community. They will enjoy helping you.</p>
 
-<p>You just have to install <em>luarocks</em> and launch some commands:</p>
+<h3>Others methods to install dependancies</h3>
 
-<pre><code>apt-get install luarocks
+<p>If your distribution doesn't have <em>lua-filesystem</em> and/or <em>lua-markdown</em>, you can attempt to install <strong>luarocks</strong> then install dependancies as:</p>
+
+<pre><code>sudo apt-get install luarocks
 luarocks install lua-filesystem lua-markdown
 </code></pre>
 
 <p>That's all!</p>
 
-<h4>Your distribution's packages</h4>
-
-<p>Use this method only if you didn't use previous <em>luarocks</em> one.</p>
-
-<p>Under GNU/Linux Debian for an example install given packages:</p>
-
-<ul>
-<li>liblua5.1-filesystem0</li>
-<li>liblua5.1-markdown0</li>
-</ul>
-
-<p>with this command:</p>
-
-<pre><code>apt-get install liblua5.1-filesystem0 liblua5.1-markdown0
-</code></pre>
-
-<p>That's all!</p>
-
-<h2>Installation</h2>
+<h3>Installation</h3>
 
 <p>There is 2 ways to install Makefly on your computer:</p>
 
 <ul>
-<li>Using last stable version by fetching a tarball (recommanded)</li>
-<li>Using current developement version by using a repository (for advanced user only)</li>
+<li><a href="https://github.com/blankoworld/makefly/archive/master.zip" title="Download current development version">current development version</a></li>
+<li><a href="http://makefly.depotoi.re/makefly_0.3.zip" title="Download 0.3 stable version">0.3 stable version (recommanded)</a></li>
 </ul>
 
-<h3>Using last stable version</h3>
+<p>So you just have to:</p>
 
-<p>Just download last version on official website: <a href="http://makefly.depotoi.re/" title="Go to official makefly website">http://makefly.depotoi.re/</a>.</p>
+<ul>
+<li>fetch the choosen version</li>
+<li>extract the content in a directory on your computer</li>
+</ul>
 
-<p>For an example <a href="http://makefly.depotoi.re/makefly_0.3.zip" title="Download Makefly 0.3">0.3 version</a>.</p>
+<p>And Makefly is installed.</p>
 
-<p>Then extract tarball's content into a directory.</p>
+<h3>Configuration</h3>
 
-<h3>Using current developement version</h3>
-
-<p>You have to use <strong>git</strong> command. If you don't know what it is, have a look to <a href="http://git-scm.com/" title="Learn more about Git">Git SCM website</a>.</p>
-
-<p>After git installation, go to a working directory and do this:</p>
-
-<pre><code>git clone git://gitorious.org/makefly/master.git makefly_dev
-</code></pre>
-
-<p>This will fetch makefly repository and add files into <strong>makefly_dev</strong> directory.</p>
-
-<p><strong>Note</strong>: Using git is useful to easily update makefly. In fact:</p>
-
-<pre><code>git pull git://gitorious.org/makefly/master.git
-</code></pre>
-
-<p>will update your makefly.</p>
-
-<p><strong>WARNING</strong>: You have to always backup your files! This method could delete some changes you made previously.</p>
-
-<h2>Configuration</h2>
-
-<h3>Stable version</h3>
+<h4>Stable version</h4>
 
 <p>No special configuration required. Check that <strong>makefly.rc</strong> file is present. Otherwise copy <strong>makefly.rc.example</strong> file or rename it to <strong>makefly.rc</strong>.</p>
 
-<h3>Trunk version</h3>
+<h4>Trunk version</h4>
 
 <p>The first time you use Makefly you don't have any configuration file. An example is available in <em>makefly.rc.example</em>. Copy it to <strong>makefly.rc</strong> to permit Makefly to work.</p>
 
-<h3>More info</h3>
+<h4>More info</h4>
 
 <p>For more information please read <strong>The makefly.rc configuration file</strong> section.</p>
 
+<h1>Use it!</h1>
+
+<p><strong>By default the content of the blog is located in the pub directory</strong>.</p>
+
+<h2>In brief</h2>
+
+<p>Some useful commands:</p>
+
+<ul>
+<li><strong>pmake</strong>: Produce the blog. Available in the <strong>pub</strong> directory</li>
+<li><strong>pmake help</strong>: Display available commands</li>
+<li><strong>pmake add</strong>: Create a post and add its main metadata</li>
+<li><strong>pmake clean</strong>: Trash the entire final directory content and empty the Makefly's <em>cache</em>.</li>
+</ul>
+
 <h2>Create content</h2>
 
-<p>The way to create content depends on your version.</p>
-
-<p>To know your current version, just use this command:</p>
-
-<pre><code>pmake version
-</code></pre>
-
-<p>If an error occured like <code>pmake: don't know how to make version. Stop</code>, then you are under 0.2.1 version.</p>
-
-<h3>Version older than 0.2.1</h3>
-
-<p>Go to <strong>tools</strong> directory and launch <strong>create_post.sh</strong> script like this: </p>
-
-<pre><code>cd tools
-./create_post.sh
-</code></pre>
-
-<p>and answer to all given questions. It will generate some files needed by Makefly.</p>
-
-<p>Note that Makefly use the <a href="http://daringfireball.net/projects/markdown/" title="Learn more about Markdown format">markdown format</a> for its posts.</p>
-
-<h3>Version equal or superior to 0.2.1</h3>
+<h3>Create a new post</h3>
 
 <p>Use this command:</p>
 
@@ -210,22 +172,22 @@ luarocks install lua-filesystem lua-markdown
 <li><em>footer.md</em> : Display this file's content as a footer on all your website's pages. This could change regarding the choosen theme.</li>
 </ul>
 
-<h2>Use it!</h2>
+<h2>Produce the blog</h2>
 
 <p>After having created <em>makefly.rc</em> (from makefly.rc.example) and having created some posts, just do this:</p>
 
 <pre><code>pmake
 </code></pre>
 
-<p>It will generate a Makefly weblog to the <strong>pub</strong> directory.</p>
+<p>It will generate a Makefly weblog to the <strong>pub</strong> directory (default directory).</p>
 
 <p>Note: <em>pmake</em> is for Debian like distribution. For other distributions, I suggest you to use <strong>bmake</strong>.</p>
 
-<h2>Publish result to the web</h2>
+<h1>Publish result to the web</h1>
 
 <p>The result is compatible with all HTML servers. In fact you could probably use result with your website provider. You just have to upload all files from <strong>pub</strong> directory to your provider's web directory.</p>
 
-<h3>From a webserver</h3>
+<h2>From a webserver</h2>
 
 <p>If you launch Makefly on you own server or probably on provider ' server, you should be capable to use <strong>install</strong> script automation. Just launch it as:</p>
 
@@ -243,7 +205,7 @@ luarocks install lua-filesystem lua-markdown
 
 <p>Then relaunch <code>pmake install</code> to recompile the weblog.</p>
 
-<h3>To a remote computer: <em>publish</em> command</h3>
+<h2>To a remote computer: <em>publish</em> command</h2>
 
 <p>To publish your blog to a remote computer you have to:</p>
 
@@ -268,7 +230,7 @@ luarocks install lua-filesystem lua-markdown
 
 <p>For developers: You can also edit <strong>tools/publish.sh</strong> file and change script content to you own code.</p>
 
-<h2>Create a new theme</h2>
+<h1>Create a new theme</h1>
 
 <p>To make easier the theme creation you can use this command:</p>
 
@@ -279,11 +241,11 @@ luarocks install lua-filesystem lua-markdown
 
 <p>Note: This exploit a theme called <em>Base</em> as example.</p>
 
-<h2>Translation</h2>
+<h1>Translation</h1>
 
 <p>A simple way to translate Makefly to your language is to copy the <strong>lang/translate.en</strong> file to another translation file. For an example, for french (with fr code), you can copy <strong>lang/translate.en</strong> to <strong>lang/translate.fr</strong> and change values. Then just change <em>BLOG_LANG</em> option in <strong>makefly.rc</strong> file.</p>
 
-<h2>Backup</h2>
+<h1>Backup</h1>
 
 <p>Perhaps would you backup some important files in Makefly? It's possible via <strong>backup command</strong>. Just launch it like this:</p>
 
@@ -310,7 +272,7 @@ luarocks install lua-filesystem lua-markdown
 
 <p>Result: This will create a <em>tarball</em> named <em>YYYYMMDD_makefly.tar.gz</em> in <strong>mbackup</strong> directory (for an example 20120823_makefly.tar.gz). You can so backup your Makefly each day for an example.</p>
 
-<h3>Tips</h3>
+<h2>Tip</h2>
 
 <p>You can customize (in your <strong>makefly.rc</strong> file):</p>
 
@@ -320,7 +282,7 @@ luarocks install lua-filesystem lua-markdown
 <li>the backup file extension by using <strong>COMPRESS_EXT</strong>. For an example with <strong>.gz</strong> (don't forget the point char).</li>
 </ul>
 
-<h2>Sources</h2>
+<h1>Sources</h1>
 
 <p>Sources are available: </p>
 
@@ -330,7 +292,7 @@ luarocks install lua-filesystem lua-markdown
 <li><a href="http://git.dossmann.net/blogbox/makefly.git/">On my own git repository</a></li>
 </ul>
 
-<h2>Documentation</h2>
+<h1>Documentation</h1>
 
 <p>This file is the documentation. You can <a href="https://github.com/blankoworld/makefly" title="Read documentation on Github">read it on github</a> or simply generate an HTML file with this command:</p>
 
@@ -339,15 +301,15 @@ luarocks install lua-filesystem lua-markdown
 
 <p>Note: pmake command is for Debian like. For other distribution, use <strong>bmake</strong> instead of pmake.</p>
 
-<h2>Tips</h2>
+<h1>Tips</h1>
 
-<h3>Write post ahead of current's datetime</h3>
+<h2>Write post ahead of current's datetime</h2>
 
 <p>In Makefly you can publish early posts. To do that metadata file should have a timestamp superior to current's one when you generate the weblog. </p>
 
 <p>For an example we are 2013, the 6th march. 12:30:00. The timestamp is : 1362569400. Your post (situated in the <strong>db</strong> directory) have to have a timestamp inferior to current's one (1362569400).</p>
 
-<h3>Write directly the post's content during its creation</h3>
+<h2>Write directly the post's content during its creation</h2>
 
 <p>Just use the 'content' variable at the beginning of the command:</p>
 
@@ -356,7 +318,7 @@ luarocks install lua-filesystem lua-markdown
 
 <p>This will add "my little content" into your new post.</p>
 
-<h3>Do not lost comments when migrating from an old domain to a new one</h3>
+<h2>Do not lost comments when migrating from an old domain to a new one</h2>
 
 <p>When you migrate from <strong>old.domain.tld</strong> to <strong>new.domain.tld</strong>, comments will not appear.</p>
 
@@ -367,7 +329,7 @@ luarocks install lua-filesystem lua-markdown
 
 <p>This will update all your old posts with the old comments' identifier (your old domain) and comments will afressh appear.</p>
 
-<h2>The makefly.rc configuration file</h2>
+<h1>The makefly.rc configuration file</h1>
 
 <p>Here is some options you can change:</p>
 
@@ -413,7 +375,47 @@ luarocks install lua-filesystem lua-markdown
 <li>COMPRESS_TOOL (optional) : Shell tool used for backup compression via <em>backup</em> command (Cf. <em>Backup</em> section). Example : <strong>gzip</strong>.</li>
 <li>COMPRESS_EXT (optional) : Backup file extension. Warning: do not forget the point char. Example: <strong>.gz</strong>.</li>
 <li>SORT (optional) : Sort posts' list. Use ASC for posts to be from the oldiest to the latest. DESC (default value) sort posts from the latest to the oldiest.</li>
+<li>AUTO_EDIT (optionnel) : Allow to edit automatically posts after their creation. Use the EDITOR variable content to know which editor to use.</li>
 </ul>
+
+<h1>Migrate from Nanoblogger</h1>
+
+<p>A script that permits to migrate from Nanoblogger exists: <a href="http://github.com/blankoworld/nb2makefly" title="Discover nb2makefly">nb2makefly</a>.</p>
+
+<p>I guest you to read the <a href="https://github.com/blankoworld/nb2makefly/blob/master/README.en.md" title="Read the nb2makefly documentation">nb2makefly documentation</a> to know more about it.</p>
+
+<h1>The project</h1>
+
+<h2>Description</h2>
+
+<p>Makefly is a subproject of <a href="http://blogbox.depotoi.re/" title="Read more about BlogBox project">BlogBox</a> that aims to give user a better way to host a blog at home.</p>
+
+<h2>Development</h2>
+
+<p>Makefly is developed in Lua, CSS, HTML and use BSD Makefile to be launched.</p>
+
+<p>The code of the software is available in the given repositories:</p>
+
+<ul>
+<li><a href="https://gitorious.org/makefly/" title="Go to Makefly's project page on Gitorious">Gitorious</a></li>
+<li><a href="https://gitorious.org/makefly/" title="Go to Makefly's project page on Github">Github</a></li>
+</ul>
+
+<h2>Website</h2>
+
+<p>Stay tuned to <a href="http://makefly.depotoi.re/blog/" title="Visit Makefly official website">Makefly weblog</a> to know more about the project.</p>
+
+<h2>Contact</h2>
+
+<p>You can contact me <a href="mailto:olivier+makefly@dossmann.net" title="Contact me">to this address</a>.</p>
+
+<h2>License</h2>
+
+<p>This software is published under GNU Affero General Public License 3.0.</p>
+
+<h2>Stats</h2>
+
+<p>Some stats about project could be found <a href="http://www.ohloh.net/p/makefly" title="See ohloh's analysis for Makefly project">on Ohloh.net</a>.</p>
  
 </body>
 </html>

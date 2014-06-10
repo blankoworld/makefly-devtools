@@ -1,7 +1,5 @@
 -- [  INFO   ] Check mandatories information
 -- [  INFO   ] Theme: base
--- [ SUCCESS ] New folder: ./tmp
--- [ SUCCESS ] New folder: ./pub
 -- [ SUCCESS ] New folder: ./pub/posts
 -- [ SUCCESS ] New folder: ./pub/tags
 -- [ ENABLE  ] About's page available
