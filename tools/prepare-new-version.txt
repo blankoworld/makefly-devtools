@@ -1,5 +1,3 @@
-bin/element.xhtml
-bin/test_parser.sh
 db/1341093600,makefly_project.mk
 db/1341352800,official_weblog_open.mk
 IDEAS
@@ -9,3 +7,5 @@ pub
 src/makefly_project.md
 src/official_weblog_open.md
 tmp
+tools/flush.sh
+tools/ltpg.sh
