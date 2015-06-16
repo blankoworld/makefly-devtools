@@ -6,6 +6,7 @@ mbackup
 pub
 src/makefly_project.md
 src/official_weblog_open.md
+template/monochromed
 tmp
 tools/flush.sh
 tools/ltpg.sh
