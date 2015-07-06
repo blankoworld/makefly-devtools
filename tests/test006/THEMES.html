@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Makefly x.x.x">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Makefly - Documentation</title>
+
+  <link rel="stylesheet" href="readme.css">
+
+</head>
+<body>
+  <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+  <![endif]-->
+
+Version x.x.x
+<h1>Themes for Makefly</h1>
+
+<p><a href="http://makefly.depotoi.re/themes.html.fr">Version française</a> (French original version)</p>
+
+<p><a href="http://makefly.depotoi.re/" title="Go to the website">Official website</a></p>
+
+<h2>Requirements</h2>
+
+<p>Making a theme is not difficult. But you need some skills as:</p>
+
+<ul>
+    <li>making HTML</li>
+    <li>making CSS</li>
+    <li>[optional] making JS</li>
+</ul>
+
+<p>All these skills can be learned on <a href="http://openclassrooms.com/" title="Go to the official openclassrooms website">openclassrooms</a>.</p>
+
+<p>Remember that this is not difficult, you just need a little bit time to make it.</p>
+
+<hr/>
+
+<h2>Design a new theme</h2>
+
+<p>Create a new theme is easy as explained in the officiel documentation. Just do this:</p>
+
+<pre><code>./makefly theme myTheme
+</code></pre>
+
+<p>where <strong>myTheme</strong> is the name of your theme.</p>
+
+<p>This will copy the default <strong>base</strong> theme.</p>
+
+<p>The command show you where is the new theme. It remains commonly in the <strong>template</strong> directory (except if you change the template's directory location).</p>
+
+<p>So you just have to customize the theme. Pay attention to values that are replacement ones. You can find a non-exhaustive list in <strong>Replacement values</strong> section of this documentation.</p>
+
+<hr/>
+
+<h2>Adapt an existing template (Example)</h2>
+
+<p>For lazy people, you can choose a template on the Web and adapt it to Makefly so that it makes less work to create a new template.</p>
+
+<p>I suggest you either to see a video showing how to adapt Monochromed template to Makefly or to read explanation about it.</p>
+
+<h3>Learn with a video</h3>
+
+<p>As a video is more verbose than a lot of explanation I make <a href="http://makefly.depotoi.re/monochromed.mkv" title="How to adapt a template to Makefly">a video that show you how to search/download/adapt an existing template to Makefly</a> (30 MB and 30 minutes approximatively).</p>
+
+<p>NB: This video can be seen with <a href="https://www.videolan.org/vlc/" title="Download VLC">VLC media player</a>.</p>
+
+<h3>Learn with explanations (you can compare with the video)</h3>
+
+<p>Sometimes, you're a lazy person. And I too. So you prefer taking other people's templates! I so use <a href="http://templated.co/" title="Choose a template on templated.co website">a website template</a>.</p>
+
+<h4>Template download</h4>
+
+<p>Let's have a look to this template: <a href="http://templated.co/monochromed" title="Discover the template called 'monochromed'">http://templated.co/monochromed</a>. We will use it for our tutorial.</p>
+
+<p>Download the template, extract it in <strong>template/monochromed</strong> (in makefly directory).</p>
+
+<h4>To do</h4>
+
+<p>Then we have 2 tasks so that the template works on Makefly:</p>
+
+<ol>
+    <li>Insert some keys (specific words) that insert our blog content into</li>
+    <li>Create the template's structure</li>
+</ol>
+
+<p>A list of keys is available in <strong>Replacement values</strong> section of the current document. This is for the <strong>first task</strong>.</p>
+
+<p>The <strong>second one</strong> is explained in <strong>Template ' structure</strong> section.</p>
+
+<p>But have a look to the following steps to understand a template migration procedure.</p>
+
+<p><strong>Note:</strong> Have a look to <strong>template/monochromed</strong> directory for an example of this tutorial.</p>
+
+<h4>What needs each page</h4>
+
+<p>First open the <strong>template/monochromed/index.html</strong> file with your web browser. You can see the original monochromed template.</p>
+
+<p>Open then the same file with your favorite editor. Mine is <em>vim</em>. But you can open the file with <em>gedit</em> or <em>geany</em> for an example. You see the file composed of:</p>
+
+<ul>
+    <li>doctype</li>
+    <li>head content</li>
+    <li>body content (homepage class)</li>
+</ul>
+
+<p>The last one (body content) have some elements:</p>
+
+<ul>
+    <li>Header DIV</li>
+    <li>Main DIV</li>
+    <li>Sidebar DIV</li>
+    <li>Footer DIV</li>
+    <li>Copyright DIV</li>
+</ul>
+
+<p>As explained in <strong>Template 's structure</strong> we need to create a <strong>header.tmpl</strong> and a <strong>footer.tmpl</strong> file. They will be used in all pages in our weblog.</p>
+
+<p>The idea is to get the begining of the page from doctype to this:</p>
+
+<pre><code>&lt;!-- Main --&gt;
+  &lt;div id="main"&gt;
+    &lt;div class="container"&gt;
+</code></pre>
+
+<p>and to put it into <strong>template/monochromed/header.tmpl</strong> file.</p>
+
+<p>Then get the last 2 DIV from the container DIV to the end of the file and put it into <strong>template/monochromed/footer.tmpl</strong>.</p>
+
+<h4>Static directory</h4>
+
+<p>Each template need a static directory in which you will put some pictures/images, javascript files, etc.</p>
+
+<p>In our example, do this:</p>
+
+<ul>
+    <li>create static directory in <strong>template/monochromed/static</strong></li>
+    <li>copy <strong>css</strong>, <strong>images</strong> and <strong>js</strong> directory into <strong>static</strong> one</li>
+</ul>
+
+<p>It's time to configure our template.</p>
+
+<h4>config.mk file</h4>
+
+<p>As explained in next chapters, <strong>config.mk</strong> file gives some information about your new template/theme.</p>
+
+<p>So create <strong>template/monochromed/config.mk</strong> file with this content:</p>
+
+<pre><code>CSS_NAME = Monochromed
+CSS_FILE = main_monochromed.css
+CSS_COLOR_FILE = color_monochromed_light.css
+</code></pre>
+
+<p>which implies to create two files:</p>
+
+<ul>
+    <li>template/monochromed/style/main_monochromed.css: all common CSS rules for your template/theme</li>
+    <li>template/monochromed/style/color<em>monochromed</em>light.css: only recommanded for a color version of your template so that you can create multiple versions</li>
+</ul>
+
+<p>For now, just create the files. You will move all CSS rules later.</p>
+
+<h4>Test the result</h4>
+
+<p>What's about testing the result?</p>
+
+<p>Just modify your <strong>makefly.rc</strong> and add this:</p>
+
+<pre><code>THEME = monochromed
+</code></pre>
+
+<p>Then refresh your blog:</p>
+
+<pre><code>./makefly refresh
+</code></pre>
+
+<p>And you will see the result in your web browser by opening <strong>pub/index.html</strong>.</p>
+
+<h4>Hey, I want to display the title!</h4>
+
+<p>Let's display our blog title.</p>
+
+<p>Open <strong>template/monochromed/header.tmpl</strong> file and replace this:</p>
+
+<pre><code>&lt;title&gt;Monochromed by TEMPLATED&lt;/title&gt;
+</code></pre>
+
+<p>by this:</p>
+
+<pre><code>&lt;title&gt;${BLOG_TITLE} - ${TITLE}&lt;/title&gt;
+</code></pre>
+
+<p>And:</p>
+
+<pre><code>&lt;h1&gt;&lt;a href="#"&gt;Monochromed&lt;/a&gt;&lt;/h1&gt;
+&lt;span&gt;Design by TEMPLATED&lt;/span&gt;
+</code></pre>
+
+<p>by:</p>
+
+<pre><code>&lt;h1&gt;&lt;a href="${BLOG_URL}"&gt;${BLOG_TITLE}&lt;/a&gt;&lt;/h1&gt;
+&lt;span&gt;${BLOG_SHORT_DESC}&lt;/span&gt;
+</code></pre>
+
+<p>In fact we just place some variables so that Makefly makes replacements in all pages.</p>
+
+<p>As previously, test the result:</p>
+
+<pre><code>./makefly refresh
+</code></pre>
+
+<p>And open <strong>pub/index.html</strong> in your web browser.</p>
+
+<h4>Where are posts?</h4>
+
+<p>See <strong>template/monochromed/onecolumn.html</strong> with your editor. The template give us a row containing a "No sidebar" post that takes all the width.</p>
+
+<p>So take the content of <strong>row</strong> DIV (<code>&lt;div class="row"&gt;</code>) and put it into <strong>template/monochromed/article.index.tmpl</strong> file.</p>
+
+<p>Then add some variables to display your posts (you can see the result in <strong>template/monochromed/article.index.tmpl</strong>):</p>
+
+<ul>
+    <li>POST_TITLE</li>
+    <li>POST_DESCRIPTION</li>
+    <li>POST_FILE</li>
+    <li>POSTDIR_NAME</li>
+    <li>POST_TYPE</li>
+    <li>POST_CONTENT</li>
+</ul>
+
+<p>This will only make posts available on homepage. To have each post create the <strong>template/monochromed/article.tmpl</strong>. You can copy the <strong>template/monochromed/article.index.tmpl</strong> file instead. As explained in <strong>Template ' structure</strong> section, <em>article.index.tmpl</em> is used by homepage and <em>article.tmpl</em> by each single post. So just adapt them as your needs.</p>
+
+<h4>Main menu</h4>
+
+<p>What we are used to see in Makefly looks like:</p>
+
+<pre><code>&lt;li&gt;&lt;a href="${BLOG_URL}"&gt;${HOME_TITLE}&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="${BLOG_URL}/${POSTDIR_NAME}/${POSTDIR_INDEX}"&gt;${POST_LIST_TITLE}&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="${BLOG_URL}/${TAGDIR_NAME}/${TAGDIR_INDEX}"&gt;${TAG_LIST_TITLE}&lt;/a&gt;&lt;/li&gt;${ABOUT_LINK}
+</code></pre>
+
+<p>You can adapt the <strong>template/monochromed/header.tmpl</strong> file to integrate the menu in place of <strong>nav</strong> tag.</p>
+
+<p>Note that the ABOUT_LINK variable needs the <strong>template/monochromed/menu.about.tmpl</strong> file. Copy those from <em>template/base/menu.about.tmpl</em>.</p>
+
+<h4>Some problems appears with the CSS</h4>
+
+<p>Now you have a menu and use it you see that CSS is not available for all pages. This is because of the fact that all CSS and JS links are relative. They refers to <em>css/style.css</em> for an example. And each page don't have the same depth into our blog tree.</p>
+
+<p>To avoid this kind of problem we recommand in Makefly to use absolute path. But how to add our blog URL in each CSS and JS files? We use variables. That way, you can add BLOG_URL variable in your CSS/JS files (located in <strong>template/monochromed/static</strong> directory) to complete all links. For an example in <strong>template/monochromed/static/js/init.js</strong> file replace:</p>
+
+<pre><code>prefix: 'css/style',
+</code></pre>
+
+<p>by:</p>
+
+<pre><code>prefix: '${BLOG_URL}/css/style',
+</code></pre>
+
+<p>Then adapt <strong>template/monochromed/header.tmpl</strong> to have this:</p>
+
+<pre><code>  &lt;link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'&gt;
+  &lt;!--[if lte IE 8]&gt;&lt;script src="${BLOG_URL}/js/html5shiv.js"&gt;&lt;/script&gt;&lt;![endif]--&gt;
+    &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script src="${BLOG_URL}/js/skel.min.js"&gt;&lt;/script&gt;
+  &lt;script src="${BLOG_URL}/js/skel-panels.min.js"&gt;&lt;/script&gt;
+  &lt;script src="${BLOG_URL}/js/init.js"&gt;&lt;/script&gt;
+  &lt;noscript&gt;
+    &lt;link rel="stylesheet" href="${BLOG_URL}/css/skel-noscript.css" /&gt;
+    &lt;link rel="stylesheet" href="${BLOG_URL}/css/style.css" /&gt;
+  &lt;/noscript&gt;
+  &lt;!--[if lte IE 8]&gt;&lt;link rel="stylesheet" href="${BLOG_URL}/css/ie/v8.css" /&gt;&lt;![endif]--&gt;
+  &lt;!--[if lte IE 9]&gt;&lt;link rel="stylesheet" href="${BLOG_URL}/css/ie/v9.css" /&gt;&lt;![endif]--&gt;
+&lt;/head&gt;
+</code></pre>
+
+<p>Refresh the blog and enjoy!</p>
+
+<h4>Common files</h4>
+
+<p>As explained in <strong>Template ' structure</strong> section, there is a lot of files needed for our template to work. Some needs to be adapted, and some other one can be just used as it is.</p>
+
+<p>So you can copy these files (from <strong>template/base</strong> directory) in your monochromed directory:</p>
+
+<ul>
+    <li>element.tmpl</li>
+    <li>menu.about.tmpl</li>
+    <li>post.footer.tmpl</li>
+    <li>post.index.tmpl</li>
+    <li>tagelement.tmpl</li>
+    <li>taglink.tmpl</li>
+    <li>tags.tmpl</li>
+</ul>
+
+<p>After a <em>refresh</em> your blog will have posts list and tags list available.</p>
+
+<p>What do you think about your blog now?</p>
+
+<hr/>
+
+<h2>Template ' structure</h2>
+
+<p>In Makefly the structure of templates is not complex. But you need to know how it works to understand the possibilities it offers.</p>
+
+<h3>Quick list of needed files</h3>
+
+<p>Here is a short description of each element of the structure. Note that no header/footer is required for these templates. Which means that the begining of all pages is <strong>header.tmpl</strong> and the end of all pages is <strong>footer.tmpl</strong>, except for RSS feeds that use <strong>feed.header.rss</strong> and <strong>feed.footer.rss</strong>.</p>
+
+<p>Elements:</p>
+
+<ul>
+    <li><strong>article.index.tmpl</strong>: the template of <strong>one</strong> post on the homepage</li>
+    <li><strong>article.tmpl</strong>: content of a given post from the weblog</li>
+    <li><strong>config.mk</strong>: contains the configuration of your template. The name, the CSS filename, the second CSS filename, if the sidebar is mandatory, etc.</li>
+    <li><strong>element.tmpl</strong>: short info about a post to be integrated in the list of posts.</li>
+    <li><strong>header.tmpl</strong>: header of <strong>all</strong> weblog pages. Should contains the first <code>&lt;html&gt;</code> tag, the <code>&lt;head&gt;</code> and the <code>&lt;body&gt;</code> one.</li>
+    <li><strong>footer.tmpl</strong>: footer of <strong>all</strong> weblog pages. Should contains the last <code>&lt;/body&gt;</code> and <code>&lt;/html&gt;</code> one.</li>
+    <li><strong>menu.about.tmpl</strong>: supplementary main menu link to the about's page</li>
+    <li><strong>menu.search_bar.tmpl</strong>: supplementary main menu link to display a search bar</li>
+    <li><strong>pagination.tmpl</strong>: HTML code used to make a pagination under posts list</li>
+    <li><strong>post.footer.tmpl</strong>: last HTML code that will be displayed after the list of all posts</li>
+    <li><strong>post.index.tmpl</strong>: first HTML code to be displayed before the list of all posts</li>
+    <li><strong>read_more_link.tmpl</strong>: link "Read more" that will be displayed under each post on the homepage. Only available if MAX_POST_LINES is used.</li>
+    <li><strong>sidebar.tmpl</strong>: HTML code that will be used in place of ${SIDEBAR} specific word in header/footer templates. Should contains the <strong>${SIDEBAR_CONTENT}</strong> specific word.</li>
+    <li><strong>static</strong> [directory]: directory that contains files that needs to be present in the result. For an example some pictures, javascript files, etc. Do not place CSS files here (but not forbidden) as we have <em>style</em> directory for this. You should know that files contained in static directory will be completed during a compilation process. But this is only ready for the <strong>BLOG_URL</strong> variable.</li>
+    <li><strong>style</strong> [directory]: list of possible CSS files. As Makefly is designed, you can make a stylesheet for main appearance, then add a CSS file for each version of your template. For an example a CSS that makes your template red. Another one that makes your template blue, etc. Is configurable with the help of CSS_COLOR_FILE in <strong>config.mk</strong> file.</li>
+    <li><strong>tagelement.tmpl</strong>: a single tag element to be displayed on the tag list page</li>
+    <li><strong>taglink.tmpl</strong>: a single tag info that would be displayed on each post</li>
+    <li><strong>tags.tmpl</strong>: the tag list page. Should content the <strong>${TAG_LIST_TITLE}</strong> specific word.</li>
+</ul>
+
+<p>Pay attention that some other ones are located in the template main directory for specific treatments. You should not create them into your template but you need to know them:</p>
+
+<ul>
+    <li><strong>eli_content.tmpl</strong>: HTML code of status timeline from ELI application.</li>
+    <li><strong>eli.css</strong>: CSS for ELI functionnality</li>
+    <li><strong>eli_css_declaration.tmpl</strong>: HTML code used to declare ELI CSS in our weblog</li>
+    <li><strong>eli_declaration.tmpl</strong>: HTML code that declares the ELI javascript in our weblog. Commonly placed in the footer.</li>
+    <li><strong>eli.js</strong>: Javascript code used by ELI functionnality</li>
+    <li><strong>empty.file</strong>: an empty file (some applications are very curious, this one don't escape to this rule)</li>
+    <li><strong>feed.footer.rss</strong>: XML footer code for RSS feed</li>
+    <li><strong>feed.header.rss</strong>: XML header code for RSS feed</li>
+    <li><strong>isso.tmpl</strong>: HTML code for each post for ISSO comment functionnality. Replace ISSO_CONTENT variable in templates.</li>
+    <li><strong>isso.css</strong>: CSS used for ISSO functionnality</li>
+    <li><strong>isso_css_declaration.tmpl</strong>: CSS HTML declaration used in header for ISSO comment system. Replace ISSO_CSS_DECLARATION variable in templates.</li>
+    <li><strong>isso_declaration.tmpl</strong>: HTML code that declares the ISSO javascript in our weblog. Commonly placed in the footer. Replace ISSO_SCRIPT variable in templates.</li>
+    <li><strong>isso.short.tmpl</strong>: usually used on homepage to only display number of comment using ISSO comment system. Replace ISSO_SHORT variable in templates.</li>
+    <li><strong>isso.extended.tmpl</strong>: usually used on each post to display comments using ISSO comment system. Replace ISSO_EXTENDED variable in templates.</li>
+</ul>
+
+<h3>More explanation</h3>
+
+<p>First, Makefly delivers the blog as:</p>
+
+<ul>
+    <li>an homepage</li>
+    <li>a list of posts</li>
+    <li>a list of tags</li>
+    <li>an about's page (optional)</li>
+    <li>some static pages (user adds itself the static pages it wants)</li>
+    <li>a page for each post</li>
+    <li>a page for each tag</li>
+</ul>
+
+<p>So a page is composed of:</p>
+
+<ul>
+    <li>a header (<strong>header.tmpl</strong> file)</li>
+    <li>a content (various contents: list of posts, list of tags, a tag, a post, an homepage, an about's one, etc.)</li>
+    <li>a footer (<strong>footer.tmpl</strong> file)</li>
+</ul>
+
+<p>If you understand it well, you need so 2 files:</p>
+
+<ul>
+    <li>header.tmpl (the begining of ALL pages)</li>
+    <li>footer.tmpl (the end of ALL pages)</li>
+</ul>
+
+<p>Then, how works the content?</p>
+
+<p>The content is so build regarding which page we want.</p>
+
+<p>So for <strong>posts</strong> you have <strong>article.tmpl</strong> that describe each single post page, but <strong>article.index.tmpl</strong> describe the code used for one post that is displayed on homepage.
+All posts are listed in a posts page. The template for this list is <strong>post.index.tmpl</strong> (beginning) and <strong>post.footer.tmpl</strong> (end).
+Each post short description on this list is described in <strong>element.tmpl</strong>.
+If you activate the numbering of posts on this page, you will have a pagination. The template of this one is available here: <strong>pagination.tmpl</strong>.</p>
+
+<p>Each post under the homepage can have a <em>Read More</em> link that is described here: <strong>read_more_link.tmpl</strong>.</p>
+
+<p>For <strong>tags</strong> you have <strong>taglink.tmpl</strong> that contains each link to a tag used in a post. The tag list page is available here: <strong>tags.tmpl</strong>. Each tag displayed on this page is available here: <strong>tagelement.tmpl</strong>.</p>
+
+<p>You can create a kind of main menu displayed on all pages that is called <em>sidebar</em>. The corresponding template is: <strong>sidebar.tmpl</strong> and contains a specific word named <strong>${SIDEBAR_CONTENT}</strong> which integrate the content of <em>special/sidebar.md</em> file.</p>
+
+<p>TODO: make a picture to display the structure</p>
+
+<h3>The config.mk file</h3>
+
+<p>Each template delivers a <strong>config.mk</strong> file. This is the business card of your template.</p>
+
+<p>The file contains some mandatories info as:</p>
+
+<ul>
+    <li><strong>CSS_NAME</strong>: template's name. For an example: <em>Minisch 2.4</em></li>
+    <li><strong>CSS_FILE</strong>: template's main CSS file. This should be located into '<em>template/yourTemplate/style/</em>' directory. Example: <em>main_minisch.css</em></li>
+    <li><strong>CSS_COLOR_FILE</strong>: template's particular colors. This means you can have more than one color for your template just by giving a lot of CSS files. All CSS files should be located into '<em>template/yourTemplate/style/</em>'. For an example: <em>color_minisch_light.css</em></li>
+</ul>
+
+<p>and optional ones:</p>
+
+<ul>
+    <li><strong>ISSO_CSS</strong>: additionnal CSS used for ISSO comment system. Should be located into <strong>template/yourTemplate</strong> directory. Example: <em>myissocomment.css</em></li>
+    <li><strong>SIDEBAR</strong>: If value is 1 then the sidebar is mandatory for your template. Which means your template have been designed to be only used with a sidebar.</li>
+    <li><strong>ISSO_SHORT</strong>: template used for ISSO_SHORT variable. In fact, it replaces ISSO_SHORT variable by the content of this template.</li>
+</ul>
+
+<p><strong>NB:</strong> These info should be placed like this:</p>
+
+<pre><code>VAR = value
+</code></pre>
+
+<p>You can find some example of <em>config.mk</em> file into the <strong>template</strong> directory. Don't hesitate to have a look into this directory. You will learn a lot!</p>
+
+<hr/>
+
+<h2>Replacement values</h2>
+
+<p>In Makefly you have some specific words in templates that are replaced by some values. For an example the word <strong>${HOME_TITLE}</strong> will be displayed as <strong>Home</strong>. So when you see it in template, or add it in template, you know that this specific word will be replaced.</p>
+
+<p>Note that you can easily find these specific words in a template because the begin with "<strong>${</strong>" and finish by "<strong>}</strong>". This is the first rule.</p>
+
+<p>The second one is: specific words should be in UPPERCASE.</p>
+
+<p>In this section, you will know more about these replacement values, how to find them, which one you have, etc.</p>
+
+<h3>Translated values</h3>
+
+<p>Some specific words can be found here: <em>lang/translate.en</em>.</p>
+
+<p>In this file, each first word in uppercase of each line is a specific word that will be replaced in the result.</p>
+
+<p>Tip: You can add your own specific word and its value. And it will be used for templates (if you add them in templates).</p>
+
+<h3>Configuration values</h3>
+
+<p>There is some specific words that comes from the configuration file (makefly.rc). You can so read the official documentation, especially the makefly.rc file section to know what they are used for.</p>
+
+<ul>
+    <li><strong>BLOG_CHARSET</strong></li>
+    <li><strong>BLOG_TITLE</strong></li>
+    <li><strong>LANG</strong> (comes from BLOG_LANG in makefly.rc file)</li>
+    <li><strong>BLOG_DESCRIPTION</strong></li>
+    <li><strong>BLOG_SHORT_DESCRIPTION</strong></li>
+    <li><strong>BLOG_URL</strong> (very used all over the blog)</li>
+    <li><strong>BLOG_AUTHOR</strong></li>
+    <li><strong>BLOG_COPYRIGHT</strong></li>
+    <li><strong>RSS_FEED_NAME</strong></li>
+</ul>
+
+<p>Tip: Dislike the previous section about translation file, you cannot add any personal specific word in the makefly.rc file as they are used in a special way.</p>
+
+<h3>Given by the Makefly engine</h3>
+
+<p>To make template you need to know and understand these specific words. They are delivered by the Makefly engine and permit you to design new templates for your weblog.</p>
+
+<p>Here is a non-exhaustive list. If you find a new one not listed here, please contact us or create a new ticket on <a href="https://github.com/blankoworld/makefly/issues">our bug tracking system</a>.</p>
+
+<ul>
+    <li><strong>ABOUT_INDEX</strong>: Real html name of <em>About</em>'s page. For an example: about.html. If you want a link to the about's page, you just have to make this: "<em>${BLOG_URL}/${ABOUT_INDEX}</em>".</li>
+    <li><strong>ABOUT_LINK</strong>: Add a menu link regarding <em>menu.about.tmpl</em> template. This only works if About's page was activated by its presence.</li>
+    <li><strong>BODY_CLASS</strong>: The engine is configured to change this value regarding the generated page. By default the value is "single" for all pages. Then you have: 
+    <ul>
+        <li>single (default value)</li>
+        <li>about: to say the entire page is an about's one</li>
+        <li>tags: to say the entire page is the list of tags</li>
+        <li>home: homepage</li>
+        <li>page: you're in a static page (static page functionnality)</li>
+    </ul></li>
+    <li><strong>CONTENT</strong>: Content of a post (when you edit posts ' templates)</li>
+    <li><strong>CSS_COLOR_FILE</strong>: CSS second filename (in template directory) used as supplementary CSS. Ofently used for CSS that gaves the color (to permit user to choose among few CSS color files). Defined in <strong>config.mk</strong> of your template.</li>
+    <li><strong>CSS_FILE</strong>: Main CSS filename.</li>
+    <li><strong>CSS_NAME</strong>: Name displayed when the user choose your template. Defined in <strong>config.mk</strong> of your template.</li>
+    <li><strong>DATE</strong>: Date using DATE_FORMAT format. Displayed date changes regarding the post you are into.</li>
+    <li><strong>DATETIME</strong>: Date using ISO8601 format to be compatible with HTML5 <em>time</em> tag. Displayed datetime changes regarding the post you are into.</li>
+    <li><strong>POST_TYPE</strong>: Type the user filled in when it creates the post. This permit to use it in CSS and class so that each article have another color for an example.</li>
+    <li><strong>POSTDIR_INDEX</strong>: Name of postdir's index page. For an example <em>index.html</em>.</li>
+    <li><strong>POSTDIR_NAME</strong>: Posts ' directory name. For an example <em>post</em>. That permit to have a better web indexation for your language.</li>
+    <li><strong>POST_AUTHOR</strong>: Author of the post</li>
+    <li><strong>POST_ESCAPED_TITLE</strong>: Title of the post without whitespaces. Commonly used for comment systems. Example of result: <strong>my_first_post</strong>.</li>
+    <li><strong>POST_FILE</strong>: Post filename. Example: <strong>my_first_post.html</strong>.</li>
+    <li><strong>POST_TITLE</strong>: Title of the post. For an example: <strong>My first post</strong>.</li>
+    <li><strong>SEARCHBAR</strong>: Add a search bar here regarding <strong>menu.search_bar.tmpl</strong> template file. Only works if searchbar is activate in configuration file.</li>
+    <li><strong>SHORT_DATE</strong>: Date using short date format (SHORT_DATE_FORMAT in makefly.rc configuration file) for post list's page.</li>
+    <li><strong>SIDEBAR</strong>: Add a sidebar here regarding <em>sidebar.tmpl</em> template. Only works if sidebar is activate from the configuration file (makefly.rc) or the template's configuration file (config.mk).</li>
+    <li><strong>SIDEBAR_CONTENT</strong>: Add the content of <strong>special/sidebar.md</strong> file.</li>
+    <li><strong>TAGDIR_NAME</strong>: Tags directory name. For an example <em>tag</em>. This permits a better web indexation for your language.</li>
+    <li><strong>TAGDIR_INDEX</strong>: Tag index filename. Example: <strong>index.html</strong>.</li>
+    <li><strong>TAGLIST_CONTENT</strong>: List of all tags from the blog.</li>
+    <li><strong>TAG_LINKS_LIST</strong>: List of tags from a given post.</li>
+    <li><strong>TAG_NAME</strong>: Tag name. For an example <strong>My first tag</strong>.</li>
+    <li><strong>TAG_PAGE</strong>: Tag filename. For an example: <em>my_first_tag.html</em>.</li>
+    <li><strong>TITLE</strong>: Current page title. For an example <em>Homepage</em>, <em>Tags List</em>, <em>My first post</em>, etc.</li>
+</ul>
+
+
+ 
+</body>
+</html>

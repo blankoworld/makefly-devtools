@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Makefly x.x.x">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Makefly - Documentation</title>
+
+  <link rel="stylesheet" href="readme.css">
+
+</head>
+<body>
+  <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+  <![endif]-->
+
+Version x.x.x
+<h1>Thèmes pour Makefly</h1>
+
+<p><a href="http://makefly.depotoi.re/themes.html.en">English version</a> (version originale française)</p>
+
+<p><a href="http://makefly.depotoi.re/" title="Aller sur le site web">Site officiel</a></p>
+
+<h2>Dépendances</h2>
+
+<p>Concevoir un thème n'est pas difficile. Mais cela demande quelques compétences comme : </p>
+
+<ul>
+    <li>faire du HTML</li>
+    <li>faire du CSS</li>
+    <li>[optionnel] faire du JS</li>
+</ul>
+
+<p>Toutes ces compétences peuvent être apprises sur <a href="http://openclassrooms.com/" title="Aller sur le site web officiel d'openclassrooms">openclassrooms</a>.</p>
+
+<p>Rappelez-vous que ce n'est pas difficile, vous avez simplement besoin d'un peu de temps pour le faire.</p>
+
+<hr/>
+
+<h2>Concevoir un nouveau thème</h2>
+
+<p>Créér un nouveau thème est facile, comme expliqué dans la documentation officielle. Faites simplement : </p>
+
+<pre><code>./makefly theme monTheme
+</code></pre>
+
+<p>où <strong>monTheme</strong> est le nom de votre thème.</p>
+
+<p>Ceci va copier le thème par défaut <strong>base</strong>.</p>
+
+<p>La commande vous montre où est le nouveau thème. Cela reste généralement dans le répertoire <strong>template</strong> (sauf si vous changez l'emplacement du répertoire des templates).</p>
+
+<p>Donc vous avez simplement à personnaliser le thème. Faites attention aux valeurs qui sont des valeurs de remplacement. Vous pouvez trouver une liste non-exhaustive dans la section <strong>Valeurs de remplacement</strong> de cette documentation.</p>
+
+<hr/>
+
+<h2>Adapter un template existant (Exemple)</h2>
+
+<p>Pour les personnes fainéantes, vous pouvez choisir un template sur le Web et l'adapter à Makefly afin que cela fasse moins de travail pour créer un nouveau template.</p>
+
+<p>Je vous suggère soit de voir une vidéo montrant comment adapter le template Monochromed à Makefly soit de lire les explications à ce propos.</p>
+
+<h3>Apprendre avec une vidéo</h3>
+
+<p>Comme une vidéo est plus parlante qu'un ensemble d'explication, j'ai fait <a href="http://makefly.depotoi.re/monochromed.mkv" title="Comment adapter un template à Makefly">une vidéo qui vous montre comment chercher/charger/adapter un template existant à Makefly</a> (30 MB et 30 minutes approximativement).</p>
+
+<p>NB : Cette vidéo est visionnable avec <a href="https://www.videolan.org/vlc/" title="Charger VLC">VLC media player</a>.</p>
+
+<h3>Apprendre avec des explications (vous pouvez comparer avec la vidéo)</h3>
+
+<p>Parfois, vous êtes feignants. Et moi aussi. Alors vous préférez prendre les templates des autres ! Ainsi j'utilise <a href="http://templated.co/" title="Choisir un template sur le site web templated.co">un site web de templates</a>.</p>
+
+<h4>Chargement du template</h4>
+
+<p>Jetez un œil à ce template : <a href="http://templated.co/monochromed" title="Découvrir le template nommé 'monochromed'">http://templated.co/monochromed</a>. Nous l'utiliserons pour notre tutoriel.</p>
+
+<p>Charger le template, l'extraire dans <strong>template/monochromed</strong> (dans le dossier makefly).</p>
+
+<h4>Tâches à faire</h4>
+
+<p>Donc nous avons 2 choses à faire pour que le template fonctionne sur Makefly : </p>
+
+<ol>
+    <li>Ajouter quelques clés (des mots spécifiques) qui vont insérer le contenu de notre blog à l'intérieur</li>
+    <li>Créer la structure du template</li>
+</ol>
+
+<p>La liste des clés est disponible dans la section <strong>Valeurs de remplacement</strong> du présent document. Ceci est pour la <strong>première tâche</strong> à faire.</p>
+
+<p><strong>La seconde</strong> est expliquée dans la section <strong>Structure du template</strong>.</p>
+
+<p>Mais jetez un œil aux étapes suivantes pour comprendre la procédure de migration d'un template.</p>
+
+<p><strong>Note</strong> : Regardez le dossier <strong>template/monochromed</strong> en exemple de ce tutoriel.</p>
+
+<h4>Ce que demande chaque page</h4>
+
+<p>Premièrement ouvrez le fichier <strong>template/monochromed/index.html</strong> avec votre navigateur web. Vous pouvez voir le template monochromed original.</p>
+
+<p>Ouvrez ensuite le même fichier avec votre éditeur favoris. Le mien est <em>vim</em>. Mais vous pouvez ouvrir le fichier avec <em>gedit</em> ou <em>geany</em> par exemple. Vous voyez le fichier composé de : </p>
+
+<ul>
+    <li>un doctype</li>
+    <li>le contenu de head</li>
+    <li>le contenu de body (classe homepage)</li>
+</ul>
+
+<p>Le dernier (le contenu de body) a plusieurs éléments : </p>
+
+<ul>
+    <li>un DIV header</li>
+    <li>un DIV main</li>
+    <li>un DIV sidebar</li>
+    <li>un DIV footer</li>
+    <li>un DIV copyright</li>
+</ul>
+
+<p>Comme expliqué dans <strong>Structure du template</strong> nous avons besoin de créer un fichier <strong>header.tmpl</strong> et <strong>footer.tmpl</strong>. Ils seront utilisés dans toutes les pages de notre blog.</p>
+
+<p>L'idée est de prendre le début de la page depuis doctype à : </p>
+
+<pre><code>&lt;!-- Main --&gt;
+  &lt;div id="main"&gt;
+    &lt;div class="container"&gt;
+</code></pre>
+
+<p>et le déposer dans le fichier <strong>template/monochromed/header.tmpl</strong>.</p>
+
+<p>Puis nous prenons les 2 derniers DIV de celui nommé <em>container</em> à la fin du fichier et on le dépose dans <strong>template/monochromed/footer.tmpl</strong>.</p>
+
+<h4>Dossier static</h4>
+
+<p>Chaque template a besoin d'un dossier statique dans lequel vous placerez quelques images/photos, fichiers javascript, etc.</p>
+
+<p>Dans notre exemple, faites ceci : </p>
+
+<ul>
+    <li>créez un dossier <em>static</em> : <strong>template/monochromed/static</strong></li>
+    <li>copiez les dossiers <strong>css</strong>, <strong>images</strong> et <strong>js</strong> dans celui nommé <strong>static</strong></li>
+</ul>
+
+<p>Il est temps de configurer notre template.</p>
+
+<h4>Fichier config.mk</h4>
+
+<p>Comme expliqué dans les chapitres suivants, le fichier <strong>config.mk</strong> donne des informations à propos de notre nouveau template/thème.</p>
+
+<p>Donc créez le fichier <strong>template/monochromed/config.mk</strong> avec ce contenu : </p>
+
+<pre><code>CSS_NAME = Monochromed
+CSS_FILE = main_monochromed.css
+CSS_COLOR_FILE = color_monochromed_light.css
+</code></pre>
+
+<p>ce qui implique de créer deux fichiers : </p>
+
+<ul>
+    <li>template/monochromed/style/main_monochromed.css : toutes les règles CSS communes pour notre template/thème</li>
+    <li>template/monochromed/style/color<em>monochromed</em>light.css : seulement conseillé pour une version colorée de votre template afin que vous puissiez créer plusieurs versions</li>
+</ul>
+
+<p>Pour l'instant créez simplement les fichiers. Vous migrerez les règles CSS plus tard.</p>
+
+<h4>Tester le résultat</h4>
+
+<p>Que diriez-vous de tester le résultat ?</p>
+
+<p>Modifiez simplement votre <strong>makefly.rc</strong> et ajoutez ceci : </p>
+
+<pre><code>THEME = monochromed
+</code></pre>
+
+<p>Puis réactualisez votre blog : </p>
+
+<pre><code>./makefly refresh
+</code></pre>
+
+<p>Et vous observerez le résultat dans votre navigateur web en ouvrant <strong>pub/index.html</strong>.</p>
+
+<h4>Hé, je voudrais afficher le titre !</h4>
+
+<p>Affichons le titre de notre blog.</p>
+
+<p>Ouvrez le fichier <strong>template/monochromed/header.tmpl</strong> et remplacez ceci : </p>
+
+<pre><code>&lt;title&gt;Monochromed by TEMPLATED&lt;/title&gt;
+</code></pre>
+
+<p>par ceci : </p>
+
+<pre><code>&lt;title&gt;${BLOG_TITLE} - ${TITLE}&lt;/title&gt;
+</code></pre>
+
+<p>Et : </p>
+
+<pre><code>&lt;h1&gt;&lt;a href="#"&gt;Monochromed&lt;/a&gt;&lt;/h1&gt;
+&lt;span&gt;Design by TEMPLATED&lt;/span&gt;
+</code></pre>
+
+<p>par : </p>
+
+<pre><code>&lt;h1&gt;&lt;a href="${BLOG_URL}"&gt;${BLOG_TITLE}&lt;/a&gt;&lt;/h1&gt;
+&lt;span&gt;${BLOG_SHORT_DESC}&lt;/span&gt;
+</code></pre>
+
+<p>En fait nous mettons simplement quelques variables pour que Makefly fasse des remplacements dans toutes les pages.</p>
+
+<p>Comme précédemment, testez le résultat : </p>
+
+<pre><code>./makefly refresh
+</code></pre>
+
+<p>Et ouvrez <strong>pub/index.html</strong> dans votre navigateur web.</p>
+
+<h4>Où sont les billets ?</h4>
+
+<p>Regardez <strong>template/monochromed/onecolumn.html</strong> avec votre éditeur. Le template nous donne une ligne contenant un billet "No sidebar" qui prend toute la largeur.</p>
+
+<p>Donc prenez le contenu de la DIV <strong>row</strong> (<code>&lt;div class="row"&gt;</code>) et mettez le dans le fichier <strong>template/monochromed/article.index.tmpl</strong>.</p>
+
+<p>Puis ajoutez quelques variables pour afficher vos billets (vous pouvez voir le résultat dans <strong>template/monochromed/article.index.tmpl</strong>) : </p>
+
+<ul>
+    <li>POST_TITLE</li>
+    <li>POST_DESCRIPTION</li>
+    <li>POST_FILE</li>
+    <li>POSTDIR_NAME</li>
+    <li>POST_TYPE</li>
+    <li>POST_CONTENT</li>
+</ul>
+
+<p>Cela rendra seulement disponible les billets sur la page d'accueil. Pour avoir chaque billet créez le fichier <strong>template/monochromed/article.tmpl</strong>. Vous pouvez copier <strong>template/monochromed/article.index.tmpl</strong> à la place. Comme expliqué dans la section <strong>Structure du template</strong>, <em>article.index.tmpl</em> est utilisé par la page d'accueil et <em>article.tmpl</em> par chaque billet seul. Donc adaptez les suivant vos besoins.</p>
+
+<h4>Menu principal</h4>
+
+<p>Ce dont nous sommes habitués à voir dans Makefly ressemble à : </p>
+
+<pre><code>&lt;li&gt;&lt;a href="${BLOG_URL}"&gt;${HOME_TITLE}&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="${BLOG_URL}/${POSTDIR_NAME}/${POSTDIR_INDEX}"&gt;${POST_LIST_TITLE}&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="${BLOG_URL}/${TAGDIR_NAME}/${TAGDIR_INDEX}"&gt;${TAG_LIST_TITLE}&lt;/a&gt;&lt;/li&gt;${ABOUT_LINK}
+</code></pre>
+
+<p>Vous pouvez adapter le fichier <strong>template/monochromed/header.tmpl</strong> pour intégrer le menu à la place de la balise <strong>nav</strong>.</p>
+
+<p>Notez que la variable ABOUT_LINK a besoin du fichier <strong>template/monochromed/menu.about.tmpl</strong>. Copiez celui de <em>template/base/menu.about.tmpl</em>.</p>
+
+<h4>Quelques problèmes apparaissent avec le CSS</h4>
+
+<p>Maintenant que vous avez un menu et que vous l'utiliser, vous voyez que le CSS n'est pas disponible pour toutes les pages. C'est du fait que tout les liens CSS et JS sont relatifs. Ils se réfèrent par exemple à <em>css/style.css</em>. Et chaque page n'a pas l'a même profondeur au sein l'arbre de notre blog.</p>
+
+<p>Pour éviter ce genre de problème nous recommandons dans Makefly d'utiliser des liens absolus. Mais comment ajouter l'URL de notre blog dans chaque fichier CSS et JS ? Nous utilisons les variables. De cette façon vous pouvez ajouter la variable BLOG_URL dans vos fichiers CSS/JS (situés dans le dossier <strong>template/monochromed/static</strong>) pour compléter tous les liens. Par exemple dans le fichier <strong>template/monochromed/static/js/init.js</strong> remplacez : </p>
+
+<pre><code>prefix: 'css/style',
+</code></pre>
+
+<p>par : </p>
+
+<pre><code>prefix: '${BLOG_URL}/css/style',
+</code></pre>
+
+<p>Puis adaptez <strong>template/monochromed/header.tmpl</strong> pour avoir ceci : </p>
+
+<pre><code>  &lt;link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'&gt;
+  &lt;!--[if lte IE 8]&gt;&lt;script src="${BLOG_URL}/js/html5shiv.js"&gt;&lt;/script&gt;&lt;![endif]--&gt;
+    &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script src="${BLOG_URL}/js/skel.min.js"&gt;&lt;/script&gt;
+  &lt;script src="${BLOG_URL}/js/skel-panels.min.js"&gt;&lt;/script&gt;
+  &lt;script src="${BLOG_URL}/js/init.js"&gt;&lt;/script&gt;
+  &lt;noscript&gt;
+    &lt;link rel="stylesheet" href="${BLOG_URL}/css/skel-noscript.css" /&gt;
+    &lt;link rel="stylesheet" href="${BLOG_URL}/css/style.css" /&gt;
+  &lt;/noscript&gt;
+  &lt;!--[if lte IE 8]&gt;&lt;link rel="stylesheet" href="${BLOG_URL}/css/ie/v8.css" /&gt;&lt;![endif]--&gt;
+  &lt;!--[if lte IE 9]&gt;&lt;link rel="stylesheet" href="${BLOG_URL}/css/ie/v9.css" /&gt;&lt;![endif]--&gt;
+&lt;/head&gt;
+</code></pre>
+
+<p>Réactualisez le blog et profitez !</p>
+
+<h4>Fichiers communs</h4>
+
+<p>Comme expliqué dans la section <strong>Structure du template</strong>, il y a beaucoup de fichiers nécessaires pour que notre template fonctionne. Certains demandent à être adaptés, d'autres peuvent être utilisés comme tels.</p>
+
+<p>Donc vous pouvez copiez ces fichiers (depuis le dossier <strong>template/base</strong>) dans votre dossier monochromed : </p>
+
+<ul>
+    <li>element.tmpl</li>
+    <li>menu.about.tmpl</li>
+    <li>post.footer.tmpl</li>
+    <li>post.index.tmpl</li>
+    <li>tagelement.tmpl</li>
+    <li>taglink.tmpl</li>
+    <li>tags.tmpl</li>
+</ul>
+
+<p>Après un <em>refresh</em>, votre blog aura une liste de billets et une liste de mots-clés disponible.</p>
+
+<p>Que pensez-vous de votre blog désormais ?</p>
+
+<hr/>
+
+<h2>Structure du template</h2>
+
+<p>Dans Makefly la structure des templates n'est pas complexe. Mais vous devez savoir comment cela fonctionne pour comprendre les possibilités qu'elle offre.</p>
+
+<h3>Liste rapide des fichiers nécessaires</h3>
+
+<p>Voici une description courte de chaque élément de la structure. Notez qu'aucune entête/enqueue n'est requise pour ces templates. Ce qui veut dire que le début de chaque page est <strong>header.tmpl</strong> et la fin de chaque page est <strong>footer.tmpl</strong>, à l'exception des flux RSS qui utilisent <strong>feed.header.rss</strong> et <strong>feed.footer.rss</strong>.</p>
+
+<p>Éléments : </p>
+
+<ul>
+    <li><strong>article.index.tmpl</strong> : la structure d'<strong>un</strong> billet sur la page d'accueil</li>
+    <li><strong>article.tmpl</strong> : contenu d'un billet donné du blog</li>
+    <li><strong>config.mk</strong> : contient la configuration de votre template. Le nom, le nom du fichier CSS, le nom du fichier CSS secondaire, si la barre latérale est obligatoire, etc.</li>
+    <li><strong>element.tmpl</strong> : courtes informations à propos d'un billet qui sera intégré dans une liste de billets.</li>
+    <li><strong>header.tmpl</strong> : entête de <strong>toutes</strong> les pages du blog. Devrait contenir les premières balises <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> et <code>&lt;body&gt;</code>.</li>
+    <li><strong>footer.tmpl</strong> : enqueue de <strong>toutes</strong> les pages du blog. Devrait contenir les dernières balises <code>&lt;/body&gt;</code> et <code>&lt;/html&gt;</code>.</li>
+    <li><strong>menu.about.tmpl</strong> : lien supplémentaire du menu principal vers la page d'à propos</li>
+    <li><strong>menu.search_bar.tmpl</strong> : lien supplémentaire du menu principal pour afficher une barre de recherche</li>
+    <li><strong>pagination.tmpl</strong> : code HTML utilisé pour faire une pagination sous la liste des billets</li>
+    <li><strong>post.footer.tmpl</strong> : dernier code HTML qui sera affiché après la liste de tous les billets</li>
+    <li><strong>post.index.tmpl</strong> : premier code HTML à être affiché avant la liste de tous les billets</li>
+    <li><strong>read_more_link.tmpl</strong> : lien "Lire la suite" qui sera affiché sous chaque billet de la page d'accueil. Seulement disponible si MAX_POST_LINES est utilisé.</li>
+    <li><strong>sidebar.tmpl</strong> : code HTML qui sera utilisé à la place du mot spécifique ${SIDEBAR} dans les templates header/footer. Devrait contenir le mot spécifique <strong>${SIDEBAR_CONTENT}</strong>.</li>
+    <li><strong>static</strong> [dossier] : dossier qui contient les fichiers qui doivent être présent dans le résultat. Par exemple quelques images, fichiers javascript, etc. Ne pas mettre les fichiers CSS ici (mais pas interdit de le faire) puisque nous avons un dossier <em>style</em> pour cela. Vous devez savoir que les fichiers contenus dans le dossier <em>static</em> seront complétés pendant le processus de compilation. Mais ceci n'est seulement fonctionnel que pour la variable <strong>BLOG_URL</strong>.</li>
+    <li><strong>style</strong> [dossier] : liste des fichiers CSS possibles du template. De la manière dont Makefly est conçu, vous pouvez faire une feuille de style pour l'apparence principale, puis ajouter un fichier CSS pour chaque version de votre template. Par exemple un CSS qui rend votre template rouge. Un autre qui rend le template bleu, etc. Se configure à l'aide de CSS_COLOR_FILE dans le fichier <strong>config.mk</strong>.</li>
+    <li><strong>tagelement.tmpl</strong> : le détail d'un mot-clé à afficher sur la liste des mots-clés</li>
+    <li><strong>taglink.tmpl</strong> : les informations d'un mot clé seul qui sera affiché sur chaque billet</li>
+    <li><strong>tags.tmpl</strong> : la page de la liste des mots-clés. Devrait contenir le mot spécifique <strong>${TAG_LIST_TITLE}</strong>.</li>
+</ul>
+
+<p>Faites attention car d'autres fichiers sont situés dans le répertoire principale des templates pour des traitements spécifiques. Vous ne devriez pas les créer dans votre template mais vous devez les connaître : </p>
+
+<ul>
+    <li><strong>eli_content.tmpl</strong> : code HTML de l'historique des statuts de l'application ELI</li>
+    <li><strong>eli.css</strong> : CSS pour la fonctionnalité ELI</li>
+    <li><strong>eli_css_declaration.tmpl</strong> : code HTML utilisé pour déclarer le CSS d'ELI sur votre blog</li>
+    <li><strong>eli_declaration.tmpl</strong> : code HTML qui déclare le javascript d'ELI dans notre blog. Principalement localisé dans l'enqueue.</li>
+    <li><strong>eli.js</strong> : Code javascript utilisé par la fonctionnalité ELI</li>
+    <li><strong>empty.file</strong> : un fichier vide (certaines applications sont très curieuses, celle-ci n'échappe pas à la règle)</li>
+    <li><strong>feed.footer.rss</strong> : code XML de l'enqueue du flux RSS</li>
+    <li><strong>feed.header.rss</strong> : code XML de l'entête du flux RSS</li>
+    <li><strong>isso.tmpl</strong> : code HTML pour chaque billet pour la fonctionnalité de commentaire nommée ISSO. Remplace la variable ISSO_CONTENT dans les templates.</li>
+    <li><strong>isso.css</strong> : CSS utilisé pour la fonctionnalité ISSO</li>
+    <li><strong>isso_css_declaration.tmpl</strong> : déclaration HTML du CSS utilisée dans l'entête pour le système de commentaire ISSO. Remplace la variable ISSO_CSS_DECLARATION dans les templates.</li>
+    <li><strong>isso_declaration.tmpl</strong> : code HTML qui déclare le javascript d'ISSO dans votre blog. Principalement localisé dans le pied de page. Remplace la variable ISSO_SCRIPT dans les templates.</li>
+    <li><strong>isso.short.tmpl</strong> : habituellement utilisé sur la page d'accueil pour seulement afficher le nombre de commentaire en utilisant le système de commentaire ISSO. Remplace la variable ISSO_SHORT dans les templates.</li>
+    <li><strong>isso.extended.tmpl</strong> : habituellement utilisé sur chaque billet pour afficher les commentaires utilisant le système de commentaire ISSO. Remplace la variable ISSO_EXTENDED dans les templates.</li>
+</ul>
+
+<h3>Plus d'explications</h3>
+
+<p>Premièrement Makefly délivre le blog de la manière suivante : </p>
+
+<ul>
+    <li>une page d'accueil</li>
+    <li>une liste de billets</li>
+    <li>une liste de mots-clés</li>
+    <li>une page d'à propos (optionnel)</li>
+    <li>quelques pages statiques (l'utilisateur ajoute lui-même les pages statiques qu'il veut)</li>
+    <li>une page pour chaque billet</li>
+    <li>une page pour chaque mot-clé</li>
+</ul>
+
+<p>Donc une page est composée de : </p>
+
+<ul>
+    <li>une entête (fichier <strong>header.tmpl</strong>)</li>
+    <li>un contenu (contenus variés : liste de billets, liste de mots-clés, un mot-clé, un billet, une page d'accueil, une d'à propos, etc.)</li>
+    <li>une enqueue (fichier <strong>footer.tmpl</strong>)</li>
+</ul>
+
+<p>Si vous le comprenez correctement, vous avez donc besoin de 2 fichiers : </p>
+
+<ul>
+    <li>header.tmpl (le début de TOUTES les pages)</li>
+    <li>footer.tmpl (la fin de TOUTES les pages)</li>
+</ul>
+
+<p>Ainsi, comment fonctionne le contenu ?</p>
+
+<p>Le contenu est ainsi fabriqué au regard de la page que nous voulons.</p>
+
+<p>Donc pour les <strong>billets</strong> vous avez <strong>article.tmpl</strong> qui décrit chaque page simple d'un billet, mais <strong>article.index.tmpl</strong> décrit le code utilisé pour un billet qui sera affiché sur la page d'accueil.
+Tout les billets sont listés sur une page des billets. Le template pour cette liste est <strong>post.index.tmpl</strong> (début) et <strong>post.footer.tmpl</strong> (fin).
+Chaque courte description d'un billet de cette liste est décrit dans <strong>element.tmpl</strong>.
+Si vous activez la numérotation des billets sur cette page, vous aurez de la pagination. Le template pour cela est disponible ici : <strong>pagination.tmpl</strong>.</p>
+
+<p>Chaque billet dans la page d'accueil peut avoir un lien <em>Lire la suite</em> qui est décrit ici : <strong>read_more_link.tmpl</strong>.</p>
+
+<p>Pour les <strong>mots-clés</strong> vous avez <strong>taglink.tmpl</strong> qui contient chaque lien vers un mot-clé utilisé par un billet. La page de la liste des mots-clés est disponible ici : <strong>tags.tmpl</strong>. Chaque mot-clé affiché sur cette page est disponible ici : <strong>tagelement.tmpl</strong>.</p>
+
+<p>Vous pouvez créer une sorte de menu principal affiché sur chaque page, appelé <em>panneau latéral</em>. Le template correspondant est <strong>sidebar.tmpl</strong> et contient un mot spécifique nommé <strong>${SIDEBAR_CONTENT}</strong> qui intègre le contenu du fichier <em>special/sidebar.md</em>.</p>
+
+<p>À FAIRE : créer une image pour afficher la structure</p>
+
+<h3>Le fichier config.mk</h3>
+
+<p>Chaque template donne un fichier <strong>config.mk</strong>. C'est la carte de visite de votre template.</p>
+
+<p>Le fichier contient quelques informations obligatoires comme : </p>
+
+<ul>
+    <li><strong>CSS_NAME</strong>: nom du template. Par exemple <em>Minisch 2.4</em></li>
+    <li><strong>CSS_FILE</strong>: fichier CSS principal du template. Il devrait être contenu dans le dossier '<em>template/votreTemplate/style/</em>'. Exemple : <em>main_minisch.css</em></li>
+    <li><strong>CSS_COLOR_FILE</strong>: Couleurs particulières du template. Ceci veut dire que vous pouvez avoir plus qu'une couleur pour votre template en donnant simplement plusieurs fichiers CSS. All les fichiers CSS doivent être placés dans le dossier '<em>template/votreTemplate/style/</em>'. Par exemple : <em>color_minisch_light.css</em></li>
+</ul>
+
+<p>et quelques autres optionnelles : </p>
+
+<ul>
+    <li><strong>ISSO_CSS</strong>: CSS additionnel utilisé pour le sytème de commentaire d'ISSO. Devrait être placé dans le dossier <strong>template/yourTemplate</strong>. Exemple : <em>commentairesIsso.css</em></li>
+    <li><strong>SIDEBAR</strong>: Si la valeur est 1 alors le panneau latéral est obligatoire pour votre template. Ce qui implique que votre template a été conçu pour être seulement utilisé avec le panneau latéral.</li>
+    <li><strong>ISSO_SHORT</strong>: template utilisé pour la variable ISSO_SHORT. En fait, cela remplace la variable ISSO_SHORT par le contenu de ce template.</li>
+</ul>
+
+<p><strong>NB</strong> : Ces informations doivent être ajoutées comme ça : </p>
+
+<pre><code>VAR = valeur
+</code></pre>
+
+<p>Vous pouvez trouver quelques exemples de fichier <em>config.mk</em> dans le dossier <strong>template</strong>. N'hésitez pas à jeter un œil dans ce dossier. Vous apprendrez énormément !</p>
+
+<hr/>
+
+<h2>Valeurs de remplacement</h2>
+
+<p>Dans Makefly vous avez quelques mots spécifiques dans les templates qui sont remplacés par quelques valeurs. Par exemple le mot <strong>${HOME_TITLE}</strong> sera affiché comme <strong>Accueil</strong>. Donc quand vous les voyez dans les templates, ou que vous les ajoutez dans les templates, vous savez que ce mot spécifique sera remplacé.</p>
+
+<p>À noter que vous pouvez facilement trouver ces mots spécifiques dans un template car ils comment avec "<strong>${</strong>" et finissent avec "<strong>}</strong>". Ceci est la première règle.</p>
+
+<p>La seconde est celle-ci : les mots spécifiques doivent être en MAJUSCULES.</p>
+
+<p>Dans cette section vous en saurez plus à propos de ces valeurs de remplacement, comment les trouver, desquelles vous disposez, etc.</p>
+
+<h3>Valeurs de traduction</h3>
+
+<p>Certains mots spécifiques peuvent se trouver ici : <em>lang/translate.fr</em>.</p>
+
+<p>Dans ce fichier, chaque premier mot en majuscule sur chaque ligne est un mot spécique qui sera remplacé dans le résultat final.</p>
+
+<p>Astuce : Vous pouvez ajouter vos propres mot spécifiques et leurs valeurs. Et ils seront utilisés pour les templates (si vous les ajoutez aux templates).</p>
+
+<h3>Valeurs de configuration</h3>
+
+<p>Il y a certains mots spécifiques qui viennent du fichier de configuration (makefly.rc). Vous pouvez donc lire la documentation officielle, spécifiquement la section sur le fichier makefly.rc pour savoir pour quoi ils sont utilisés.</p>
+
+<ul>
+    <li><strong>BLOG_CHARSET</strong></li>
+    <li><strong>BLOG_TITLE</strong></li>
+    <li><strong>LANG</strong> (provient de BLOG_LANG dans le fichier makefly.rc)</li>
+    <li><strong>BLOG_DESCRIPTION</strong></li>
+    <li><strong>BLOG_SHORT_DESCRIPTION</strong></li>
+    <li><strong>BLOG_URL</strong> (très utilisé dans tout le blog)</li>
+    <li><strong>BLOG_AUTHOR</strong></li>
+    <li><strong>BLOG_COPYRIGHT</strong></li>
+    <li><strong>RSS_FEED_NAME</strong></li>
+</ul>
+
+<p>Astuce : Contrairement à la section précédente à propos du fichier de traduction, vous ne pouvez pas ajouter de mot spécifique personnel dans le fichier makefly.rc puisqu'ils sont utilisés d'une manière spéciale.</p>
+
+<h3>Fournis par le moteur de Makefly</h3>
+
+<p>Pour faire votre template vous avez besoin de savoir et comprendre certains mots spécifiques. Ils sont fournis par le moteur de Makefly et permettent de concevoir de nouveaux templates pour votre blog.</p>
+
+<p>Voici une liste non-exhaustive. Si vous en trouvez une nouvelle non listée ici, merci de nous contacter ou de créer un nouveau ticket sur <a href="https://github.com/blankoworld/makefly/issues">notre système de gestion de tickets</a>.</p>
+
+<ul>
+    <li><strong>ABOUT_INDEX</strong>: Nom réel du fichier HTML de la page d'<em>À propos</em>. Par exemple : apropos.html. Si vous voulez un lien vers la page d'à propos, vous avez juste à faire ceci : "<em>${BLOG_URL}/${ABOUT_INDEX}</em>".</li>
+    <li><strong>ABOUT_LINK</strong>: Ajout un lien pour un menu au regard du template <em>menu.about.tmpl</em>. Ceci fonctionne seulement si la page d'à propos a été activé par sa présence.</li>
+    <li><strong>BODY_CLASS</strong>: Le moteur est configuré pour changer cette valeur au regard de la page générée. Par défaut la valeur est "single" pour toutes les pages. Puis vous avez : 
+    <ul>
+        <li>single (valeur par défaut)</li>
+        <li>about: pour signifier que la page entière est une page d'à propos</li>
+        <li>tags: pour dire que la page entière est une liste de mots-clés</li>
+        <li>home: page d'accueil</li>
+        <li>page: vous êtes dans une page statique (fonctionnalité des pages statiques)</li>
+    </ul></li>
+    <li><strong>CONTENT</strong>: Contenu d'un billet (quand vous éditez les templatees des billets)</li>
+    <li><strong>CSS_COLOR_FILE</strong>: nom du fichier CSS secondaire (dans le dossier du template) utilisé comme d'une feuille de style supplémentaire. Souvent utilisé pour un CSS qui donne des couleurs (pour permettre à l'utilisateur de choisir parmi quelques fichiers de couleurs CSS). Défini dans <strong>config.mk</strong> de votre template.</li>
+    <li><strong>CSS_FILE</strong>: nom du fichier CSS principal.</li>
+    <li><strong>CSS_NAME</strong>: Nom affiché quand l'utilisateur choisi un template. Défini dans <strong>config.mk</strong> de votre template.</li>
+    <li><strong>DATE</strong>: Date utilisant le format de DATE_FORMAT. La date affiché change en fonction du billet dans lequel vous êtes.</li>
+    <li><strong>DATETIME</strong>: Date utilisant le format ISO8601 pour être compatible avec la balise <em>time</em> d'HTML5. Le datetime affiché change en fonction du billet dans lequel vous êtes.</li>
+    <li><strong>POST_TYPE</strong>: Type que l'utilisateur a rempli quand il crée le billet. Ceci permet de l'utiliser dans le CSS et les class afin que chaque article ait une autre couleur par exemple.</li>
+    <li><strong>POSTDIR_INDEX</strong>: Nom de la page d'index du dossier contenant les billets. Par exemple <em>index.html</em>.</li>
+    <li><strong>POSTDIR_NAME</strong>: Nom du dossier des billets. Par exemple <em>article</em>. Ceci permet d'avoir un meilleur référencement web pour votre langage.</li>
+    <li><strong>POST_AUTHOR</strong>: Auteur du billet</li>
+    <li><strong>POST_ESCAPED_TITLE</strong>: Titre du billet sans espaces. Principalement u tilisé pour les systèmes de commentaires. Exemple de résultat : <strong>mon_premier_billet</strong>.</li>
+    <li><strong>POST_FILE</strong>: Nom du fichier du billet. Exemple : <strong>mon_premier_billet.html</strong>.</li>
+    <li><strong>POST_TITLE</strong>: Titre du billet. Par exemple : <strong>Mon premier billet</strong>.</li>
+    <li><strong>SEARCHBAR</strong>: Ajoute une barre de recherche au regard du fichier de template <strong>menu.search_bar.tmpl</strong>. Ne fonctionne seulement si la barre de recherche est activé dans le fichier de configuration.</li>
+    <li><strong>SHORT_DATE</strong>: Date utilisant le format de date court (SHORT_DATE_FORMAT du fichier de configuration makefly.rc) pour la page de la liste des billets.</li>
+    <li><strong>SIDEBAR</strong>: Ajoute un panneau latéral à cette endroit en fonction du template <em>sidebar.tmpl</em>. Ne fonctionne seulement si le panneau latéral est activé dans le fichier de configuration (makefly.rc) ou dans le fichier de configuration du template (config.mk).</li>
+    <li><strong>SIDEBAR_CONTENT</strong>: Ajoute le contenu du fichier <strong>special/sidebar.md</strong>.</li>
+    <li><strong>TAGDIR_NAME</strong>: Nom du répertoire des mots-clés. Par exemple <em>motcle</em>. Ceci permet un meilleur référencement web pour votre langage.</li>
+    <li><strong>TAGDIR_INDEX</strong>: Nom du fichier d'index du répertoire des mots-clés. Exemple : <strong>index.html</strong>.</li>
+    <li><strong>TAGLIST_CONTENT</strong>: Liste de tous les mots-clés de votre blog.</li>
+    <li><strong>TAG_LINKS_LIST</strong>: Liste des mots-clés pour un billet donné.</li>
+    <li><strong>TAG_NAME</strong>: Nom du mot-clé. Par exemple : <strong>Mon premier mot-clé</strong>.</li>
+    <li><strong>TAG_PAGE</strong>: Nom du fichier du mot-clé. Par exemple : <em>mon_premier_mot_cle.html</em>.</li>
+    <li><strong>TITLE</strong>: Titre de la page courante. Par exemple : <em>Accueil</em>, <em>Liste des mots-clés</em>, <em>Mon premier billet</em>, etc.</li>
+</ul>
+
+
+ 
+</body>
+</html>

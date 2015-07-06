@@ -1,3 +1,4 @@
--- Removed: ./pub directory
--- Removed: ./tmp directory
--- Removed: ./doc/*.html files
+[  INFO   ] Check mandatories information
+[  INFO   ] Removed: /home/olivier/projets/makefly/pub directory
+[  INFO   ] Removed: /home/olivier/projets/makefly/tmp directory
+[  INFO   ] Removed: /home/olivier/projets/makefly/doc/*.html files

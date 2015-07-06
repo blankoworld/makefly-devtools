@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="UTF-8">
-  <meta name="generator" content="Makefly ${VERSION}">
+  <meta name="generator" content="Makefly x.x.x">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Makefly - Documentation</title>
 
@@ -17,7 +17,7 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
 
-Version 0.4-trunk
+Version x.x.x
 <h1>Makefly</h1>
 
 <p><a href="http://makefly.depotoi.re/documentation.html.fr">Version française</a> (French original version)</p>
@@ -33,165 +33,191 @@ Version 0.4-trunk
 <p>It gives these functionnalities:</p>
 
 <ul>
-<li>themes</li>
-<li>RSS feed</li>
-<li>keywords on each page (for web ranking)</li>
-<li>tags</li>
-<li>static webpages</li>
-<li>predate posts</li>
-<li>translations</li>
-<li>comment system</li>
-<li>backup</li>
-<li>publishing scripts to remote servers</li>
-<li>quick theme creation</li>
-<li>Nanoblogger posts migration (Cf. <strong>Migrate from Nanoblogger</strong> section)</li>
+    <li>themes</li>
+    <li>RSS feed</li>
+    <li>keywords on each page (for web ranking)</li>
+    <li>tags</li>
+    <li>static webpages</li>
+    <li>predate posts</li>
+    <li>translations</li>
+    <li>comment system</li>
+    <li>backup</li>
+    <li>publishing scripts to remote servers</li>
+    <li>quick theme creation</li>
+    <li>Nanoblogger posts migration (Cf. <strong>Migrate from Nanoblogger</strong> section)</li>
 </ul>
 
-<h1>Installation</h1>
+<p><strong>Note</strong> : Makefly was not designed to create, edit and delete posts. Even if it offers a script that make new post we suggest you to turn to other projects like <a href="https://github.com/blankoworld/hymby">Hymby</a> (in development).</p>
 
-<h2>Briefly</h2>
+<h2>Installation</h2>
+
+<h3>Briefly</h3>
 
 <p>In some short steps, here is how to install the last version (current development):</p>
 
-<pre><code>sudo apt-get install pmake lua5.1 lua-filesystem lua-markdown
+<pre><code>sudo apt-get install lua5.1 lua-filesystem
 curl https://github.com/blankoworld/makefly/archive/master.zip
 unzip master.zip
 cd makefly-master
 cp makefly.rc.example makefly.rc
-pmake clean &amp;&amp; pmake
+./makefly clean &amp;&amp; ./makefly compile
 </code></pre>
 
 <p>You should have an action list done on your computer. And result is available in <strong>pub directory</strong>.</p>
 
-<h2>Detailed</h2>
+<h3>Detailed</h3>
 
 <p>If you achieve the <strong>Briefly</strong> step, go to <strong>Use it!</strong> section.</p>
 
-<h3>Dependencies</h3>
+<h4>Dependencies</h4>
 
-<p>Some programs on which makefly depends: </p>
+<p>Some programs on which Makefly depends: </p>
 
 <ul>
-<li>pmake or bmake</li>
-<li>lua 5.1 and earlier</li>
-<li>lua-filesystem</li>
-<li>lua-markdown</li>
+    <li>lua 5.1 and earlier</li>
+    <li>lua-filesystem</li>
 </ul>
 
 <p>So use your distribution package manager to install them. For an example on Debian and derivated, it would be:</p>
 
-<pre><code>apt-get install pmake lua5.1 lua-filesystem lua-markdown
+<pre><code>apt-get install lua5.1 lua-filesystem
 </code></pre>
 
 <p>For other distribution, please have a look on your distribution's forum/IRC/community. They will enjoy helping you.</p>
 
-<h3>Others methods to install dependancies</h3>
+<h4>Others methods to install dependancies</h4>
 
-<p>If your distribution doesn't have <em>lua-filesystem</em> and/or <em>lua-markdown</em>, you can attempt to install <strong>luarocks</strong> then install dependancies as:</p>
+<p>If your distribution doesn't have <em>lua-filesystem</em>, you can attempt to install <strong>luarocks</strong> then install dependancies as:</p>
 
 <pre><code>sudo apt-get install luarocks
-luarocks install lua-filesystem lua-markdown
+luarocks install lua-filesystem
 </code></pre>
 
 <p>That's all!</p>
 
-<h3>Installation</h3>
+<h4>Installation</h4>
 
 <p>There is 2 ways to install Makefly on your computer:</p>
 
 <ul>
-<li><a href="https://github.com/blankoworld/makefly/archive/master.zip" title="Download current development version">current development version</a></li>
-<li><a href="http://makefly.depotoi.re/makefly_0.3.zip" title="Download 0.3 stable version">0.3 stable version (recommanded)</a></li>
+    <li><a href="https://github.com/blankoworld/makefly/archive/master.zip" title="Download current development version">current development version</a></li>
+    <li><a href="http://makefly.depotoi.re/makefly_0.3.zip" title="Download 0.3 stable version">0.3 stable version (recommanded)</a></li>
 </ul>
 
 <p>So you just have to:</p>
 
 <ul>
-<li>fetch the choosen version</li>
-<li>extract the content in a directory on your computer</li>
+    <li>fetch the choosen version</li>
+    <li>extract the content in a directory on your computer</li>
 </ul>
 
 <p>And Makefly is installed.</p>
 
-<h3>Configuration</h3>
+<h4>Configuration</h4>
 
-<h4>Stable version</h4>
+<h5>Stable version</h5>
 
 <p>No special configuration required. Check that <strong>makefly.rc</strong> file is present. Otherwise copy <strong>makefly.rc.example</strong> file or rename it to <strong>makefly.rc</strong>.</p>
 
-<h4>Trunk version</h4>
+<h5>Trunk version</h5>
 
 <p>The first time you use Makefly you don't have any configuration file. An example is available in <em>makefly.rc.example</em>. Copy it to <strong>makefly.rc</strong> to permit Makefly to work.</p>
 
-<h4>More info</h4>
+<h5>More info</h5>
 
 <p>For more information please read <strong>The makefly.rc configuration file</strong> section.</p>
 
-<h1>Use it!</h1>
+<h2>Use it!</h2>
 
 <p><strong>By default the content of the blog is located in the pub directory</strong>.</p>
 
-<h2>In brief</h2>
+<h3>In brief</h3>
 
 <p>Some useful commands:</p>
 
 <ul>
-<li><strong>pmake</strong>: Produce the blog. Available in the <strong>pub</strong> directory</li>
-<li><strong>pmake help</strong>: Display available commands</li>
-<li><strong>pmake add</strong>: Create a post and add its main metadata</li>
-<li><strong>pmake clean</strong>: Trash the entire final directory content and empty the Makefly's <em>cache</em>.</li>
+    <li><strong>./makefly compile</strong>: Produce the blog. Available in the <strong>pub</strong> directory</li>
+    <li><strong>./makefly help</strong>: Display available commands</li>
+    <li><strong>./makefly add</strong>: Create a post and add its main metadata</li>
+    <li><strong>./makefly clean</strong>: Trash the entire final directory content and empty the Makefly's <em>cache</em>.</li>
 </ul>
 
-<h2>Create content</h2>
+<h3>Create content</h3>
 
-<h3>Create a new post</h3>
+<h4>Create a new post</h4>
 
 <p>Use this command:</p>
 
-<pre><code>pmake add
+<pre><code>./makefly add
 </code></pre>
 
 <p>and answer to all given questions. It will generate some files needed by Makefly.</p>
 
 <p>Note that Makefly use the <a href="http://daringfireball.net/projects/markdown/" title="Learn more about Markdown format">markdown format</a> for its posts.</p>
 
-<p><strong>Don't forget to edit the file that the 'pmake add' command return.</strong></p>
+<p><strong>Don't forget to edit the file that the './makefly add' command return.</strong></p>
 
-<h3>Static files</h3>
+<h4>Static content (pictures, videos, PDF files, etc.)</h4>
 
-<p>If you want to add some static files, just add them to the <em>static</em> directory. They will be copied in destination directory.</p>
+<p>Sometimes you want to share some files as photos, demonstration, shows, etc. <em>static</em> directory exists for this kind of use. Each file that is in this directory will be copied in the result directory.</p>
 
-<h3>The 'special' directory</h3>
+<p>Example:</p>
+
+<ul>
+    <li>We created <em>static/makefly.svg</em> file</li>
+    <li>After blog's compilation: <em>pub/makefly.svg</em> file exists</li>
+</ul>
+
+<p>It works for each kind of file in this <em>static</em> directory.</p>
+
+<h4>Static pages</h4>
+
+<p>Sometimes you'd prefer to add <strong>static</strong> pages,  for an example legal notices.</p>
+
+<p>For this, create <strong>pages</strong> directory in the Makefly's root. Then add some files that contains Markdown content with <strong>.md</strong> file extension.</p>
+
+<p>Example:</p>
+
+<ul>
+    <li>We created <em>pages/notices.md</em> file</li>
+    <li>After blog's compilation: <em>pub/mentions.html</em> file exists</li>
+</ul>
+
+<p>This allow you to create a website with static pages.</p>
+
+<p>Note 1: Page result's name will be in lower case and will replace spaces with underscore (*_* char).</p>
+
+<p>Note 2: No dynamic link will be make to static page. You will need to modify template yourself to include a link to the static page. Cf. <em>Template ' structure</em> section.</p>
+
+<h4>The 'special' directory</h4>
 
 <p>This one is named <strong>special</strong> because it can contain some file you have to create in order to activate a functionality:</p>
 
 <ul>
-<li><em>about.md</em> : Is the content of an about's page about your website. It will add an item in the website main menu (If your theme support it.)</li>
-<li><em>sidebar.md</em> : Add a sidebar on your website. The theme have to support this function.</li>
-<li><em>introduction.md</em> : Display this file's content as an introduction on all your website's pages. This could change regarding the choosen theme.</li>
-<li><em>footer.md</em> : Display this file's content as a footer on all your website's pages. This could change regarding the choosen theme.</li>
+    <li><em>about.md</em> : Is the content of an about's page about your website. It will add an item in the website main menu (If your theme support it.)</li>
+    <li><em>sidebar.md</em> : Add a sidebar on your website. The theme have to support this function.</li>
+    <li><em>introduction.md</em> : Display this file's content as an introduction on all your website's pages. This could change regarding the choosen theme.</li>
+    <li><em>footer.md</em> : Display this file's content as a footer on all your website's pages. This could change regarding the choosen theme.</li>
 </ul>
 
-<h2>Produce the blog</h2>
+<h3>Produce the blog</h3>
 
 <p>After having created <em>makefly.rc</em> (from makefly.rc.example) and having created some posts, just do this:</p>
 
-<pre><code>pmake
+<pre><code>./makefly compile
 </code></pre>
 
 <p>It will generate a Makefly weblog to the <strong>pub</strong> directory (default directory).</p>
 
-<p>Note: <em>pmake</em> is for Debian like distribution. For other distributions, I suggest you to use <strong>bmake</strong>.</p>
-
-<h1>Publish result to the web</h1>
+<h2>Publish result to the web</h2>
 
 <p>The result is compatible with all HTML servers. In fact you could probably use result with your website provider. You just have to upload all files from <strong>pub</strong> directory to your provider's web directory.</p>
 
-<h2>From a webserver</h2>
+<h3>From a webserver</h3>
 
 <p>If you launch Makefly on you own server or probably on provider ' server, you should be capable to use <strong>install</strong> script automation. Just launch it as:</p>
 
-<pre><code>pmake install
+<pre><code>./makefly install
 </code></pre>
 
 <p>...and it will copy all files to <strong>~/public_html</strong> directory.</p>
@@ -203,17 +229,17 @@ luarocks install lua-filesystem lua-markdown
 <pre><code>INSTALLDIR=${HOME}/public_html
 </code></pre>
 
-<p>Then relaunch <code>pmake install</code> to recompile the weblog.</p>
+<p>Then relaunch <code>./makefly refresh &amp;&amp; ./makefly install</code> to recompile and reinstall the weblog.</p>
 
-<h2>To a remote computer: <em>publish</em> command</h2>
+<h3>To a remote computer: <em>publish</em> command</h3>
 
 <p>To publish your blog to a remote computer you have to:</p>
 
 <ul>
-<li>have an SSH access to the remote machine</li>
-<li>have rsync program</li>
-<li>configure <strong>PUBLISH_DESTINATION</strong> in <strong>makefly.rc</strong> file</li>
-<li>launch <strong>publish</strong> command</li>
+    <li>have an SSH access to the remote machine</li>
+    <li>have rsync program</li>
+    <li>configure <strong>PUBLISH_DESTINATION</strong> in <strong>makefly.rc</strong> file</li>
+    <li>launch <strong>publish</strong> command</li>
 </ul>
 
 <p>That's all!</p>
@@ -225,197 +251,283 @@ luarocks install lua-filesystem lua-markdown
 
 <p>Once having complete this variable in <strong>makefly.rc</strong> file, just launch:</p>
 
-<pre><code>pmake publish
+<pre><code>./makefly publish
 </code></pre>
 
 <p>For developers: You can also edit <strong>tools/publish.sh</strong> file and change script content to you own code.</p>
 
-<h1>Create a new theme</h1>
+<h2>Create a new theme</h2>
 
 <p>To make easier the theme creation you can use this command:</p>
 
-<pre><code>pmake theme name="myTheme"
+<pre><code>./makefly theme myTheme
 </code></pre>
 
 <p>where <strong>myTheme</strong> is to replace by your own theme name.</p>
 
-<p>Note: This exploit a theme called <em>Base</em> as example.</p>
+<p>Note: This exploits a theme called <em>Base</em> as example.</p>
 
-<h1>Translation</h1>
+<p>For template designer have a look here: <a href="http://makefly.depotoi.re//themes.html.en" title="Read more about making template for Makefly">Themes documentation</a>.</p>
+
+<h2>Translation</h2>
 
 <p>A simple way to translate Makefly to your language is to copy the <strong>lang/translate.en</strong> file to another translation file. For an example, for french (with fr code), you can copy <strong>lang/translate.en</strong> to <strong>lang/translate.fr</strong> and change values. Then just change <em>BLOG_LANG</em> option in <strong>makefly.rc</strong> file.</p>
 
-<h1>Backup</h1>
+<h2>Backup</h2>
 
 <p>Perhaps would you backup some important files in Makefly? It's possible via <strong>backup command</strong>. Just launch it like this:</p>
 
-<pre><code>pmake backup
+<pre><code>./makefly backup
 </code></pre>
 
 <p>Requirements:</p>
 
 <ul>
-<li>tar</li>
-<li>gzip</li>
+    <li>tar</li>
+    <li>gzip</li>
 </ul>
 
 <p>Files saved:</p>
 
 <ul>
-<li>makefly.rc</li>
-<li>static directory</li>
-<li>special directory</li>
-<li>db directory</li>
-<li>src directory</li>
-<li>the directory that contains the choosen theme (for an example <em>templates/default/</em>)</li>
+    <li>makefly.rc</li>
+    <li>static directory</li>
+    <li>special directory</li>
+    <li>db directory</li>
+    <li>src directory</li>
+    <li>the directory that contains the choosen theme (for an example <em>templates/default/</em>)</li>
 </ul>
 
-<p>Result: This will create a <em>tarball</em> named <em>YYYYMMDD_makefly.tar.gz</em> in <strong>mbackup</strong> directory (for an example 20120823_makefly.tar.gz). You can so backup your Makefly each day for an example.</p>
+<p>Result: This will create a <em>tarball</em> named <em>YYYYmmdd-HM_makefly.tar.gz</em> in <strong>mbackup</strong> directory (for an example 20120823-1732_makefly.tar.gz). You can so backup your Makefly each day for an example.</p>
 
-<h2>Tip</h2>
+<h3>Tip</h3>
 
 <p>You can customize (in your <strong>makefly.rc</strong> file):</p>
 
 <ul>
-<li>the backup directory by using <strong>BACKUPDIR</strong> option</li>
-<li>the compression tool by using <strong>COMPRESS_TOOL</strong> option. For an example with <strong>gzip</strong>.</li>
-<li>the backup file extension by using <strong>COMPRESS_EXT</strong>. For an example with <strong>.gz</strong> (don't forget the point char).</li>
+    <li>the backup directory by using <strong>BACKUPDIR</strong> option</li>
+    <li>the prefix of the name by using <strong>BACKUP_PREFIX</strong> option</li>
+    <li>the suffix of the name by using <strong>BACKUP_SUFFIX</strong> option</li>
+    <li>the date format using <strong>BACKUP_FORMAT</strong> option</li>
 </ul>
 
-<h1>Sources</h1>
+<h2>Play with the command line</h2>
+
+<p>Knowing that Makefly works the following way:</p>
+
+<pre><code>./makefly help
+</code></pre>
+
+<p>and use some configuration file as <strong>config</strong> and <strong>makefly</strong>.rc, we can play with some variables.</p>
+
+<p>For an example:</p>
+
+<pre><code>LANG=fr_FR.UTF-8 ./makefly help
+</code></pre>
+
+<p>Which permits to change the output language in French.</p>
+
+<p>This way you have the following variables:</p>
+
+<ul>
+    <li>CURDIR : Makefly directory path. Permit to launch compilation from another directory. By default the current directory.</li>
+    <li>LANGDIR : directory path that contains translations. By default the <strong>lang</strong> directory from current path.</li>
+    <li>LANG : language used by the command line. For an example <strong>en_US.UTF-8</strong> of <strong>fr_FR.UTF-8</strong>.</li>
+    <li>CONFIG : default Makefly configuration file path. By default the <strong>config</strong> from current directory.</li>
+    <li>RC_CONFIG : user's configuration file path. By default the <strong>makefly</strong>.rc from current directory.</li>
+</ul>
+
+<p>All these params will permit you to create scripts using Makefly.</p>
+
+<h2>Sources</h2>
 
 <p>Sources are available: </p>
 
 <ul>
-<li><a href="http://gitorious.org/makefly/master.git/">On gitorious</a></li>
-<li><a href="https://github.com/blankoworld/makefly">On github</a></li>
-<li><a href="http://git.dossmann.net/blogbox/makefly.git/">On my own git repository</a></li>
+    <li><a href="https://github.com/blankoworld/makefly/">On github</a></li>
 </ul>
 
-<h1>Documentation</h1>
+<h2>Documentation</h2>
 
-<p>This file is the documentation. You can <a href="https://github.com/blankoworld/makefly" title="Read documentation on Github">read it on github</a> or simply generate an HTML file with this command:</p>
+<p>This file is the documentation. You can <a href="https://github.com/blankoworld/makefly/" title="Read documentation on Github">read it on github</a> or simply generate an HTML file with this command:</p>
 
-<pre><code>pmake doc
+<pre><code>./makefly doc
 </code></pre>
 
-<p>Note: pmake command is for Debian like. For other distribution, use <strong>bmake</strong> instead of pmake.</p>
+<h2>Tips</h2>
 
-<h1>Tips</h1>
-
-<h2>Write post ahead of current's datetime</h2>
+<h3>Write post ahead of current's datetime</h3>
 
 <p>In Makefly you can publish early posts. To do that metadata file should have a timestamp superior to current's one when you generate the weblog. </p>
 
 <p>For an example we are 2013, the 6th march. 12:30:00. The timestamp is : 1362569400. Your post (situated in the <strong>db</strong> directory) have to have a timestamp inferior to current's one (1362569400).</p>
 
-<h2>Write directly the post's content during its creation</h2>
+<h3>Write directly the post's content during its creation</h3>
 
 <p>Just use the 'content' variable at the beginning of the command:</p>
 
-<pre><code>content="my little content" pmake add
+<pre><code>content="my little content" ./makefly add
 </code></pre>
 
 <p>This will add "my little content" into your new post.</p>
 
-<h2>Do not lost comments when migrating from an old domain to a new one</h2>
+<h3>Having a comment system</h3>
+
+<p>Makefly have a free beta service called <a href="http://rave.depotoi.re/">Rave Comment</a> and available for users.</p>
+
+<p>Once registered, you will receive an URL as: <strong>rave.depotoi.re/mypseudo</strong>.</p>
+
+<p>You just have to edit makefly.rc and change these variables:</p>
+
+<pre><code>ISSO = 1
+ISSO_URL = rave.depotoi.re/mypseudo
+</code></pre>
+
+<p>You will so have a comment system on your website.</p>
+
+<p>Note: comments will not be visible on your computer. Only on remote website.</p>
+
+<h3>[deprecated] Do not lost comments when migrating from an old domain to a new one</h3>
+
+<p><strong>Note</strong>: This tip is <strong>deprecated</strong> since 0.4 Makefly version as it only works with JSKOMMENT system.</p>
 
 <p>When you migrate from <strong>old.domain.tld</strong> to <strong>new.domain.tld</strong>, comments will not appear.</p>
 
 <p>To avoid this problem, just use <strong>migratefrom command</strong> as:</p>
 
-<pre><code>domain="http://old.domain.tld" pmake migratefrom
+<pre><code>./makefly migratefrom http://old.domain.tld
 </code></pre>
 
 <p>This will update all your old posts with the old comments' identifier (your old domain) and comments will afressh appear.</p>
 
-<h1>The makefly.rc configuration file</h1>
+<h2>The makefly.rc configuration file</h2>
 
 <p>Here is some options you can change:</p>
 
 <ul>
-<li>BLOG_TITLE: Title of your weblog</li>
-<li>BLOG_SHORT_DESC: A short description of your weblog</li>
-<li>BLOG_DESCRIPTION: A long description of your weblog</li>
-<li>BLOG_LANG: your language code. Note that file lang/translate.YOUR_LANGUAGE_CODE should exists. For an example if I set this parameter to <em>en</em>, a <em>lang/translate.en</em> file should exists!</li>
-<li>BLOG_CHARSET: your encoding configuration. Should be something like <strong>UTF-8</strong> or <strong>ISO-8859-1</strong>. If you don't know what's this option, just let it to <em>UTF-8</em>.</li>
-<li>BLOG_URL: absolute URL of your blog. For an example http://makefly.depotoi.re/.</li>
-<li>BLOG_AUTHOR: Main blog writer. Allow a better indexation in websearch engine.</li>
-<li>BLOG_COPYRIGHT: Blog copyright. Allow a better indexation in websearch engine.</li>
-<li>BLOG_KEYWORDS: Keywords that will appears on all webblog pages. Allow a better indexation in websearch engine.</li>
-<li>RSS_FEED_NAME: Title for the RSS Feed</li>
-<li>MAX_POST: Max post that would be showed on home page</li>
-<li>MAX_POST_LINES: Number of lines that should be shown on Homepage. If set to 0 or not referenced in <em>makefly.rc</em> file, then posts are fully shown.</li>
-<li>MAX_PAGE: Maximum number of post that should be displayed on Post's list. If set to 0 or not used in <em>makefly.rc</em> file, then only one page is done with all posts!</li>
-<li>DATE_FORMAT: Date format displayed for each post. Please see man date's page for more information.</li>
-<li>SHORT_DATE_FORMAT: Short date format that would be used on the post list page. Please see man date's page for more information.</li>
-<li>INDEX_FILENAME: Name given to all index'pages. For an example with <strong>INDEX_FILENAME = mainpage</strong>, post list page will be named <em>mainpage.html</em>.</li>
-<li>PAGE_EXT: suffix that all page will have. <strong>DO NOT FORGET TO ADD A POINT BEFORE SUFFIX</strong>. For an example, with <strong>PAGE_EXT = .html</strong>, all pages will be under the form: index.html.</li>
-<li>ABOUT_FILENAME: As described, this is the about's filename. If you set it to "about" for an example, you have to create a "about.md" file into <strong>special</strong> directory in order to have an about's page. If you change it to "toto", so you have to create a <em>toto.md</em> file into <strong>special</strong> directory.</li>
-<li>POSTDIR_NAME: The name you want to be displayed in URL when a user go to post list. For an example, if you set it to "myposts": http://makefly.depotoi.re/myposts/ will display all you posts. This is useful for others languages.</li>
-<li>TAGDIR_NAME: Same behaviour as POSTDIR_NAME, but for tags. Change it to "mytags" for an example, and you will have URLs like this: http://makefly.depotoi.re/mytags/ to display tag list.</li>
-<li>THEME: Name of the theme you want to be used. All themes are available in <strong>template</strong> directory. Each theme have its own directory. For an example, "default" theme have its <strong>template/default</strong> directory.</li>
-<li>FLAVOR: This name will be used to select a color from your theme (if exists)</li>
-<li>BACKUPDIR: Name of directory where <em>backup</em> command will save all files.</li>
-<li>SIDEBAR_FILENAME: As described, name of sidebar file that would be used to create a sidebar. If you set it to "sidebar" for an example, you have to create a "sidebar.md" file into <strong>special</strong> directory in order to have this sidebar. Note that your theme should support sidebars!</li>
-<li>SIDEBAR: If set to 1, so activate a sidebar on Makefly. Note that your theme should support sidebars!</li>
-<li>PUBLISH_DESTINATION: Full address from where to send files in order to publish them.</li>
-<li>PUBLISH_SCRIPT_NAME: script filename used to send files from <strong>pub</strong> directory to a destination filled in <em>PUBLISH_DESTINATION</em> variable.</li>
-<li>SEARCH_BAR: If set to 1, activate a search bar on Makefly. Note that your theme should support search bar!</li>
-<li>MAX_RSS: Max RSS posts that would be fetch from your users.</li>
-<li>JSKOMMENT : If set to 1, this activate a comment system on Makefly. Note that your theme should support comment system. Warning: default server is jskomment.appspot.com which doesn't guarantee a long backup of your comments. More info are available <a href="http://code.google.com/p/jskomment/wiki/Installation" title="Go to jskomment webpage for more information">on jskomment project installation page</a> (fr).</li>
-<li>JSKOMMENT_CAPTCHA_THEME (optional): Define a theme regarding <a href="https://developers.google.com/recaptcha/docs/customization" title="More info about reCaptcha themes">reCaptcha page</a> for Catpcha in JSKOMMENT comment system</li>
-<li>JSKOMMENT_URL (optional): Define a JSKOMMENT server on which send comments. By default <strong>http://jskomment.appspot.com/</strong>.</li>
-<li>JSKOMMENT_MAX (optional): Define a limit for displayed comments for JSKOMMENT comment system. By default <strong>2</strong>.</li>
-<li>ELI_USER: If set, this activate a badge for identica. Note that your theme should support ELI widget. By default this functionality use IDENTICA's API.</li>
-<li>ELI_TYPE (optional): Change this to "group" to follow a group instead of a user on IDENTICA. By default "user".</li>
-<li>ELI_MAX (optional): Permit to choose how many statuses to display. On identica, this couldn't bypass the default 20 items. Default value: 5.</li>
-<li>ELI_API (optional) : Access to your StatusNet API system.</li>
-<li>INSTALLDIR : Permit to choose a target directory when using <strong>install.sh</strong> script (Read more in <em>Publish result to the web</em> chapter)</li>
-<li>COMPRESS_TOOL (optional) : Shell tool used for backup compression via <em>backup</em> command (Cf. <em>Backup</em> section). Example : <strong>gzip</strong>.</li>
-<li>COMPRESS_EXT (optional) : Backup file extension. Warning: do not forget the point char. Example: <strong>.gz</strong>.</li>
-<li>SORT (optional) : Sort posts' list. Use ASC for posts to be from the oldiest to the latest. DESC (default value) sort posts from the latest to the oldiest.</li>
-<li>AUTO_EDIT (optionnel) : Allow to edit automatically posts after their creation. Use the EDITOR variable content to know which editor to use.</li>
+    <li>BLOG_TITLE: Title of your weblog</li>
+    <li>BLOG_SHORT_DESC: A short description of your weblog</li>
+    <li>BLOG_DESCRIPTION: A long description of your weblog</li>
+    <li>BLOG_LANG: your language code. Note that file lang/translate.YOUR_LANGUAGE_CODE should exists. For an example if I set this parameter to <em>en</em>, a <em>lang/translate.en</em> file should exists!</li>
+    <li>BLOG_CHARSET: your encoding configuration. Should be something like <strong>UTF-8</strong> or <strong>ISO-8859-1</strong>. If you don't know what's this option, just let it to <em>UTF-8</em>.</li>
+    <li>BLOG_URL: absolute URL of your blog. For an example http://makefly.depotoi.re/.</li>
+    <li>BLOG_AUTHOR: Main blog writer. Allow a better indexation in websearch engine.</li>
+    <li>BLOG_COPYRIGHT: Blog copyright. Allow a better indexation in websearch engine.</li>
+    <li>BLOG_KEYWORDS: Keywords that will appears on all webblog pages. Allow a better indexation in websearch engine.</li>
+    <li>RSS_FEED_NAME: Title for the RSS Feed</li>
+    <li>MAX_POST: Max post that would be showed on home page</li>
+    <li>MAX_POST_LINES: Number of lines that should be shown on Homepage. If set to 0 or not referenced in <em>makefly.rc</em> file, then posts are fully shown.</li>
+    <li>MAX_PAGE: Maximum number of post that should be displayed on Post's list. If set to 0 or not used in <em>makefly.rc</em> file, then only one page is done with all posts!</li>
+    <li>DATE_FORMAT: Date format displayed for each post. Please see man date's page for more information.</li>
+    <li>SHORT_DATE_FORMAT: Short date format that would be used on the post list page. Please see man date's page for more information.</li>
+    <li>INDEX_FILENAME: Name given to all index'pages. For an example with <strong>INDEX_FILENAME = mainpage</strong>, post list page will be named <em>mainpage.html</em>.</li>
+    <li>PAGE_EXT: suffix that all page will have. <strong>DO NOT FORGET TO ADD A POINT BEFORE SUFFIX</strong>. For an example, with <strong>PAGE_EXT = .html</strong>, all pages will be under the form: index.html.</li>
+    <li>ABOUT_FILENAME: As described, this is the about's filename. If you set it to "about" for an example, you have to create a "about.md" file into <strong>special</strong> directory in order to have an about's page. If you change it to "toto", so you have to create a <em>toto.md</em> file into <strong>special</strong> directory.</li>
+    <li>POSTDIR_NAME: The name you want to be displayed in URL when a user go to post list. For an example, if you set it to "myposts": http://makefly.depotoi.re/myposts/ will display all you posts. This is useful for others languages.</li>
+    <li>TAGDIR_NAME: Same behaviour as POSTDIR_NAME, but for tags. Change it to "mytags" for an example, and you will have URLs like this: http://makefly.depotoi.re/mytags/ to display tag list.</li>
+    <li>THEME: Name of the theme you want to be used. All themes are available in <strong>template</strong> directory. Each theme have its own directory. For an example, "default" theme have its <strong>template/default</strong> directory.</li>
+    <li>FLAVOR: This name will be used to select a color from your theme (if exists)</li>
+    <li>BACKUPDIR: Name of directory where <em>backup</em> command will save all files.</li>
+    <li>BACKUP_FORMAT: Date format that would be used for the backup file.</li>
+    <li>BACKUP_PREFIX: prefix used for the backup file between the date and the filename.</li>
+    <li>BACKUP_SUFFIX: suffix used for the backup file between the filename and the extension.</li>
+    <li>SIDEBAR_FILENAME: As described, name of sidebar file that would be used to create a sidebar. If you set it to "sidebar" for an example, you have to create a "sidebar.md" file into <strong>special</strong> directory in order to have this sidebar. Note that your theme should support sidebars!</li>
+    <li>SIDEBAR: If set to 1, so activate a sidebar on Makefly. Note that your theme should support sidebars!</li>
+    <li>PUBLISH_DESTINATION: Full address from where to send files in order to publish them.</li>
+    <li>PUBLISH_SCRIPT_NAME: script filename used to send files from <strong>pub</strong> directory to a destination filled in <em>PUBLISH_DESTINATION</em> variable.</li>
+    <li>SEARCH_BAR: If set to 1, activate a search bar on Makefly. Note that your theme should support search bar!</li>
+    <li>MAX_RSS: Max RSS posts that would be fetch from your users.</li>
+    <li>ISSO : If set to 1, this activate a comment system on Makefly. Note that your theme should support comment system. Warning: default server is rave.depotoi.re which doesn't guarantee a long backup of your comments. More info are available <a href="http://posativ.org/isso/docs/install/" title="Go to isso webpage for more information">on isso project installation page</a>.</li>
+    <li>ISSO_URL (optional): Define a ISSO server on which send comments. For example <strong>rave.depotoi.re/pseudo</strong>. Warning: don't use <strong>http://</strong> behind the address. It permits to keep to have http or https when needed.</li>
+    <li>ISSO_MAX (optional): Define a limit for displayed comments for ISSO comment system. By default <strong>3</strong>.</li>
+    <li>ELI_USER: If set, this activate a badge for identica. Note that your theme should support ELI widget. By default this functionality use IDENTICA's API.</li>
+    <li>ELI_TYPE (optional): Change this to "group" to follow a group instead of a user on IDENTICA. By default "user".</li>
+    <li>ELI_MAX (optional): Permit to choose how many statuses to display. On identica, this couldn't bypass the default 20 items. Default value: 5.</li>
+    <li>ELI_API (optional) : Access to your StatusNet API system.</li>
+    <li>INSTALLDIR : Permit to choose a target directory when using <strong>./makefly install</strong> command (Read more in <em>Publish result to the web</em> chapter)</li>
+    <li>SORT (optional) : Sort posts' list. Use ASC for posts to be from the oldiest to the latest. DESC (default value) sort posts from the latest to the oldiest.</li>
+    <li>AUTO_EDIT (optionnel) : Allow to edit automatically posts after their creation. Use the EDITOR variable content to know which editor to use.</li>
 </ul>
 
-<h1>Migrate from Nanoblogger</h1>
+<h2>Migrate from Nanoblogger</h2>
 
 <p>A script that permits to migrate from Nanoblogger exists: <a href="http://github.com/blankoworld/nb2makefly" title="Discover nb2makefly">nb2makefly</a>.</p>
 
 <p>I guest you to read the <a href="https://github.com/blankoworld/nb2makefly/blob/master/README.en.md" title="Read the nb2makefly documentation">nb2makefly documentation</a> to know more about it.</p>
 
-<h1>The project</h1>
+<h2>The project</h2>
 
-<h2>Description</h2>
+<h3>Description</h3>
 
 <p>Makefly is a subproject of <a href="http://blogbox.depotoi.re/" title="Read more about BlogBox project">BlogBox</a> that aims to give user a better way to host a blog at home.</p>
 
-<h2>Development</h2>
-
-<p>Makefly is developed in Lua, CSS, HTML and use BSD Makefile to be launched.</p>
-
-<p>The code of the software is available in the given repositories:</p>
-
-<ul>
-<li><a href="https://gitorious.org/makefly/" title="Go to Makefly's project page on Gitorious">Gitorious</a></li>
-<li><a href="https://gitorious.org/makefly/" title="Go to Makefly's project page on Github">Github</a></li>
-</ul>
-
-<h2>Website</h2>
+<h3>Website</h3>
 
 <p>Stay tuned to <a href="http://makefly.depotoi.re/blog/" title="Visit Makefly official website">Makefly weblog</a> to know more about the project.</p>
 
-<h2>Contact</h2>
+<h3>Red alert, bug detected!</h3>
+
+<p>You find a bug? Or something goes wrong? Let's go <a href="https://github.com/blankoworld/makefly/issues">opening a ticket on Github</a>. It's simple:</p>
+
+<ul>
+    <li>Go to <a href="https://github.com/blankoworld/makefly/issues">this link</a></li>
+    <li>If you're not registered, use <strong>Sign up</strong> link. Then reclick on the previous link and continue to do steps</li>
+    <li>Click on <strong>New Issue</strong></li>
+    <li>Give a title that could be a short description of your problem</li>
+    <li>Then under title, explain in details:
+    <ul>
+        <li>What you do</li>
+        <li>What you have after that</li>
+        <li>What you expect</li>
+        <li>[optional] give the copy/paste of what you see on your computer or <a href="https://lut.im/">give some screenshots</a></li>
+    </ul></li>
+    <li>Validate by using <strong>Submit new issue</strong></li>
+</ul>
+
+<p>This take few minutes and permit to improve Makefly. Thanks -in advance - a lot for your help!</p>
+
+<h3>Development</h3>
+
+<p>Makefly is developed in Lua, CSS and HTML.</p>
+
+<p>The code of the software is available in the given repository:</p>
+
+<ul>
+    <li><a href="https://github.com/blankoworld/makefly/" title="Go to Makefly's project page on Github">Github</a></li>
+</ul>
+
+<h4>Tip to fork the project</h4>
+
+<p>The project can be duplicated and renamed easily. For that just use the given variable in makefly file:</p>
+
+<ul>
+    <li>PROJECTNAME</li>
+    <li>PROJECTURL</li>
+    <li>GITPROJECT</li>
+</ul>
+
+<p>Then rename the makefly file to the name given in PROJECTNAME variable, in lower case.</p>
+
+<p>I suggest you to rename the makefly.svg file to those given in PROJECTNAME..</p>
+
+<p>Good fork and good luck!</p>
+
+<h3>Docker file</h3>
+
+<p>A Docker file is available to test Makefly: https://registry.hub.docker.com/u/bl4n/docker-makefly/</p>
+
+<h3>Contact</h3>
 
 <p>You can contact me <a href="mailto:olivier+makefly@dossmann.net" title="Contact me">to this address</a>.</p>
 
-<h2>License</h2>
+<h3>License</h3>
 
 <p>This software is published under GNU Affero General Public License 3.0.</p>
 
-<h2>Stats</h2>
+<h3>Stats</h3>
 
 <p>Some stats about project could be found <a href="http://www.ohloh.net/p/makefly" title="See ohloh's analysis for Makefly project">on Ohloh.net</a>.</p>
+
  
 </body>
 </html>

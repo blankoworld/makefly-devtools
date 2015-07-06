@@ -1,26 +1,28 @@
--- [  INFO   ] Check mandatories information
--- [  INFO   ] Theme: base
--- [ SUCCESS ] New folder: ./pub/posts
--- [ SUCCESS ] New folder: ./pub/tags
--- [ ENABLE  ] About's page available
--- [ DISABLE ] ELI badge
--- [ DISABLE ] Sidebar
--- [ DISABLE ] Search bar
--- [ ENABLE  ] Comment system
--- [ ENABLE  ] FOOTER
--- [ DISABLE ] INTRO
--- [ SUCCESS ] Folder content copied: ./static
--- [  INFO   ] No static page(s) found.
--- [ SUCCESS ] New post: Makefly project
--- [ SUCCESS ] New post: Official weblog: Open
--- [ SUCCESS ] New post: Welcome to makefly!
--- [ SUCCESS ] RSS feed: BUILT.
--- [ SUCCESS ] Post list: BUILT.
--- [ SUCCESS ] New tag: a test to see if space breaks tags
--- [ SUCCESS ] New tag: makefly
--- [ SUCCESS ] New tag: news
--- [ SUCCESS ] New tag: programmation
--- [ SUCCESS ] New tag: social
--- [ SUCCESS ] New tag: web
--- [ SUCCESS ] Tag list: BUILT.
--- [ SUCCESS ] Homepage: BUILT.
+[  INFO   ] Check mandatories information
+[  INFO   ] Theme: base
+[ SUCCESS ] New folder: /home/olivier/projets/makefly/tmp
+[ SUCCESS ] New folder: /home/olivier/projets/makefly/pub
+[ SUCCESS ] New folder: /home/olivier/projets/makefly/pub/posts
+[ SUCCESS ] New folder: /home/olivier/projets/makefly/pub/tags
+[ ENABLE  ] About's page available
+[ DISABLE ] ELI badge
+[ DISABLE ] Sidebar
+[ DISABLE ] Search bar
+[ ENABLE  ] Comment system
+[ ENABLE  ] FOOTER
+[ DISABLE ] INTRO
+[ SUCCESS ] Folder content copied: /home/olivier/projets/makefly/static
+[  INFO   ] No static page(s) found.
+[ SUCCESS ] New post: Welcome to ${PROJECTNAME}!
+[ SUCCESS ] New post: ${PROJECTNAME} project
+[ SUCCESS ] New post: Official weblog: Open
+[ SUCCESS ] RSS feed: BUILT.
+[ SUCCESS ] Post list: BUILT.
+[ SUCCESS ] New tag: a test to see if space breaks tags
+[ SUCCESS ] New tag: news
+[ SUCCESS ] New tag: programmation
+[ SUCCESS ] New tag: project
+[ SUCCESS ] New tag: social
+[ SUCCESS ] New tag: web
+[ SUCCESS ] Tag list: BUILT.
+[ SUCCESS ] Homepage: BUILT.

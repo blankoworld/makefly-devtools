@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="UTF-8">
-  <meta name="generator" content="Makefly ${VERSION}">
+  <meta name="generator" content="Makefly x.x.x">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Makefly - Documentation</title>
 
@@ -17,66 +17,18 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
 
-Version 0.4-trunk
+Version x.x.x
 <p><link href="./readme.css" rel="stylesheet"></link></p>
 
 <h1>Known issues</h1>
 
-<h2>Issue 1</h2>
+<h2>Issue xx</h2>
 
 <p>Error:</p>
 
-<pre><code>/bin/sh: 1: lua: not found
--- Error while building ./pub/posts/makefly_project.html.
-*** Error code 1
+<p>Solution:</p>
 
-Stop.
-</code></pre>
 
-<p>Solution: Lua is missing. Install it by using a command like:</p>
-
-<pre><code>apt-get install lua5.1
-</code></pre>
-
-<h2>Issue 2</h2>
-
-<p>Error:</p>
-
-<pre><code>/bin/sh: 1: markdown: not found
--- Could not build doc file: ./doc/README.html
--- Doc file built: ./doc/README.html
-`doc' is up to date.
-</code></pre>
-
-<p>Solution: Markdown is missing. Install it by using a command like:</p>
-
-<pre><code>apt-get install markdown
-</code></pre>
-
-<h2>Issue 3</h2>
-
-<p>Error:</p>
-
-<pre><code>pmake: "./makefly/Makefile" line XXX: warning: Couldn't read shell's output for "cd ./src; ls"
-pmake: "./makefly/Makefile" line XXY: warning: Couldn't read shell's output for "cd ./db; ls|sort -r"
-pmake: "./makefly/Makefile" line XXZ: warning: Couldn't read shell's output for "cd ./db; ls|sort -r|head -n 3"
-</code></pre>
-
-<p>Solution: No post to process. Add new post for your blog :)</p>
-
-<h2>Issue 4</h2>
-
-<p>Error:</p>
-
-<pre><code>pmake: "./makefly/Makefile" line 70: Could not find makefly.rc
-pmake: "./makefly/Makefile" line 72: Could not find ./lang/translate.
-head : l'option requiert un argument -- n
-Saisissez « head --help » pour plus d'informations.
-pmake: "./makefly/Makefile" line 135: warning: "cd ./db; ls|sort -r|head -n " returned non-zero status
-pmake: Fatal errors encountered -- cannot continue
-</code></pre>
-
-<p>Solution: Copy the makefly.rc.example to makefly.rc file.</p>
  
 </body>
 </html>

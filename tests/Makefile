@@ -11,10 +11,9 @@ blue   ?= "$e[34m"
 white  ?= "$e[37m"
 
 # Default variables
-PROJECTNAME = makefly
-current != pwd
-main ?= ${current}/../../${PROJECTNAME}
-default_file = ${main}/${PROJECTNAME}
+current = /home/olivier/projets/makefly-devtools/tests
+main ?= /home/olivier/projets/makefly
+default_file = ${main}/makefly
 out = ${current}/out
 result ?= ${current}/result
 
@@ -66,7 +65,8 @@ test001_conf = "${current}/test001.rc"
 test001: test001.rc
 	$Q{ \
 		cp ${test001_conf} ${result}/${TODAY}-test001.rc && \
-		(CURDIR=${main} RC_CONFIG="${test001_conf}" pmake clean -f ${default_file} > /dev/null && CURDIR=${main} RC_CONFIG="${test001_conf}" pmake -f ${default_file} > ${out}/test001.out && \
+		(LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test001_conf}" ${default_file} clean > /dev/null && \
+		LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test001_conf}" ${default_file} compile > ${out}/test001.out && \
 		diff -u test001.ok ${out}/test001.out > ${out}/test001.diff.out && { \
 		echo "-- ${test001_name}: ${result_ok} ${test001_desc}" && echo "test001.rc:${test001_name}:${test001_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
 		echo "-- ${test001_name}: ${result_err} ${test001_desc}" && echo "test001.rc:${test001_name}:${test001_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
@@ -79,14 +79,15 @@ test001: test001.rc
 # search  : NO
 # comment : YES
 # identica: NO
-# goal    : Test that compilation work with jskomment comment system.
+# goal    : Test that compilation work with ISSO comment system.
 test002_name = "Test 002"
 test002_desc = "Only jskomment functionnality -- base theme WITHOUT sidebar WITHOUT search USING comment WITHOUT identica"
 test002_conf = "${current}/test002.rc"
 test002: test002.rc
 	$Q{ \
 		cp ${test002_conf} ${result}/${TODAY}-test002.rc && \
-		(CURDIR=${main} RC_CONFIG="${test002_conf}" pmake clean -f ${default_file} > /dev/null && CURDIR=${main} RC_CONFIG="${test002_conf}" pmake -f ${default_file} > ${out}/test002.out && \
+		(LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test002_conf}" ${default_file} clean > /dev/null && \
+		LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test002_conf}" ${default_file} compile > ${out}/test002.out && \
 		diff -u test002.ok ${out}/test002.out > ${out}/test002.diff.out && { \
 		echo "-- ${test002_name}: ${result_ok} ${test002_desc}" && echo "test002.rc:${test002_name}:${test002_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
 		echo "-- ${test002_name}: ${result_err} ${test002_desc}" && echo "test002.rc:${test002_name}:${test002_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
@@ -106,7 +107,8 @@ test003_conf = "${current}/test003.rc"
 test003: test003.rc
 	$Q{ \
 		cp ${test003_conf} ${result}/${TODAY}-test003.rc && \
-		(CURDIR=${main} RC_CONFIG="${test003_conf}" pmake clean -f ${default_file} > /dev/null && CURDIR=${main} RC_CONFIG="${test003_conf}" pmake -f ${default_file} > ${out}/test003.out && \
+		(LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test003_conf}" ${default_file} clean > /dev/null && \
+		LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test003_conf}" ${default_file} compile > ${out}/test003.out && \
 		diff -u test003.ok ${out}/test003.out > ${out}/test003.diff.out && { \
 		echo "-- ${test003_name}: ${result_ok} ${test003_desc}" && echo "test003.rc:${test003_name}:${test003_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
 		echo "-- ${test003_name}: ${result_err} ${test003_desc}" && echo "test003.rc:${test003_name}:${test003_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
@@ -126,7 +128,8 @@ test004_conf = "${current}/test004.rc"
 test004: test004.rc
 	$Q{ \
 		cp ${test004_conf} ${result}/${TODAY}-test004.rc && \
-		(CURDIR=${main} RC_CONFIG="${test004_conf}" pmake clean -f ${default_file} > /dev/null && CURDIR=${main} RC_CONFIG="${test004_conf}" pmake -f ${default_file} > ${out}/test004.out && \
+		(LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test004_conf}" ${default_file} clean > /dev/null && \
+		LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test004_conf}" ${default_file} compile > ${out}/test004.out && \
 		diff -u test004.ok ${out}/test004.out > ${out}/test004.diff.out && \
 		diff -u test004.html ${main}/pub/index.html > ${out}/test004.diff2.out && { \
 		echo "-- ${test004_name}: ${result_ok} ${test004_desc}" && echo "test004.rc:${test004_name}:${test004_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
@@ -147,7 +150,8 @@ test005_conf = "${current}/test005.rc"
 test005: test005.rc
 	$Q{ \
 		cp ${test005_conf} ${result}/${TODAY}-test005.rc && \
-		(CURDIR=${main} RC_CONFIG="${test005_conf}" pmake clean -f ${default_file} > /dev/null && CURDIR=${main} RC_CONFIG="${test005_conf}" pmake -f ${default_file} > ${out}/test005.out && \
+		(LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test005_conf}" ${default_file} clean > /dev/null && \
+		LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test005_conf}" ${default_file} compile > ${out}/test005.out && \
 		diff -u test005.ok ${out}/test005.out > ${out}/test005.diff.out && \
 		diff -u test005.html ${main}/pub/index.html > ${out}/test005.diff2.out && { \
 		echo "-- ${test005_name}: ${result_ok} ${test005_desc}" && echo "test005.rc:${test005_name}:${test005_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
@@ -168,7 +172,8 @@ test006_conf = "${current}/test006.rc"
 test006: test006.rc
 	$Q{ \
 		cp ${test006_conf} ${result}/${TODAY}-test006.rc && \
-		(CURDIR=${main} RC_CONFIG="${test006_conf}" pmake clean -f ${default_file} > /dev/null && CURDIR=${main} RC_CONFIG="${test006_conf}" pmake -f ${default_file} doc > ${out}/test006.out && \
+		(LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test006_conf}" ${default_file} clean > /dev/null && \
+		LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test006_conf}" ${default_file} doc > ${out}/test006.out && \
 		diff -u test006.ok ${out}/test006.out > ${out}/test006.diff.out && \
 		diff -ruN test006/ ${main}/doc/ > ${out}/test006.diff2.out && { \
 		echo "-- ${test006_name}: ${result_ok} ${test006_desc}" && echo "test006.rc:${test006_name}:${test006_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
@@ -192,7 +197,8 @@ test007_conf = "${current}/test007.rc"
 test007: test007.rc
 	$Q{ \
 		cp ${test007_conf} ${result}/${TODAY}-test007.rc && \
-		(CURDIR=${main} RC_CONFIG="${test007_conf}" pmake clean -f ${default_file} > /dev/null && CURDIR=${main} RC_CONFIG="${test007_conf}" pmake -f ${default_file} > ${out}/test007.out && \
+		(LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test007_conf}" ${default_file} clean > /dev/null && \
+		LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test007_conf}" ${default_file} compile > ${out}/test007.out && \
 		diff -u test007.ok ${out}/test007.out > ${out}/test007.diff.out && { \
 		echo "-- ${test007_name}: ${result_ok} ${test007_desc}" && echo "test007.rc:${test007_name}:${test007_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
 		echo "-- ${test007_name}: ${result_err} ${test007_desc}" && echo "test007.rc:${test007_name}:${test007_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
@@ -212,7 +218,7 @@ test008_conf = "${current}/test008.rc"
 test008: test008.rc
 	$Q{ \
 		cp ${test008_conf} ${result}/${TODAY}-test008.rc && \
-		(CURDIR=${main} RC_CONFIG="${test008_conf}" pmake clean -f ${default_file} > ${out}/test008.out && { \
+		(LANG=en_US.UTF-8 CURDIR=${main} RC_CONFIG="${test008_conf}" ${default_file} clean > ${out}/test008.out && { \
 		echo "-- ${test008_name}: ${result_err} ${test008_desc}" && echo "test008.rc:${test008_name}:${test008_desc}:ER" >> ${result}/${TODAY}-${git_branch_version}.txt ; }) || { \
 		echo "-- ${test008_name}: ${result_ok} ${test008_desc}" && echo "test008.rc:${test008_name}:${test008_desc}:OK" >> ${result}/${TODAY}-${git_branch_version}.txt ; } ; \
 	}
